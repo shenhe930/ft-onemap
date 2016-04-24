@@ -1,0 +1,262 @@
+.left-panel {
+    overflow: visible;
+
+    .searchbox {
+        //border-radius: 0;
+
+        width: 425px;
+        overflow: visible;
+        background-color: #fff;
+        .shadow-6dp();
+        input{
+            border: 0;
+        }
+        .state-btn,.clear-btn{
+            border: 0;
+            &:hover,
+            &:focus,
+            &:visited{
+                border: 0;
+                box-shadow: none;
+            }
+        }
+        .state-btn {
+            color: @blue;
+            &:focus{
+                color: @blue;
+            }
+        }
+        .clear-btn{
+            padding: 6px 4px;
+            color: @border-color;
+            &:hover{
+                color: darken(@border-color,33%);
+            }
+        }
+        .dropdown-menu{
+            min-width: 386px;
+            padding: 0;
+            border-radius: 0;
+            .shadow-6dp();
+
+            > li > a {
+                &:hover,
+                &:focus {
+                    background-color: @navy;
+                }
+            }
+
+            .active > a {
+                &,
+                &:hover,
+                &:focus {
+                    background-color: @navy;
+                }
+            }
+        }
+
+
+    }
+
+    .cardlist {
+        width: 384px;
+        margin: 5px 0;
+    }
+
+    .card {
+        display: inline-block;
+        width: 100%;
+        background-color: #fff;
+
+        margin-bottom: 6px;
+        .shadow-6dp();
+        //&:first-child{
+        //    margin-top: 30px;
+        //}
+
+        .closeBtn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: lighten(#000, 50%);
+            z-index: 9999;
+            &:hover {
+                color: #000;
+            }
+        }
+
+        .card-content{
+            width: 100%;
+            padding:0 6px;
+            .card-box{
+                border: 1px solid @border-color;
+                margin-bottom: 6px;
+            }
+
+            .nav-tabs {
+                border-bottom: 2px solid #DDD;
+            }
+
+            .nav-tabs > li.active > a,
+            .nav-tabs > li.active > a:focus,
+            .nav-tabs > li.active > a:hover {
+                border-width: 0;
+                font-weight: bold;
+            }
+
+            .nav-tabs > li > a {
+                border: none;
+                color: #666;
+            }
+
+            .nav-tabs > li.active > a,
+            .nav-tabs > li > a:hover ,
+            .nav-tabs > li > a:focus{
+                border: none;
+                background: transparent;
+                outline: none;
+            }
+
+            .nav-tabs > li > a::after {
+                content: "";
+                background: @navy;
+                height: 2px;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom: -1px;
+                transition: all 250ms;
+                transform: scale(0);
+            }
+
+            .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after {
+                transform: scale(1);
+            }
+
+            .tab-nav > li > a::after {
+                background: @navy none repeat scroll 0 0;
+                color: #fff;
+            }
+
+            .building-icon{
+                color: lighten(#000, 50%);
+                margin: 24px 12px;
+            }
+
+            form{
+                margin-left: 48px;
+            }
+
+            .list-group{
+                margin: 28px 6px 6px 0;
+                .list-group-item{
+                    border: 0;
+                    color: @text-color;
+                    &:hover{
+                        background-color: #f6f6f6;
+                        cursor: pointer;
+                    }
+                    h3{
+                        margin: 0 6px;
+                    }
+
+                }
+            }
+
+            .nav-pills{
+                margin: 28px 0 6px 0;
+                padding: 0;
+            }
+            .nav-pills>li{
+                border: 1px solid @border-color;
+                +li{
+                    margin-left: 0;
+                }
+                >a{
+                    border-radius: 0;
+                    //background-color: @gray;
+                    background-color: #fff;
+                    color: #000;
+                }
+                &.active>a{
+                    background-color: @navy;
+                    color: #fff;
+                }
+
+            }
+
+            .pagination{
+                margin: 6px 2px;
+                a{
+                    border:0;
+                    &:hover,&:focus{
+                        color: @navy;
+                        background: none;
+                    }
+                }
+                li.active>a{
+                    color: @navy;
+                    background: none;
+                }
+            }
+        }
+
+    }
+
+    .building-detail{
+        img{
+            height: 100%;
+            width: 100%;
+        }
+
+        .building-info{
+            padding: 6px;
+        }
+
+        .floor-box{
+            padding: 6px;
+            overflow-y: auto;
+            .room-cube{
+                margin: 0 6px 6px 0;
+                padding-top: 6px;
+                float: left;
+                position: relative;
+                width: 64px;
+                height: 44px;
+                border: 1 px darken(@yellow,10%);
+                background-color: @yellow;
+                color: #fff;
+                font-size: 12px;
+                cursor: pointer;
+                user-select: none;
+                .shadow-z-1()
+            }
+        }
+    }
+
+}
+
+.company-info{
+    .company-img{
+        width: 100%;
+    }
+    .company-content{
+        padding: 6px 12px;
+    }
+    .tab-content,
+    //.nav-tabs > li>a:hover,
+    //.nav-tabs > li>a:focus
+    .nav-tabs > li.active>a,
+    .nav-tabs > li.active>a:hover,
+    .nav-tabs > li.active>a:focus
+    {
+        background-color: @gray;
+    }
+
+}
+
+
+
+
+
+
