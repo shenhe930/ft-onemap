@@ -40,6 +40,8 @@
     //在下一行错误的修改window[undefined]
     baidu.guid = "$BAIDU$";
 
+    laydate.skin('molv');
+
     var self;
     var LeftPanelControl =BMapLib.LeftPanelControl = function (/*options*/) {
         // 默认停靠位置和偏移量
@@ -187,8 +189,8 @@
                                 '<i class="building-icon fa fa-building fa-2x pull-left"></i>'+
                                 '<form class="form">' +
                                     '<div class="form-group">' +
-                                        '<input type="text" placeholder="开始时间" class="form-control">'+
-                                        '<input type="text" placeholder="结束时间" class="form-control">'+
+                '<input type="text" placeholder="开始时间" class="input-date form-control" onclick="laydate()">' +
+                '<input type="text" placeholder="结束时间" class="input-date form-control" onclick="laydate()">' +
                                     '</div>'+
                                 '</form>'+
                             '</div>'+
@@ -198,8 +200,8 @@
                                 '<i class="building-icon fa fa-building fa-2x pull-left"></i>'+
                                 '<form class="form">' +
                                     '<div class="form-group">' +
-                                        '<input type="text" placeholder="开始时间" class="form-control">'+
-                                        '<input type="text" placeholder="结束时间" class="form-control">'+
+                '<input type="text" placeholder="开始时间" class="input-date form-control" onclick="laydate()">' +
+                '<input type="text" placeholder="结束时间" class="input-date form-control" onclick="laydate()">' +
                                     '</div>'+
                                 '</form>'+
                             '</div>'+
@@ -431,8 +433,18 @@
 
         var toolbar=
             $('<div class="toolbar btn-group btn-group-sm">' +
-                    '<button class="btn btn-white" type="button"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;信息</button>'+
-                    '<button class="btn btn-white" type="button"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;专题图</button>'+
+                '<button class="btn btn-white" id="info-tool" type="button"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;信息</button>' +
+                '<button class="btn btn-white" id="grid-tool" type="button"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;网格</button>' +
+                '<div class="btn-group btn-group-sm">' +
+                '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;专题图 <span class="caret"></span></button>' +
+                '<ul class="dropdown-menu">' +
+                '<li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;注册资本</a></li>' +
+                '<li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;企业分类</a></li>' +
+                '<li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;院士工作站</a></li>' +
+                '<li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;楼宇党建</a></li>' +
+                '<li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;非公党建</a></li>' +
+                '</ul>' +
+                '</div>' +
                     '<div class="btn-group btn-group-sm">'+
                         '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;企业分布 <span class="caret"></span></button>'+
                         '<ul class="dropdown-menu">'+
@@ -469,9 +481,15 @@
                 '</div>'+
             '</div>');
 
-        toolbar.find('>button:first-child').click(function () {
+        toolbar.find('#info-tool').click(function () {
+            $(this).toggleClass('active');
             buildingInfo.toggleClass('hidden');
         });
+
+        toolbar.find('#grid-tool').click(function () {
+            $(this).toggleClass('active');
+        });
+
         toolboxContainer.append(buildingInfo);
 
         map.getContainer().appendChild(toolboxContainer.get(0));
