@@ -15,11 +15,13 @@
                 border-right: 1px solid @border-color;
             }
             &:active,
-            &:focus{
+            &:focus,
+            &.active {
                 box-shadow: none;
             }
-            &:hover{
-                color: @navy;
+            &:hover,
+            &.active {
+                color: darken(@navy, 3%);
             }
         }
         .btn-group{
@@ -27,6 +29,12 @@
         }
         .dropdown-menu{
             margin: 8px 0 0;
+            border-radius: 0;
+            font-size: 12px;
+            a:hover {
+                color: darken(@navy, 3%);
+                background: none;
+            }
         }
 
     }
