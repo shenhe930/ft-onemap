@@ -183,6 +183,11 @@ gulp.task('build', function (done) {
 
 gulp.task('default', ['build']);
 
+gulp.task('deploy', function() {
+    return gulp.src('./dist/**/*')
+        .pipe(plugins.ghPages());
+});
+
 // ---------------------------------------------------------------------
 // | Watch tasks                                                        |
 // ---------------------------------------------------------------------
