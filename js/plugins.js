@@ -116,7 +116,6 @@
             }
 
             var buildingDetailCardHtml =
-                '<div class="building-detail card animated fadeInUp">' +
                 '<button class="closeBtn btn btn-link glyphicon glyphicon-remove"></button>' +
                 '<div class="card-content">' +
                 '<ul class="nav nav-pills nav-justified">' +
@@ -158,10 +157,10 @@
                 generateFloorDetailHtml(floors[0]) +
                 '</div>' +
                 '</div>' +
-                '</div>' +
                 '</div>';
 
             self.buildingDetailCard.html(buildingDetailCardHtml);
+            self.buildingDetailCard.removeClass("hidden");
 
             self.buildingDetailCard.find(".closeBtn").click(function () {
                 self.buildingDetailCard.addClass("hidden");
@@ -337,7 +336,7 @@
     }
 
     function buildingDetailCardDom(me,container){
-        var buildingDetailCard = $('<div></div>');
+        var buildingDetailCard = $('<div class="building-detail card hidden animated fadeInUp"></div>');
         container.append(buildingDetailCard);
         me.buildingDetailCard = buildingDetailCard;
     }
