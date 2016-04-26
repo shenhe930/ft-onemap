@@ -2791,10 +2791,18 @@ body.tour-open .animated {
 .left-panel .card .card-content .pagination a {
   border: 0;
 }
-.left-panel .card .card-content .pagination a:hover,
-.left-panel .card .card-content .pagination a:focus {
+.left-panel .card .card-content .pagination a:hover {
   color: #1ab394;
   background: none;
+}
+.left-panel .card .card-content .pagination a:focus {
+  background: none;
+}
+.left-panel .card .card-content .pagination li:first-child {
+  float: left;
+}
+.left-panel .card .card-content .pagination li:last-child {
+  float: right;
 }
 .left-panel .card .card-content .pagination li.active > a {
   color: #1ab394;
