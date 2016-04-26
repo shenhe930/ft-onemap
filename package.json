@@ -39,7 +39,7 @@
     "type": "MIT",
     "url": ""
   },
-  "name": "html5-boilerplate",
+  "name": "ft-onemap",
   "private": true,
   "scripts": {
     "build": "gulp build"

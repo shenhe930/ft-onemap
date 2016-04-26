@@ -2604,7 +2604,6 @@ body.tour-open .animated {
 .wizard > .content > .body {
   position: relative;
 }
-
 .laydate-icon,
 .laydate_box,
 .laydate_top,
@@ -2612,7 +2611,6 @@ body.tour-open .animated {
 .laydate_ym {
     box-sizing: content-box;
 }
-
 .laydate_yms {
     overflow: hidden;
 }
@@ -2746,7 +2744,6 @@ body.tour-open .animated {
   color: #808080;
   margin: 24px 12px;
 }
-
 .left-panel .card .card-content .input-date {
     border-left: 0;
     border-right: 0;
@@ -2863,7 +2860,6 @@ body.tour-open .animated {
 .toolbox-container .toolbar .btn-white.active {
   box-shadow: none;
 }
-
 .toolbox-container .toolbar .btn-white:hover,
 .toolbox-container .toolbar .btn-white.active {
     color: #18a689;
@@ -2876,7 +2872,6 @@ body.tour-open .animated {
     border-radius: 0;
     font-size: 12px;
 }
-
 .toolbox-container .toolbar .dropdown-menu a:hover {
     color: #18a689;
     background: none;
