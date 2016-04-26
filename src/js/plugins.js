@@ -32,14 +32,6 @@
     }
     var BMapLib = window.BMapLib;
 
-    //声明baidu包
-    var baidu = baidu || {
-            version: "1.3.9"
-        };
-    //提出guid，防止在与老版本Tangram混用时
-    //在下一行错误的修改window[undefined]
-    baidu.guid = "$BAIDU$";
-
     laydate.skin('molv');
 
     var self;
@@ -51,46 +43,49 @@
 
     LeftPanelControl.prototype = new BMap.Control();
 
-    /**
-     * 显示楼宇信息
-     * @ignore
-     * @param {String} 标签名称
-     * @param {Object} 元素属性
-     */
-    function showBuildingInfo(){
-        self.buildingDetailCard.removeClass("hidden");
+    function generateFloorDetailHtml(floor) {
+        var roomsHtml = "";
+        for (var i = floor.rooms.length - 1; i >= 0; i--) {
+            roomsHtml += '<div class="room-cube text-center"><strong>房间号：</strong><br>' + floor.rooms[i].roomNo + '</div>';
+        }
+        var floorHtml =
+            '<div class="card-box" style="height: 200px">' +
+            '<img src="' + floor.floorImage + '">' +
+            '</div>' +
+            '<div class="card-box floor-box" style="height: 200px">' +
+            roomsHtml +
+            '</div>';
+
+        return floorHtml;
     }
 
     /**
-     * 显示楼宇信息
-     * @ignore
-     * @param {String} 标签名称
-     * @param {Object} 元素属性
+     * 显示公司信息
      */
     function showCompanyInfoWindow(){
         $.getJSON("json/companyInfo.json",function(data){
             var companyInfoWindowHtml=
                 '<div class="company-info" >' +
-                    '<img class="company-img" src="'+data.companyImage+'">'+
-                    '<div class="company-content">' +
-                        '<p class="text-muted"><strong>公司名称：</strong>'+data.name+'</p>'+
-                        '<p class="text-muted"><strong>生产经营地：</strong>'+data.address+'</p>'+
-                    '</div>'+
-                        '<div class="tabs-container">' +
-                            '<ul class="nav nav-tabs">'+
-                            '<li class="active"><a data-toggle="tab" href="#">基本信息</a></li>'+
-                            '<li class=""><a data-toggle="tab" href="#" >企业服务</a></li>'+
-                            '<li class=""><a data-toggle="tab" href="#" >党建信息</a></li>'+
-                            '</ul>'+
-                        '<div class="tab-content">' +
-                            '<div id="tab-1" class="tab-pane active" style="height: 240px">'+
-                            '</div>'+
-                            '<div id="tab-2" class="tab-pane" style="height: 240px">'+
-                            '</div>'+
-                            '<div id="tab-3" class="tab-pane" style="height: 240px">'+
-                            '</div>'+
-                    '</div>'+
+                '<img class="company-img" src="' + data.companyImage + '">' +
+                '<div class="company-content">' +
+                '<p class="text-muted"><strong>公司名称：</strong>' + data.name + '</p>' +
+                '<p class="text-muted"><strong>生产经营地：</strong>' + data.address + '</p>' +
                 '</div>'+
+                '<div class="tabs-container">' +
+                '<ul class="nav nav-tabs">' +
+                '<li class="active"><a data-toggle="tab" href="#">基本信息</a></li>' +
+                '<li class=""><a data-toggle="tab" href="#" >企业服务</a></li>' +
+                '<li class=""><a data-toggle="tab" href="#" >党建信息</a></li>' +
+                '</ul>' +
+                '<div class="tab-content">' +
+                '<div id="tab-1" class="tab-pane active" style="height: 240px">' +
+                '</div>' +
+                '<div id="tab-2" class="tab-pane" style="height: 240px">' +
+                '</div>' +
+                '<div id="tab-3" class="tab-pane" style="height: 240px">' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
                 '</div>';
 
             layer.open({
@@ -106,21 +101,86 @@
 
     }
 
-    function generateFloorDetailHtml(floor){
-        var roomsHtml="";
-        for (var i = floor.rooms.length - 1; i >= 0; i--) {
-            roomsHtml+='<div class="room-cube text-center"><strong>房间号：</strong><br>'+floor.rooms[i].roomNo+'</div>';
-        }
-        var floorHtml=
-            '<div class="card-box" style="height: 200px">' +
-                '<img src="'+floor.floorImage+'">'+
-            '</div>'+
-            '<div class="card-box floor-box" style="height: 200px">' +
-                roomsHtml+
-            '</div>';
+    /**
+     * 显示楼宇信息
+     */
+    function showBuildingInfo() {
+        $.getJSON("json/buildingInfo.json", function (data) {
+            var floors = data.floors;
+            var paginationHtml = "";
+            for (var i = 0; i < floors.length; i++) {
+                if (i === 0)
+                    paginationHtml += '<li class="active"><a href="#">' + (i + 1) + '</a></li>';
+                else
+                    paginationHtml += '<li><a href="#">' + (i + 1) + '</a></li>';
+            }
 
-        return floorHtml;
+            var buildingDetailCardHtml =
+                '<div class="building-detail card animated fadeInUp">' +
+                '<button class="closeBtn btn btn-link glyphicon glyphicon-remove"></button>' +
+                '<div class="card-content">' +
+                '<ul class="nav nav-pills nav-justified">' +
+                '<li  class="active" data-toggle="tab"><a href="#detail-building">楼宇信息</a></li>' +
+                '<li  class="" data-toggle="tab"><a href="#detail-floor">楼层信息</a></li>' +
+                '</ul>' +
+                '<div class="tab-content">' +
+                '<div role="tabpanel" class="tab-pane fade  in active" id="detail-building">' +
+                '<div class="card-box" style="height: 200px">' +
+                '<img src="' + data.buildingImage + '">' +
+                '</div>' +
+                '<div class="card-box building-info" style="height: 220px">' +
+                '<p class="text-muted"><strong>楼宇名称：</strong>' + data.name + '</p>' +
+                '<p class="text-muted"><strong>地址：</strong>' + data.address + '</p>' +
+                '<p class="text-muted"><strong>开发商：</strong>' + data.developer + '</p>' +
+                '<p class="text-muted"><strong>开工日期：</strong>' + data.start + '</p>' +
+                '<p class="text-muted"><strong>竣工日期：</strong>' + data.end + '</p>' +
+                '<p class="text-muted"><strong>建筑面积：</strong>' + data.floorArea + '</p>' +
+                '<p class="text-muted"><strong>建筑楼层：</strong>' + data.floorsNum + '</p>' +
+                '</div>' +
+                '</div>' +
+                '<div role="tabpanel" class="tab-pane fade" id="detail-floor">' +
+                '<nav>' +
+
+                '<ul id="pagination" class="pagination">' +
+                '<li id="pagination-prev">' +
+                '<a href="#" >' +
+                '<span>&laquo;</span>' +
+                '</a>' +
+                '</li>' +
+                paginationHtml +
+                '<li id="pagination-next">' +
+                '<a href="#" >' +
+                '<span>&raquo;</span>' +
+                '</a>' +
+                '</li>' +
+                '</ul>' +
+                '</nav>' +
+                generateFloorDetailHtml(floors[0]) +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+
+            self.buildingDetailCard.html(buildingDetailCardHtml);
+
+            self.buildingDetailCard.find(".closeBtn").click(function () {
+                self.buildingDetailCard.addClass("hidden");
+            });
+
+            self.buildingDetailCard.find('.nav-pills a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+
+            self.buildingDetailCard.find(".room-cube").click(function () {
+                showCompanyInfoWindow();
+            });
+
+
+        });
+
     }
+
 
     function searchBoxDom(me,container){
         var searchBox=
@@ -277,80 +337,11 @@
     }
 
     function buildingDetailCardDom(me,container){
-        $.getJSON("json/buildingInfo.json",function(data){
-            var floors=data.floors;
-            var paginationHtml="";
-            for (var i = 0; i < floors.length; i++) {
-                if(i===0)
-                    paginationHtml+= '<li class="active"><a href="#">'+(i+1)+'</a></li>';
-                else
-                    paginationHtml+= '<li><a href="#">'+(i+1)+'</a></li>';
-            }
-
-            var buildingDetailCard=
-                $('<div class="building-detail card hidden animated fadeInUp">' +
-                    '<button class="closeBtn btn btn-link glyphicon glyphicon-remove"></button>'+
-                    '<div class="card-content">' +
-                        '<ul class="nav nav-pills nav-justified">'+
-                        '<li  class="active" data-toggle="tab"><a href="#detail-building">楼宇信息</a></li>'+
-                        '<li  class="" data-toggle="tab"><a href="#detail-floor">楼层信息</a></li>'+
-                        '</ul>'+
-                        '<div class="tab-content">'+
-                            '<div role="tabpanel" class="tab-pane fade  in active" id="detail-building">' +
-                                '<div class="card-box" style="height: 200px">' +
-                                '<img src="'+data.buildingImage+'">'+
-                                '</div>'+
-                                '<div class="card-box building-info" style="height: 220px">' +
-                                    '<p class="text-muted"><strong>楼宇名称：</strong>'+data.name+'</p>'+
-                                    '<p class="text-muted"><strong>地址：</strong>'+data.address+'</p>'+
-                                    '<p class="text-muted"><strong>开发商：</strong>'+data.developer+'</p>'+
-                                    '<p class="text-muted"><strong>开工日期：</strong>'+data.start+'</p>'+
-                                    '<p class="text-muted"><strong>竣工日期：</strong>'+data.end+'</p>'+
-                                    '<p class="text-muted"><strong>建筑面积：</strong>'+data.floorArea+'</p>'+
-                                    '<p class="text-muted"><strong>建筑楼层：</strong>'+data.floorsNum+'</p>'+
-                                '</div>'+
-                            '</div>'+
-                            '<div role="tabpanel" class="tab-pane fade" id="detail-floor">' +
-                                '<nav>' +
-                                    '<ul id="pagination" class="pagination">' +
-                                        '<li id="pagination-prev">'+
-                                            '<a href="#" >'+
-                                                '<span>&laquo;</span>'+
-                                            '</a>'+
-                                        '</li>'+
-                                        paginationHtml+
-                                        '<li id="pagination-next">'+
-                                            '<a href="#" >'+
-                                                '<span>&raquo;</span>'+
-                                            '</a>'+
-                                        '</li>'+
-                                    '</ul>'+
-                                '</nav>'+
-                                generateFloorDetailHtml(floors[0])+
-                            '</div>'+
-                        '</div>'+
-                    '</div>' +
-                 '</div>');
-
-            container.append(buildingDetailCard);
-
-            buildingDetailCard.find(".closeBtn").click(function () {
-                buildingDetailCard.addClass("hidden");
-            });
-
-            buildingDetailCard.find('.nav-pills a').click(function (e) {
-                e.preventDefault();
-                $(this).tab('show');
-            });
-
-            buildingDetailCard.find(".room-cube").click(function () {
-                showCompanyInfoWindow();
-            });
-
-            me.buildingDetailCard=buildingDetailCard;
-        });
-
+        var buildingDetailCard = $('<div></div>');
+        container.append(buildingDetailCard);
+        me.buildingDetailCard = buildingDetailCard;
     }
+
     /**
      * 实现父类的initialize方法
      * @ignore
@@ -375,23 +366,26 @@
 
         buildingDetailCardDom(this,cardList);
 
-        // buildingDetailCard.find('#pagination').carouFredSel({
-        //     items: 12,
-        //     height:40,
-        //     next:"pagiantion-next",
-        //     prev:"pagiantion-prev",
-        //     scroll : {
-        //         items: 1,
-        //         easing: "elastic",
-        //         duration: 1000
-        //     }
-
         container.append(cardList);
 
         map.getContainer().appendChild(container.get(0));
 
+        // this.buildingDetailCard.find('#pagination').carouFredSel({
+        //     items: 12,
+        //     height: 40,
+        //     next: "pagiantion-next",
+        //     prev: "pagiantion-prev",
+        //     scroll: {
+        //         items: 1,
+        //         easing: "elastic",
+        //         duration: 1000
+        //     }
+        // });
+
         //将创建的dom元素返回
         return container.get(0);
+
+
     };
 
 

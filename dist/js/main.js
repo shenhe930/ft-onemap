@@ -18,6 +18,5 @@
 
     var toolbox=new BMapLib.ToolBoxControl();
     map.addControl(toolbox);
-
-
+    
 }());

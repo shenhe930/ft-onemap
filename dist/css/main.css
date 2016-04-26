@@ -2609,10 +2609,10 @@ body.tour-open .animated {
 .laydate_top,
 .laydate_bottom,
 .laydate_ym {
-    box-sizing: content-box;
+  box-sizing: content-box;
 }
 .laydate_yms {
-    overflow: hidden;
+  overflow: hidden;
 }
 .left-panel {
   overflow: visible;
@@ -2745,9 +2745,9 @@ body.tour-open .animated {
   margin: 24px 12px;
 }
 .left-panel .card .card-content .input-date {
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 }
 .left-panel .card .card-content form {
   margin-left: 48px;
@@ -2791,10 +2791,18 @@ body.tour-open .animated {
 .left-panel .card .card-content .pagination a {
   border: 0;
 }
-.left-panel .card .card-content .pagination a:hover,
-.left-panel .card .card-content .pagination a:focus {
+.left-panel .card .card-content .pagination a:hover {
   color: #1ab394;
   background: none;
+}
+.left-panel .card .card-content .pagination a:focus {
+  background: none;
+}
+.left-panel .card .card-content .pagination li:first-child {
+  float: left;
+}
+.left-panel .card .card-content .pagination li:last-child {
+  float: right;
 }
 .left-panel .card .card-content .pagination li.active > a {
   color: #1ab394;
@@ -2862,19 +2870,19 @@ body.tour-open .animated {
 }
 .toolbox-container .toolbar .btn-white:hover,
 .toolbox-container .toolbar .btn-white.active {
-    color: #18a689;
+  color: #18a689;
 }
 .toolbox-container .toolbar .btn-group {
   margin-left: 0;
 }
 .toolbox-container .toolbar .dropdown-menu {
   margin: 8px 0 0;
-    border-radius: 0;
-    font-size: 12px;
+  border-radius: 0;
+  font-size: 12px;
 }
 .toolbox-container .toolbar .dropdown-menu a:hover {
-    color: #18a689;
-    background: none;
+  color: #18a689;
+  background: none;
 }
 .toolbox-container .message-btn {
   margin: 0 6px;
