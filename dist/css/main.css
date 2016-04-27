@@ -2849,6 +2849,9 @@ body.tour-open .animated {
 .company-info .nav-tabs > li.active > a:focus {
   background-color: #f3f3f4;
 }
+.toolbox-container {
+  color: #676a6c;
+}
 .toolbox-container .toolbar {
   padding: 6px 0;
   background-color: #fff;
