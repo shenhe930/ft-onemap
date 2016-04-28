@@ -36,6 +36,7 @@
         "BMAP_ANCHOR_BOTTOM_RIGHT",
         "BMAP_NAVIGATION_CONTROL_ZOOM",
         "layer",
-        "laydate"
+        "laydate",
+        "alert"
     ]
 }

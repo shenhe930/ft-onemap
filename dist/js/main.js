@@ -18,5 +18,15 @@
 
     var toolbox=new BMapLib.ToolBoxControl();
     map.addControl(toolbox);
-    
+
+    $(toolbox).bind("gridSelected",function (e,data) {
+        console.log(e);
+        console.log(data);
+        leftPanel.showSearchResult(data);
+    });
+
+    $(toolbox).bind("removeGrid",function () {
+        leftPanel.clearSearchResult();
+    });
+
 }());

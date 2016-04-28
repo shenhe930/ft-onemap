@@ -35,6 +35,13 @@
     laydate.skin('molv');
 
     var self;
+    var searchResultPoint=[];//查询结果点
+
+    var autocompleteUrl="json/autocomplete.json";//搜索框自动完成请求url
+    var searchUrl="json/searchresult.json";//搜索框搜索请求url
+    var buildingInfoUrl="json/buildingInfo.json";//楼宇信息请求url
+    var floorUrl="json/floorInfo.json";//查询楼层信息
+
     var LeftPanelControl =BMapLib.LeftPanelControl = function (/*options*/) {
         // 默认停靠位置和偏移量
         this.defaultAnchor = BMAP_ANCHOR_TOP_LEFT;
@@ -43,18 +50,32 @@
 
     LeftPanelControl.prototype = new BMap.Control();
 
-    function generateFloorDetailHtml(floor) {
+
+    /**
+     * 隐藏所有card
+     */
+    function hideAllCard(){
+        self.cardList.find(".card").addClass("hidden");
+    }
+
+    function generateFloorDetailHtml(floor,rooms) {
         var roomsHtml = "";
-        for (var i = floor.rooms.length - 1; i >= 0; i--) {
-            roomsHtml += '<div class="room-cube text-center"><strong>房间号：</strong><br>' + floor.rooms[i].roomNo + '</div>';
+        if(rooms){
+            for (var i = rooms.length - 1; i >= 0; i--) {
+                roomsHtml += '<div class="room-cube text-center"><strong>房间号：</strong><br>' + (rooms[i].name!==undefined?rooms[i].name:"") + '</div>';
+            }
         }
-        var floorHtml =
-            '<div class="card-box" style="height: 200px">' +
-            '<img src="' + floor.floorImage + '">' +
-            '</div>' +
-            '<div class="card-box floor-box" style="height: 200px">' +
-            roomsHtml +
-            '</div>';
+
+        var floorHtml ="";
+        if(floor){
+            floorHtml =
+                '<div id="floor-Info" class="card-box" style="height: 200px">' +
+                '<img src=files/"' + floor.url + '">' +
+                '</div>' +
+                '<div class="card-box floor-box" style="height: 200px">' +
+                roomsHtml +
+                '</div>';
+        }
 
         return floorHtml;
     }
@@ -104,82 +125,166 @@
     /**
      * 显示楼宇信息
      */
-    function showBuildingInfo() {
-        $.getJSON("json/buildingInfo.json", function (data) {
-            var floors = data.floors;
-            var paginationHtml = "";
-            for (var i = 0; i < floors.length; i++) {
-                if (i === 0)
-                    paginationHtml += '<li class="active"><a href="#">' + (i + 1) + '</a></li>';
-                else
-                    paginationHtml += '<li><a href="#">' + (i + 1) + '</a></li>';
-            }
+    function showBuildingInfo(id) {
+        $.getJSON(buildingInfoUrl,
+            {
+                method:"queryBuildingInfoById",
+                b_id:id,
+                buildingaddress:""
+            },
+            function (data) {
+                hideAllCard();
+                var floors = data.floorList;
+                var paginationHtml = "";
+                for (var i = 0; i < floors.length; i++) {
+                    if (i === 0)
+                        paginationHtml += '<li class="active"><a href="#" data-fid="'+floors[i].f_id+'">' + floors[i].name + '</a></li>';
+                    else
+                        paginationHtml += '<li><a href="#" data-fid="'+floors[i].f_id+'">' + floors[i].name + '</a></li>';
+                }
 
-            var buildingDetailCardHtml =
-                '<button class="closeBtn btn btn-link glyphicon glyphicon-remove"></button>' +
-                '<div class="card-content">' +
-                '<ul class="nav nav-pills nav-justified">' +
-                '<li  class="active" data-toggle="tab"><a href="#detail-building">楼宇信息</a></li>' +
-                '<li  class="" data-toggle="tab"><a href="#detail-floor">楼层信息</a></li>' +
-                '</ul>' +
-                '<div class="tab-content">' +
-                '<div role="tabpanel" class="tab-pane fade  in active" id="detail-building">' +
-                '<div class="card-box" style="height: 200px">' +
-                '<img src="' + data.buildingImage + '">' +
-                '</div>' +
-                '<div class="card-box building-info" style="height: 220px">' +
-                '<p class="text-muted"><strong>楼宇名称：</strong>' + data.name + '</p>' +
-                '<p class="text-muted"><strong>地址：</strong>' + data.address + '</p>' +
-                '<p class="text-muted"><strong>开发商：</strong>' + data.developer + '</p>' +
-                '<p class="text-muted"><strong>开工日期：</strong>' + data.start + '</p>' +
-                '<p class="text-muted"><strong>竣工日期：</strong>' + data.end + '</p>' +
-                '<p class="text-muted"><strong>建筑面积：</strong>' + data.floorArea + '</p>' +
-                '<p class="text-muted"><strong>建筑楼层：</strong>' + data.floorsNum + '</p>' +
-                '</div>' +
-                '</div>' +
-                '<div role="tabpanel" class="tab-pane fade" id="detail-floor">' +
-                '<nav>' +
+                var buildingDetailCardHtml =
+                    '<button class="closeBtn btn btn-link glyphicon glyphicon-remove"></button>' +
+                    '<div class="card-content">' +
+                    '<ul class="nav nav-pills nav-justified">' +
+                    '<li  class="active" data-toggle="tab"><a href="#detail-building">楼宇信息</a></li>' +
+                    '<li  class="" data-toggle="tab"><a href="#detail-floor">楼层信息</a></li>' +
+                    '</ul>' +
+                    '<div class="tab-content">' +
+                    '<div role="tabpanel" class="tab-pane fade  in active" id="detail-building">' +
+                    '<div class="card-box" style="height: 200px">' +
+                    '<img src="files/' + data.building.url1 + '">' +
+                    '</div>' +
+                    '<div class="card-box building-info" style="height: 220px">' +
+                    '<p class="text-muted"><strong>楼宇名称：</strong>' + data.building.name + '</p>' +
+                    '<p class="text-muted"><strong>地址：</strong>' + data.building.address + '</p>' +
+                    '<p class="text-muted"><strong>开发商：</strong>' + data.building.dev + '</p>' +
+                    '<p class="text-muted"><strong>开工日期：</strong>' + data.building.start_date + '</p>' +
+                    '<p class="text-muted"><strong>竣工日期：</strong>' + data.building.end_date + '</p>' +
+                    '<p class="text-muted"><strong>建筑面积：</strong>' + data.building.area + '</p>' +
+                    '<p class="text-muted"><strong>建筑楼层：</strong>' + data.building.f + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div role="tabpanel" class="tab-pane fade" id="detail-floor">' +
+                    '<nav>' +
 
-                '<ul id="pagination" class="pagination">' +
-                '<li id="pagination-prev">' +
-                '<a href="#" >' +
-                '<span>&laquo;</span>' +
-                '</a>' +
-                '</li>' +
-                paginationHtml +
-                '<li id="pagination-next">' +
-                '<a href="#" >' +
-                '<span>&raquo;</span>' +
-                '</a>' +
-                '</li>' +
-                '</ul>' +
-                '</nav>' +
-                generateFloorDetailHtml(floors[0]) +
-                '</div>' +
-                '</div>' +
-                '</div>';
+                    '<ul id="pagination" class="pagination">' +
+                    '<li id="pagination-prev">' +
+                    '<a href="#" >' +
+                    '<span>&laquo;</span>' +
+                    '</a>' +
+                    '</li>' +
+                    paginationHtml +
+                    '<li id="pagination-next">' +
+                    '<a href="#" >' +
+                    '<span>&raquo;</span>' +
+                    '</a>' +
+                    '</li>' +
+                    '</ul>' +
+                    '</nav>' +
+                    '<div id="floor-detail">' +
+                    generateFloorDetailHtml(floors[0],data.roomList) +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
 
-            self.buildingDetailCard.html(buildingDetailCardHtml);
+                self.buildingDetailCard.html(buildingDetailCardHtml);
 
-            self.buildingDetailCard.removeClass("hidden");
+                self.buildingDetailCard.removeClass("hidden");
 
-            self.buildingDetailCard.find(".closeBtn").click(function () {
-                self.buildingDetailCard.addClass("hidden");
-            });
+                self.buildingDetailCard.find(".closeBtn").click(function () {
+                    self.buildingDetailCard.addClass("hidden");
+                    self.clearSearchResult();
+                });
 
-            self.buildingDetailCard.find('.nav-pills a').click(function (e) {
-                e.preventDefault();
-                $(this).tab('show');
-            });
+                self.buildingDetailCard.find('.nav-pills a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
 
-            self.buildingDetailCard.find(".room-cube").click(function () {
-                showCompanyInfoWindow();
-            });
+                self.buildingDetailCard.find('.pagination a[data-fid]').click(function () {
+                    if(!$(this).parent().hasClass("active")){
+                        self.buildingDetailCard.find('.pagination a[data-fid]').parent().removeClass("active");
+                        $(this).parent().addClass("active");
+                        $.getJSON(
+                            floorUrl,
+                            {
+                                method:"queryFloorInfoById",
+                                f_id:$(this).data("fid")
+                            },
+                            function(result){
+                                self.buildingDetailCard.find('#floor-detail').html(generateFloorDetailHtml(result.floor,result.roomList));
+                            });
+                    }
+
+                });
+
+                self.buildingDetailCard.find(".room-cube").click(function () {
+                    showCompanyInfoWindow();
+                });
 
 
         });
 
     }
+
+    LeftPanelControl.prototype.clearSearchResult=function(){
+        var list=self.searchResultCard.find(".list-group");
+        list.empty();
+
+        $.each(searchResultPoint,function(i){
+            self._map.removeOverlay(searchResultPoint[i]);
+        });
+        searchResultPoint=[];
+
+        self.searchResultCard.addClass("hidden");
+    };
+
+    LeftPanelControl.prototype.showSearchResult=function(result){
+        var map=self._map;
+        hideAllCard();
+        self.searchResultCard.removeClass("hidden");
+
+        var list=self.searchResultCard.find(".list-group");
+        list.empty();
+
+        $.each(searchResultPoint,function(i){
+            map.removeOverlay(searchResultPoint[i]);
+        });
+        searchResultPoint=[];
+
+        $.each(result.data, function(i){
+            var item=$(
+                '<a class="list-group-item" data-bid="'+result.data[i].b_id+'">' +
+                '<strong>'+result.data[i].name+'</strong><br><small>'+result.data[i].address+'</small>'+
+                '</a>'
+            );
+            list.append(item);
+
+            item.click(function () {
+                self.searchResultCard.addClass("hidden");
+                showBuildingInfo($(this).data("bid"));
+            });
+
+            var point=new BMap.Point(result.data[i].x, result.data[i].y);
+            var marker = new BMap.Marker(point);
+            marker.bid=result.data[i].b_id;
+            var opts = {
+                width : 160,     // 信息窗口宽度
+                height: 60,     // 信息窗口高度
+                title : result.data[i].name  // 信息窗口标题
+            };
+            var infoWindow = new BMap.InfoWindow("地址："+result.data[i].address, opts);  // 创建信息窗口对象
+            marker.addEventListener("click", function(e){
+                map.openInfoWindow(infoWindow,point); //开启信息窗口
+                showBuildingInfo(e.target.bid);
+            });
+            map.addOverlay(marker);
+            searchResultPoint.push(marker);
+        });
+    };
+
 
 
     function searchBoxDom(me,container){
@@ -200,19 +305,26 @@
 
         searchInput.autocomplete({
             source:function(query,process){
-                $.getJSON("json/autocomplete.json",function(result){
-                    process(result);
+                $.getJSON(
+                    autocompleteUrl,
+                    {
+                        method:"queryBuilding2",
+                        buildingname:searchInput.val(),
+                        buildingaddress:""
+                    },
+                    function(result){
+                    process(result.data);
                 });
             },
             formatItem:function(item){
-                return item.key;
+                return item.name;
             },
             setValue:function(item){
-                return {'data-value':item.key,'real-value':item.value};
+                return {'data-value':item.name,'real-value':item.b_id};
             }
         });
 
-        searchBtn.on("input",function () {
+        searchInput.on("input",function () {
             if($(this).val()!==""){
                 clearBtn.removeClass("hidden");
             }else{
@@ -228,6 +340,7 @@
 
         container.append(searchBox);
 
+        me.searchInput=searchInput;
         me.searchBtn=searchBtn;
         me.stateBtn=searchBox.find('.state-btn');
 
@@ -281,7 +394,7 @@
     }
 
     function searchResultCardDom(me,container){
-        var searchResultCard=this.searchResultCard=
+        var searchResultCard=me.searchResultCard=
             $('<div class="card hidden animated fadeInUp">' +
                 '<button class="closeBtn btn btn-link glyphicon glyphicon-remove"></button>'+
                 '<div class="card-content">' +
@@ -292,44 +405,19 @@
 
         searchResultCard.find(".closeBtn").click(function () {
             searchResultCard.addClass("hidden");
+            me.clearSearchResult();
         });
 
         me.searchBtn.click(function () {
-            var map=me._map;
-            $.getJSON("json/searchresult.json",function(result){
-                var points=[];
-                searchResultCard.removeClass("hidden");
-                var list=searchResultCard.find(".list-group");
-                list.empty();
-                $.each(result, function(i){
-                    var item=$(
-                        '<a class="list-group-item">' +
-                        '<strong>'+result[i].name+'</strong><br><small>'+result[i].address+'</small>'+
-                        '</a>'
-                    );
-                    list.append(item);
-
-                    item.click(function () {
-                        searchResultCard.addClass("hidden");
-                        showBuildingInfo("buildingId");
-                    });
-
-                    var point=new BMap.Point(result[i].lng, result[i].lat);
-                    var marker = new BMap.Marker(point);
-                    var opts = {
-                        width : 160,     // 信息窗口宽度
-                        height: 60,     // 信息窗口高度
-                        title : result[i].name  // 信息窗口标题
-                    };
-                    var infoWindow = new BMap.InfoWindow("地址："+result[i].address, opts);  // 创建信息窗口对象
-                    marker.addEventListener("click", function(){
-                        map.openInfoWindow(infoWindow,point); //开启信息窗口
-                        showBuildingInfo("buildingId");
-                    });
-                    points.push(point);
-                    map.addOverlay(marker);
-                });
-                map.setViewport(points);
+            $.getJSON(
+                searchUrl,
+                {
+                    method:"queryBuilding2",
+                    buildingname:me.searchInput.val(),
+                    buildingaddress:""
+                },
+                function(result){
+                    me.showSearchResult(result);
             });
         });
 
@@ -358,7 +446,7 @@
 
         searchBoxDom(this,container);
 
-        var cardList= $('<div class="cardlist"></div>');
+        var cardList=this.cardList= $('<div class="cardlist"></div>');
 
         conditionCardDom(this,cardList);
 
@@ -396,13 +484,6 @@
      * Author：
      * ================================= */
 
-    //声明baidu包
-    var baidu = baidu || {
-            version: "0.0.1"
-        };
-    //提出guid，防止在与老版本Tangram混用时
-    //在下一行错误的修改window[undefined]
-    baidu.guid = "$BAIDU$";
 
     var ToolBoxControl = BMapLib.ToolBoxControl = function () {
             // 默认停靠位置和偏移量
@@ -413,6 +494,57 @@
     // 继承Control
     ToolBoxControl.prototype = new BMap.Control();
 
+    var self;
+    var grids=[];//网格
+    var currentGrid;//当前选中网格
+    var gridUrl="json/buildingByGrid.json";
+
+    /**
+     * 添加网格到地图
+     */
+    function addGrid(){
+        var polygon = new BMap.Polygon([
+            new BMap.Point(116.286448,39.839826),
+            new BMap.Point(116.291047,39.840131),
+            new BMap.Point(116.292395,39.836654),
+            new BMap.Point(116.293365,39.835048),
+            new BMap.Point(116.291927,39.834535),
+            new BMap.Point(116.287059,39.833538),
+            new BMap.Point(116.286232,39.836433)
+        ], {strokeColor:"blue", strokeWeight:2, strokeOpacity:1,fillOpacity:0.1});  //创建多边形
+        self._map.addOverlay(polygon);
+        self._map.setViewport(polygon.getPath());
+        grids.push(polygon);
+
+        polygon.gid="1";
+        polygon.addEventListener("click",function (e) {
+            if(currentGrid)
+                currentGrid.getFillOpacity(0);
+            e.target.setFillColor("blue");
+            e.target.getFillOpacity(0.3);
+            currentGrid=e.target;
+
+            $.getJSON(
+                gridUrl,
+                {
+                    method:"queryBuildingByGrid",
+                    g_id:e.target.gid
+                },
+                function (result) {
+                    $(self).trigger("gridSelected",result);
+                }
+            );
+        });
+    }
+
+    function  removeGrid() {
+        $.each(grids,function(i){
+            self._map.removeOverlay(grids[i]);
+        });
+        grids=[];
+        $(self).trigger("removeGrid");
+    }
+
     /**
      * 实现父类的initialize方法
      * @ignore
@@ -422,7 +554,8 @@
      * var toolbox = new BMapLib.ToolBoxControl();
      */
     ToolBoxControl.prototype.initialize = function (map) {
-
+        self=this;
+        this._map = map;
         var toolboxContainer=$("<div class='toolbox-container'></div>");
 
         var toolbar=
@@ -482,6 +615,11 @@
 
         toolbar.find('#grid-tool').click(function () {
             $(this).toggleClass('active');
+            if($(this).hasClass("active")){
+                addGrid();
+            }else{
+                removeGrid();
+            }
         });
 
         toolboxContainer.append(buildingInfo);

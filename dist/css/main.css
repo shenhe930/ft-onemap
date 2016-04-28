@@ -2808,6 +2808,9 @@ body.tour-open .animated {
   color: #1ab394;
   background: none;
 }
+.left-panel .building-detail {
+  height: 532px;
+}
 .left-panel .building-detail img {
   height: 100%;
   width: 100%;

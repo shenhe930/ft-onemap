@@ -1,272 +1,89 @@
 {
-    "buildingImage":"img/7.jpg",
-    "name":"123",
-    "address":"123",
-    "developer":"123",
-    "start":"2016-04-17",
-    "end":"2016-04-17",
-    "floorArea":"123",
-    "floorsNum":"12",
-    "floors":[
+    "building": {
+        "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+        "name": "崇新大厦",
+        "address": "123",
+        "dev": "123",
+        "start_date": "2016-03-10",
+        "end_date": "2016-03-10",
+        "area": 123.0,
+        "x": 116.307989,
+        "y": 39.847894,
+        "f": 1,
+        "url1": "IMG_20160312_170344.jpg",
+        "url2": "IMG_20160312_170344.jpg",
+        "url3": "IMG_20160312_170344.jpg",
+        "g_id": "1",
+        "pm": "123"
+    },
+    "roomList": [],
+    "floorList": [
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "8f810fb0-1e6a-4ec2-8678-2005c6d1095e",
+            "room_num": 0,
+            "row_num": 0,
+            "column_num": 0,
+            "name": "B1",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "d9713411-10c0-4bf4-93db-6f264b11e61d",
+            "room_num": 6,
+            "row_num": 3,
+            "column_num": 2,
+            "name": "9",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "ed02dad1-2400-4f32-9e0e-3f23bf8986b8",
+            "room_num": 6,
+            "row_num": 2,
+            "column_num": 3,
+            "name": "2",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "037bf0a0-afb0-4c18-86aa-a89057d44277",
+            "room_num": 0,
+            "row_num": 0,
+            "column_num": 0,
+            "name": "13",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902",
+            "room_num": 6,
+            "row_num": 2,
+            "column_num": 3,
+            "name": "12",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f",
+            "room_num": 9,
+            "row_num": 3,
+            "column_num": 3,
+            "name": "11",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "be422408-6f2e-4063-92cf-f20630422e69",
+            "room_num": 4,
+            "row_num": 2,
+            "column_num": 2,
+            "name": "10",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
-        },
-        {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
-        },
-        {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe",
+            "room_num": 130,
+            "row_num": 10,
+            "column_num": 13,
+            "name": "1",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
         }
     ]
 }

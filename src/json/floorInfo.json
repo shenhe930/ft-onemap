@@ -1,0 +1,50 @@
+{
+    "floor": {
+        "f_id": "d9713411-10c0-4bf4-93db-6f264b11e61d",
+        "room_num": 6,
+        "row_num": 3,
+        "column_num": 2,
+        "name": "9",
+        "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
+    },
+    "roomList": [
+        {
+            "r_id": "9102e0ca-ab2f-4259-8e4d-aa3be784e62b",
+            "name": "会好好",
+            "status": 1,
+            "code": 1,
+            "f_id": "d9713411-10c0-4bf4-93db-6f264b11e61d"
+        },
+        {
+            "r_id": "06a9b886-a329-4415-9844-8256adac57c4",
+            "name": "哈哈哈",
+            "status": 1,
+            "code": 2,
+            "f_id": "d9713411-10c0-4bf4-93db-6f264b11e61d"
+        },
+        {
+            "r_id": "89240ff1-2b7e-41a6-9178-91e5c11358b2",
+            "status": 0,
+            "code": 3,
+            "f_id": "d9713411-10c0-4bf4-93db-6f264b11e61d"
+        },
+        {
+            "r_id": "2ccd5db8-37d6-427f-86d8-4e09c4d14d67",
+            "status": 0,
+            "code": 4,
+            "f_id": "d9713411-10c0-4bf4-93db-6f264b11e61d"
+        },
+        {
+            "r_id": "bd239cd5-69cd-4a91-bf3c-e2f63db589e4",
+            "status": 0,
+            "code": 5,
+            "f_id": "d9713411-10c0-4bf4-93db-6f264b11e61d"
+        },
+        {
+            "r_id": "2b785048-b735-4d75-9c11-ff60013589d7",
+            "status": 0,
+            "code": 6,
+            "f_id": "d9713411-10c0-4bf4-93db-6f264b11e61d"
+        }
+    ]
+}
