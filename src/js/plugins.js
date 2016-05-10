@@ -70,7 +70,7 @@
         if(floor){
             floorHtml =
                 '<div id="floor-Info" class="card-box" style="height: 200px">' +
-                '<img src=files/"' + floor.url + '">' +
+                '<img src=files/' + floor.url + '>' +
                 '</div>' +
                 '<div class="card-box floor-box" style="height: 200px">' +
                 roomsHtml +
@@ -87,26 +87,59 @@
         $.getJSON("json/companyInfo.json",function(data){
             var companyInfoWindowHtml=
                 '<div class="company-info" >' +
-                '<img class="company-img" src="' + data.companyImage + '">' +
-                '<div class="company-content">' +
-                '<p class="text-muted"><strong>公司名称：</strong>' + data.name + '</p>' +
-                '<p class="text-muted"><strong>生产经营地：</strong>' + data.address + '</p>' +
-                '</div>'+
-                '<div class="tabs-container">' +
-                '<ul class="nav nav-tabs">' +
-                '<li class="active"><a data-toggle="tab" href="#">基本信息</a></li>' +
-                '<li class=""><a data-toggle="tab" href="#" >企业服务</a></li>' +
-                '<li class=""><a data-toggle="tab" href="#" >党建信息</a></li>' +
-                '</ul>' +
-                '<div class="tab-content">' +
-                '<div id="tab-1" class="tab-pane active" style="height: 240px">' +
-                '</div>' +
-                '<div id="tab-2" class="tab-pane" style="height: 240px">' +
-                '</div>' +
-                '<div id="tab-3" class="tab-pane" style="height: 240px">' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
+                    '<img class="company-img" src="' + data.companyImage + '">' +
+                    '<div class="company-content">' +
+                        '<p class="text-muted"><strong>公司名称：</strong>' + data.name + '</p>' +
+                        '<p class="text-muted"><strong>生产经营地：</strong>' + data.address + '</p>' +
+                    '</div>'+
+                    '<div class="tabs-container">' +
+                        '<ul class="nav nav-tabs">' +
+                            '<li class="active"><a data-toggle="tab" href="#">基本信息</a></li>' +
+                            // '<li class=""><a data-toggle="tab" href="#" >企业服务</a></li>' +
+                            // '<li class=""><a data-toggle="tab" href="#" >党建信息</a></li>' +
+                        '</ul>' +
+                        '<div class="tab-content">' +
+                            '<div id="tab-1" class="tab-pane active" style="height: 240px">' +
+                                '<p class="text-muted"><strong>是否三证合一：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>社会统一信用代码：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>注册登记号：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>企业名称：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>注册资金：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>注册地址：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>办公地址：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>组织结构代码证：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>税务登记号：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>地税所在区县（所）：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>国税所在区县（所）：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>统计登记号：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>主营业务：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>企业性质：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>联系人：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>电话：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>法人：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>注册时期：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>分支机构：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>职工总数：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>其中：非京少数民族：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>民主党派：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>本科以上：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>硕士：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>博士：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>归国留学人员：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>高级职称：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>是否中关村高新：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>证书号：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>是否国高新：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>证书号：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>备注：</strong>' + '' + '</p>' +
+                                '<p class="text-muted"><strong>其他：</strong>' + '' + '</p>' +
+                            '</div>' +
+                            '<div id="tab-2" class="tab-pane" style="height: 240px">' +
+                            '</div>' +
+                            '<div id="tab-3" class="tab-pane" style="height: 240px">' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
                 '</div>';
 
             layer.open({
@@ -191,11 +224,13 @@
 
                 self.buildingDetailCard.html(buildingDetailCardHtml);
 
+                self.backCard.removeClass("hidden");
                 self.buildingDetailCard.removeClass("hidden");
 
                 self.buildingDetailCard.find(".closeBtn").click(function () {
                     self.buildingDetailCard.addClass("hidden");
-                    self.clearSearchResult();
+                    //self.clearSearchResult();
+                    self.backCard.addClass("hidden");
                 });
 
                 self.buildingDetailCard.find('.nav-pills a').click(function (e) {
@@ -215,6 +250,10 @@
                             },
                             function(result){
                                 self.buildingDetailCard.find('#floor-detail').html(generateFloorDetailHtml(result.floor,result.roomList));
+                                self.buildingDetailCard.find(".room-cube").click(function () {
+                                    showCompanyInfoWindow();
+                                });
+
                             });
                     }
 
@@ -262,11 +301,6 @@
             );
             list.append(item);
 
-            item.click(function () {
-                self.searchResultCard.addClass("hidden");
-                showBuildingInfo($(this).data("bid"));
-            });
-
             var point=new BMap.Point(result.data[i].x, result.data[i].y);
             var marker = new BMap.Marker(point);
             marker.bid=result.data[i].b_id;
@@ -282,6 +316,17 @@
             });
             map.addOverlay(marker);
             searchResultPoint.push(marker);
+
+            item.click(function () {
+                self.searchResultCard.addClass("hidden");
+
+                var bid=$(this).data("bid");
+                showBuildingInfo(bid);
+                $.each(searchResultPoint,function(i){
+                    if(bid===searchResultPoint[i].bid)
+                        map.centerAndZoom(searchResultPoint[i].getPosition(),18);
+                });
+            });
         });
     };
 
@@ -424,6 +469,22 @@
         container.append(searchResultCard);
     }
 
+    function backToResultCardDom(me,container){
+        var backCard=
+            $('<div class="card hidden animated fadeInUp">' +
+                    '<div class="card-content">' +
+                        '<p style="padding: 6px;margin: 0;cursor:pointer"><span class="glyphicon glyphicon-chevron-left"></span>返回搜索结果</p>'+
+                    '</div>'+
+            '</div>');
+
+        backCard.click(function () {
+            hideAllCard();
+            me.searchResultCard.removeClass("hidden");
+        });
+        me.backCard=backCard;
+        container.append(backCard);
+    }
+
     function buildingDetailCardDom(me,container){
         var buildingDetailCard = $('<div class="building-detail card hidden animated fadeInUp"></div>');
         container.append(buildingDetailCard);
@@ -451,6 +512,8 @@
         conditionCardDom(this,cardList);
 
         searchResultCardDom(this,cardList);
+
+        backToResultCardDom(this,cardList);
 
         buildingDetailCardDom(this,cardList);
 

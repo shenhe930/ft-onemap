@@ -2852,6 +2852,9 @@ body.tour-open .animated {
 .company-info .nav-tabs > li.active > a:focus {
   background-color: #f3f3f4;
 }
+.company-info .tab-pane {
+  overflow: scroll;
+}
 .toolbox-container {
   color: #676a6c;
 }
