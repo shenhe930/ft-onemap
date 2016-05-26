@@ -2808,6 +2808,10 @@ body.tour-open .animated {
   color: #1ab394;
   background: none;
 }
+.left-panel .card .card-content #gridImg {
+  width: 360px;
+  min-height: 140px;
+}
 .left-panel .building-detail {
   height: 532px;
 }
@@ -2841,7 +2845,8 @@ body.tour-open .animated {
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 .company-info .company-img {
-  width: 100%;
+  width: 360px;
+  min-height: 140px;
 }
 .company-info .company-content {
   padding: 6px 12px;
