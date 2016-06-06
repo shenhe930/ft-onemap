@@ -58,12 +58,20 @@
         self.cardList.find(".card").addClass("hidden");
     }
 
-    function generateFloorDetailHtml(floor,rooms) {
+    function generateFloorDetailHtml(floor,rooms,roomsmell) {
         var roomsHtml = "";
         if(rooms){
-            for (var i = rooms.length - 1; i >= 0; i--) {
-                roomsHtml += '<div class="room-cube text-center" data-rid="'+rooms[i].r_id+'"><strong>房间号：</strong><br>' + (rooms[i].name!==undefined?rooms[i].name:"") + '</div>';
-            }
+            $.each(rooms, function(i, room) {
+                var hasAddSmile=false;
+                roomsHtml += '<div class="room-cube text-center" data-rid="'+room.r_id+'"><strong>房间号：</strong><br>' + (room.name!==undefined?room.name:"");
+                $.each(roomsmell, function(j, value) {
+                    if(value[0]===room.r_id&&!hasAddSmile){
+                        roomsHtml +='<img src="img/smile.gif">';
+                        hasAddSmile=true;
+                    }
+                });
+                roomsHtml +='</div>';
+            });
         }
 
         var floorHtml ="";
@@ -103,7 +111,33 @@
                 }
                 var companyInfoWindowHtml=
                     '<div class="company-info" >' +
-                    '<img class="company-img" src="' +"files/"+ nullToEmpty(data[0].url1) + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                        /*'<img class="company-img" style="height: 200px; width:600px;" src="' +"files/"+ nullToEmpty(data[0].url1) + '" onerror="this.src=\'img/wellcm3.png\'">' +*/
+                        '<div id="carousel-company-info" class="carousel slide" data-ride="carousel">' +
+                            '<ol class="carousel-indicators">' +
+                                '<li data-target="#carousel-company-info" data-slide-to="0" class="active"></li>' +
+                                '<li data-target="#carousel-company-info" data-slide-to="1"></li>' +
+                                '<li data-target="#carousel-company-info" data-slide-to="2"></li>' +
+                            '</ol>' +
+                        '<div class="carousel-inner" style="height: 200px;width:360px">' +
+                            '<div class="item active">' +
+                                '<img src="files/' + nullToEmpty(data[0].url1) + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                            '</div>' +
+                            '<div class="item">' +
+                                '<img src="files/' + nullToEmpty(data[0].url2) + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                            '</div>' +
+                            '<div class="item">' +
+                                '<img src="files/' + nullToEmpty(data[0].url3) + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                            '</div>' +
+                        '</div>'+
+                        '<a class="left carousel-control" href="#carousel-company-info" data-slide="prev">' +
+                            '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>'+
+                            '<span class="sr-only">Previous</span>'+
+                        '</a>'+
+                        '<a class="right carousel-control" href="#carousel-company-info" data-slide="next">' +
+                            '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'+
+                            '<span class="sr-only">Next</span>'+
+                        '</a>'+
+                        '</div>'+
                         '<div class="company-content">' +
                             '<p class="text-muted"><strong>公司名称：</strong>' + nullToEmpty(data[0].cmp_name) + '</p>' +
                             '<p class="text-muted"><strong>生产经营地：</strong>' + nullToEmpty(data[0].bg_adr) + '</p>' +
@@ -207,7 +241,7 @@
     /**
      * 显示楼宇信息
      */
-    function showBuildingInfo(id) {
+    function showBuildingInfo(id,notBack) {
         $.getJSON(buildingInfoUrl,
             {
                 method:"queryBuildingInfoById",
@@ -229,13 +263,40 @@
                     '<button class="closeBtn btn btn-link glyphicon glyphicon-remove"></button>' +
                     '<div class="card-content">' +
                     '<ul class="nav nav-pills nav-justified">' +
-                    '<li  class="active" data-toggle="tab"><a href="#detail-building">楼宇信息</a></li>' +
-                    '<li  class="" data-toggle="tab"><a href="#detail-floor">楼层信息</a></li>' +
+                    '<li class="active" data-toggle="tab"><a href="#detail-building">楼宇信息</a></li>' +
+                    '<li class="" data-toggle="tab"><a href="#detail-floor">楼层信息</a></li>' +
                     '</ul>' +
                     '<div class="tab-content">' +
-                    '<div role="tabpanel" class="tab-pane fade  in active" id="detail-building">' +
+                    '<div role="tabpanel" class="tab-pane fade in active" id="detail-building">' +
                     '<div class="card-box" style="height: 200px">' +
-                    '<img src="files/' + data.building.url1 + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                    /*'<div style="position: absolute; right:10px; top:46%;"><a class="click_img" id="'+data.building.url1+'" style="border-radius:360px; height:16px; width:15px; font-size:22px;cursor:pointer; color:blue;">1</a>&nbsp;&nbsp;<a class="click_img" id="'+data.building.url2+'" style="border-radius:360px; height:16px; width:15px; font-size:22px;cursor:pointer; color:blue;">2</a>&nbsp;&nbsp;<a class="click_img" id="'+data.building.url3+'" style="border-radius:360px; height:16px; width:15px; font-size:22px;cursor:pointer; color:blue;">3</a></div>'+
+                    '<img src="files/' + data.building.url1 + '" onerror="this.src=\'img/wellcm3.png\'">' +*/
+                    '<div id="carousel-building-info" class="carousel slide" data-ride="carousel">' +
+                        '<ol class="carousel-indicators">' +
+                            '<li data-target="#carousel-building-info" data-slide-to="0" class="active"></li>' +
+                            '<li data-target="#carousel-building-info" data-slide-to="1"></li>' +
+                            '<li data-target="#carousel-building-info" data-slide-to="2"></li>' +
+                        '</ol>' +
+                        '<div class="carousel-inner" style="height: 200px">' +
+                            '<div class="item active">' +
+                                '<img src="files/' + data.building.url1 + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                            '</div>' +
+                            '<div class="item">' +
+                                '<img src="files/' + data.building.url2 + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                            '</div>' +
+                            '<div class="item">' +
+                                '<img src="files/' + data.building.url3 + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                            '</div>' +
+                        '</div>'+
+                        '<a class="left carousel-control" href="#carousel-building-info" data-slide="prev">' +
+                            '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>'+
+                            '<span class="sr-only">Previous</span>'+
+                        '</a>'+
+                        '<a class="right carousel-control" href="#carousel-building-info" data-slide="next">' +
+                            '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'+
+                            '<span class="sr-only">Next</span>'+
+                        '</a>'+
+                    '</div>'+
                     '</div>' +
                     '<div class="card-box building-info" style="height: 220px">' +
                     '<p class="text-muted"><strong>楼宇名称：</strong>' + data.building.name + '</p>' +
@@ -265,7 +326,7 @@
                     '</ul>' +
                     '</nav>' +
                     '<div id="floor-detail">' +
-                    generateFloorDetailHtml(floors[0],data.roomList) +
+                    generateFloorDetailHtml(floors[0],data.roomList,data.roomsmell) +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -273,7 +334,31 @@
 
                 self.buildingDetailCard.html(buildingDetailCardHtml);
 
-                self.backCard.removeClass("hidden");
+                self.buildingDetailCard.find("a[data-fid]").each(function(){
+                    var $floor=$(this);
+                    var fid=$floor.data("fid");
+                    $.each(data.floorsmell, function(i, value) {
+                       if(value[0]===fid){
+                           $floor.parents("nav").css("margin-top","30px");
+                           $floor.tooltip({
+                               placement:"top",
+                               template:'<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><img src="img/smile.gif"></div>',
+                               title:"smile",
+                               trigger:"manual"
+                           });
+
+                           $('a[href="#detail-floor"]').on('shown.bs.tab', function () {
+                               $floor.tooltip("show");
+                           });
+
+                       }
+
+                    });
+                });
+
+
+                if(!notBack)
+                    self.backCard.removeClass("hidden");
                 self.buildingDetailCard.removeClass("hidden");
 
                 self.buildingDetailCard.find(".closeBtn").click(function () {
@@ -298,7 +383,7 @@
                                 f_id:$(this).data("fid")
                             },
                             function(result){
-                                self.buildingDetailCard.find('#floor-detail').html(generateFloorDetailHtml(result.floor,result.roomList));
+                                self.buildingDetailCard.find('#floor-detail').html(generateFloorDetailHtml(result.floor,result.roomList,result.roomsmell));
                                 self.buildingDetailCard.find(".room-cube").click(function () {
                                     showCompanyInfoWindow($(this).data('rid'));
                                 });
@@ -309,7 +394,11 @@
                 });
 
                 self.buildingDetailCard.find(".room-cube").click(function () {
-                    showCompanyInfoWindow();
+                    showCompanyInfoWindow($(this).data('rid'));
+                });
+
+                self.buildingDetailCard.find(".click_img").click(function(){
+                    $("#imgsrc").attr("src","files/"+$(this).attr("id"));
                 });
 
 
@@ -347,22 +436,24 @@
         searchResultPoint=[];
 
         $.each(result.data, function(i){
-            var item=$(
-                '<a class="list-group-item" data-bid="'+result.data[i].b_id+'">' +
-                '<strong>'+result.data[i].name+'</strong><br><small>'+result.data[i].address+'</small>'+
-                '</a>'
-            );
+            var html= '<a class="list-group-item" data-bid="'+result.data[i].building.b_id+'">' +
+                '<strong>'+result.data[i].building.name+'</strong><br><small>'+result.data[i].building.address+'</small>';
+            if(result.data[i].smell==="ok")
+                html+='<img class="smileImg" src="img/smile.gif">';
+            html+='</a>';
+
+            var item=$(html);
             list.append(item);
 
-            var point=new BMap.Point(result.data[i].x, result.data[i].y);
+            var point=new BMap.Point(result.data[i].building.x, result.data[i].building.y);
             var marker = new BMap.Marker(point);
-            marker.bid=result.data[i].b_id;
+            marker.bid=result.data[i].building.b_id;
             var opts = {
                 width : 160,     // 信息窗口宽度
                 height: 60,     // 信息窗口高度
-                title : result.data[i].name  // 信息窗口标题
+                title : result.data[i].building.name  // 信息窗口标题
             };
-            var infoWindow = new BMap.InfoWindow("地址："+result.data[i].address, opts);  // 创建信息窗口对象
+            var infoWindow = new BMap.InfoWindow("地址："+result.data[i].building.address, opts);  // 创建信息窗口对象
             marker.addEventListener("click", function(e){
                 map.openInfoWindow(infoWindow,point); //开启信息窗口
                 showBuildingInfo(e.target.bid);
@@ -400,22 +491,23 @@
         searchResultPoint=[];
 
         $.each(result.data, function(i){
-            var item=$(
-                '<a class="list-group-item" data-bid="'+result.data[i].b_id+'">' +
-                '<strong>'+result.data[i].name+'</strong><br><small>'+result.data[i].address+'</small>'+
-                '</a>'
-            );
+            var html='<a class="list-group-item" data-bid="'+result.data[i].building.b_id+'">' +
+                '<strong>'+result.data[i].building.name+'</strong><br><small>'+result.data[i].building.address+'</small>';
+            if(result.data[i].smell==="ok")
+                html+='<img class="smileImg" src="img/smile.gif">';
+            html+='</a>';
+            var item=$(html);
             list.append(item);
 
-            var point=new BMap.Point(result.data[i].x, result.data[i].y);
+            var point=new BMap.Point(result.data[i].building.x, result.data[i].building.y);
             var marker = new BMap.Marker(point);
-            marker.bid=result.data[i].b_id;
+            marker.bid=result.data[i].building.b_id;
             var opts = {
                 width : 160,     // 信息窗口宽度
                 height: 60,     // 信息窗口高度
-                title : result.data[i].name  // 信息窗口标题
+                title : result.data[i].building.name  // 信息窗口标题
             };
-            var infoWindow = new BMap.InfoWindow("地址："+result.data[i].address, opts);  // 创建信息窗口对象
+            var infoWindow = new BMap.InfoWindow("地址："+result.data[i].building.address, opts);  // 创建信息窗口对象
             marker.addEventListener("click", function(e){
                 map.openInfoWindow(infoWindow,point); //开启信息窗口
                 showBuildingInfo(e.target.bid);
@@ -434,6 +526,10 @@
                 });
             });
         });
+    };
+
+    LeftPanelControl.prototype.showBuildingInfo=function(id){
+        showBuildingInfo(id,true);
     };
 
     function searchBoxDom(me,container){
@@ -557,11 +653,13 @@
             me.clearSearchResult();
         });
 
+        searchResultCard.css("max-height",$(window).height()-240+"px");
+
         me.searchBtn.click(function () {
             $.getJSON(
                 searchUrl,
                 {
-                    method:"queryBuilding2",
+                    method:"queryBuildingSmell",
                     buildingname:me.searchInput.val(),
                     buildingaddress:""
                 },
@@ -588,6 +686,8 @@
             gridSearchResultCard.addClass("hidden");
             me.clearSearchResult();
         });
+
+        gridSearchResultCard.css("max-height",$(window).height()-240+"px");
 
         container.append(gridSearchResultCard);
     }
@@ -834,8 +934,14 @@
     var grids=[];//网格
     var zrGrids=[];//责任网格
     var currentGrid;//当前选中网格
-    var gridUrl="json/buildingByGrid.json";
+    var newCompanys=[];//新入驻企业
+    var gps={};//采集员GPS
+    var gpsIntervalId;//采集员轮询id
 
+    var gridUrl="json/buildingByGrid.json";//根据网格查楼宇
+    var newCompanyUrl="json/newCompany.json";//查询新入驻企业
+    var smilingFaceUrl="json/smilingFace.json";//查询笑脸
+    var gpsUrl="json/gps.json";//查询GPS
     /***
      * 网格点击事件
      * @param e
@@ -851,7 +957,6 @@
         // e.target.setFillColor("blue");
         // e.target.setFillOpacity(0.4);
         currentGrid=e.target;
-
 
         $.getJSON(
             gridUrl,
@@ -879,7 +984,7 @@
                     view.push(new BMap.Point(bdPoint.lon,bdPoint.lat));
                 }
 
-                var strokeColor=isZR?"#673ab7":"#5677fc";
+                var strokeColor=isZR?"#ff00d8":"#0060e3";
                 var polygon = new BMap.Polygon(points, {strokeColor:strokeColor, strokeWeight:2, strokeOpacity:1,fillOpacity:0.1});  //创建多边形
                 self._map.addOverlay(polygon);
 
@@ -908,6 +1013,60 @@
         $(self).trigger("removeGrid");
     }
 
+    /***
+     * 查询GPS
+     */
+    function queryGPS(){
+        $.getJSON(
+            gpsUrl,
+            {
+                method:"selectUserGrid"
+            },
+            function (result){
+                var collectorOnIcon = new BMap.Icon("img/collector.png", new BMap.Size(32,32));
+                var collectorOffIcon = new BMap.Icon("img/collector-off.png", new BMap.Size(32,32));
+                $.each(result,function(i,v){
+                    var point=new BMap.Point(v.longitude, v.latitude);
+                    var marker;
+                    if(gps[v.u_id]){
+                        marker=gps[v.u_id];
+                        marker.setPosition(point);
+                        if(v.rownum!==marker.rownum){
+                            if(v.rownum===1){
+                                marker.setIcon(collectorOnIcon);
+                            }else{
+                                marker.setIcon(collectorOffIcon);
+                            }
+                        }
+                    }else{
+                        if(v.rownum===1){
+                            marker=new BMap.Marker(point,{icon:collectorOnIcon});
+                        }else{
+                            marker=new BMap.Marker(point,{icon:collectorOffIcon});
+                        }
+                        var opts = {
+                            position : point,    // 指定文本标注所在的地理位置
+                            offset   : new BMap.Size(20, -20)    //设置文本偏移量
+                        };
+                        var label = new BMap.Label(v.name, opts);
+                        label.setStyle({
+                            "color" : "red",
+                            "fontSize" : "12px",
+                            "height" : "20px",
+                            "fontFamily":"微软雅黑",
+                            "max-width": "none"
+                        });
+                        marker.setLabel(label);
+                        marker.label=label;
+                        marker.setTop(true);
+                        marker.rownum=v.rownum;
+                        gps[v.u_id]=marker;
+                        self._map.addOverlay(marker);
+                    }
+                });
+            });
+    }
+
     /**
      * 实现父类的initialize方法
      * @ignore
@@ -923,58 +1082,150 @@
 
         var toolbar=
             $('<div class="toolbar btn-group btn-group-sm">' +
-                '<button class="btn btn-white" id="info-tool" type="button"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;迁徙图</button>' +
-                '<button class="btn btn-white" id="info-tool" type="button"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;信息</button>' +
-                '<button class="btn btn-white" id="grid-tool" type="button"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;网格</button>' +
+                '<button class="btn btn-white" id="info-tool" type="button"><i class="fa fa-info fa-lg"></i>&nbsp;&nbsp;信息</button>' +
+                '<button class="btn btn-white" id="grid-tool" type="button"><i class="fa fa-th fa-lg"></i>&nbsp;&nbsp;网格</button>' +
                 '<div class="btn-group btn-group-sm">' +
-                '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;专题图 <span class="caret"></span></button>' +
+                '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-line-chart fa-lg"></i>&nbsp;&nbsp;专题图 <span class="caret"></span></button>' +
                 '<ul class="dropdown-menu">' +
-                '<li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;注册资本</a></li>' +
-                '<li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;企业分类</a></li>' +
-                '<li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;院士工作站</a></li>' +
-                '<li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;楼宇党建</a></li>' +
-                '<li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;非公党建</a></li>' +
+                '<li><a href="#"><i class="fa fa-jpy fa-lg"></i>&nbsp;&nbsp;注册资本</a></li>' +
+                '<li><a href="#"><i class="fa fa-folder-open fa-lg"></i>&nbsp;&nbsp;企业分类</a></li>' +
+                '<li><a href="#"><i class="fa fa-university fa-lg"></i>&nbsp;&nbsp;院士工作站</a></li>' +
+                '<li><a href="#"><i class="fa fa-building-o fa-lg"></i>&nbsp;&nbsp;楼宇党建</a></li>' +
+                '<li><a href="#"><i class="fa  fa-user fa-lg"></i>&nbsp;&nbsp;非公党建</a></li>' +
                 '</ul>' +
                 '</div>' +
                     '<div class="btn-group btn-group-sm">'+
-                        '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;企业分布 <span class="caret"></span></button>'+
+                        '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-file fa-lg"></i>&nbsp;&nbsp;企业分布 <span class="caret"></span></button>'+
                         '<ul class="dropdown-menu">'+
-                            '<li><a href="#">一张图功能</a></li>'+
-                            '<li><a href="#">热力图</a></li>'+
+                            '<li><a id="info-tool" type="button" href="./worldmap/extension/BMap/doc/BMap.html"><i class="fa fa-globe fa-lg"></i>&nbsp;&nbsp;迁徙图</a></li>'+
+                            '<li><a href="#"><i class="fa fa-fire fa-lg"></i>&nbsp;&nbsp;热力图</a></li>'+
                     '    </ul>'+
                      '</div>'+
-                    '<button class="btn btn-white" type="button"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;测距</button>'+
+                    '<button class="btn btn-white" type="button"><i class="fa fa-expand fa-lg"></i>&nbsp;&nbsp;测距</button>'+
             '</div>');
         toolboxContainer.append(toolbar);
 
-        var messageBtn= $('<button class="message-btn btn btn-white" type="button"><i class="fa fa-map-marker"></i></button>');
+        var messageBtn= $('<button class="message-btn btn btn-white active" type="button"><i class="fa fa-smile-o fa-lg"></i></button>');
         toolboxContainer.append(messageBtn);
 
-        var userBtn=$('<button class="user-btn btn btn-circle btn-lg btn-white" type="button"><i class="fa fa-map-marker"></i></button>');
+        var collectorBtn= $('<button class="message-btn btn btn-white active" type="button"><i class="fa  fa-street-view fa-lg"></i></button>');
+        toolboxContainer.append(collectorBtn);
+
+        messageBtn.click(function(){
+            $(this).toggleClass("active");
+            if($(this).hasClass("active")){
+                for (var i = 0; i < newCompanys.length; i++) {
+                    self._map.addOverlay( newCompanys[i]);
+                }
+            }else{
+                for (var j = 0; j < newCompanys.length; j++) {
+                    self._map.removeOverlay( newCompanys[j]);
+                }
+            }
+        });
+
+        collectorBtn.click(function(){
+            $(this).toggleClass("active");
+            if($(this).hasClass("active")){
+                $.each(gps,function(k,v){
+                    var label=v.label;
+                    v.setLabel(label);
+                    self._map.addOverlay(v);
+                });
+                gpsIntervalId=setInterval(queryGPS, 60*1000);
+            }else{
+                $.each(gps,function(k,v){
+                    self._map.removeOverlay(v);
+                });
+                if(gpsIntervalId)
+                    window.clearInterval(gpsIntervalId);
+            }
+        });
+
+        var userBtn=$('<button class="user-btn btn btn-circle btn-lg btn-white" type="button"><i class="fa fa-user fa-lg"></i></button>');
         toolboxContainer.append(userBtn);
 
-        var  buildingInfo=
-            $('<div class="building-info-box card hidden animated flipInY " >' +
-                '<div class="company well well-sm bg-warning">' +
-                    '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;企业数</h4>'+
-                    '<p class="text-center">1234个</p>'+
-                '</div>'+
-                '<div class="company-new well well-sm bg-info">' +
-                    '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;新入驻企业</h4>'+
-                    '<ul class="list-unstyled">' +
-                        '<li>XXXXXXXXX公司</li>'+
-                        '<li>XXXXXXXXX公司</li>'+
-                        '<li>XXXXXXXXX公司</li>'+
-                        '<li>XXXXXXXXX公司</li>'+
-                        '<li>XXXXXXXXX公司</li>'+
-                        '<li>XXXXXXXXX公司</li>'+
-                    '</ul>'+
-                '</div>'+
-            '</div>');
+        //查询新入驻企业信息
+        $.getJSON(
+            newCompanyUrl,
+            {
+                method:"selectComnews"
+            },
+            function (result) {
+                var companys=result.data.slice(0,6);
+                var companyHtml="";
+                for (var i = 0; i < companys.length; i++) {
+                    var name=companys[i].cmp_name;
+                    if(name.length<13)
+                        companyHtml += '<li>'+name+'</li>';
+                    else
+                        companyHtml += '<li title="'+name+'">'+name.slice(0,12).toString()+'...'+'</li>';
+                }
+
+                var buildingInfo=self.buildingInfo=
+                    $('<div class="building-info-box card hidden animated flipInY " >' +
+                        '<div class="company well well-sm">' +
+                        '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;园区企业总数</h4>'+
+                        '<p class="text-center text-danger">'+result.count+'</p>'+
+                        '</div>'+
+                        '<div class="company well well-sm">' +
+                        '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;园区楼宇总数</h4>'+
+                        '<p class="text-center text-danger">'+result.buildingCount+'</p>'+
+                        '</div>'+
+                        '<div class="company well well-sm">' +
+                        '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;园区管理网格总数</h4>'+
+                        '<p class="text-center text-danger">'+result.gridCount+'</p>'+
+                        '</div>'+
+                        '<div class="company-new well well-sm bg-info">' +
+                        '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;新入驻企业</h4>'+
+                        '<ul class="list-unstyled">' +
+                        companyHtml+
+                        '</ul>'+
+                        '</div>'+
+                        '</div>');
+
+
+
+                toolboxContainer.append(buildingInfo);
+            }
+        );
+
+        //笑脸
+        $.getJSON(
+            smilingFaceUrl,
+            {
+                method:"selectSmellCmp"
+            },
+            function (result) {
+                function buildingClickHandler(e){
+                    $(self).trigger("buildingClicked",e.target.bid);
+                }
+                for (var i = 0; i < result.length; i++) {
+                    for (var j = 0; j < result[i].lou.length; j++) {
+                        var buildingMarker = new BMap.Marker(new BMap.Point(result[i].lou[j].x, result[i].lou[j].y));
+                        buildingMarker.bid=result[i].lou[j].b_id;
+                        buildingMarker.addEventListener("click",buildingClickHandler);
+                        self._map.addOverlay(buildingMarker);
+                        newCompanys.push(buildingMarker);
+
+                        var smileIcon = new BMap.Icon("img/smile.gif", new BMap.Size(24,26),{anchor:new BMap.Size(13,50)});
+                        var smileMarker = new BMap.Marker(new BMap.Point(result[i].lou[j].x, result[i].lou[j].y),{icon:smileIcon});
+                        smileMarker.bid=result[i].lou[j].b_id;
+                        smileMarker.addEventListener("click",buildingClickHandler);
+                        self._map.addOverlay(smileMarker);
+                        newCompanys.push(smileMarker);
+
+                    }
+
+                }
+            });
+
+        queryGPS();
+        gpsIntervalId=setInterval(queryGPS, 60*1000);
 
         toolbar.find('#info-tool').click(function () {
             $(this).toggleClass('active');
-            buildingInfo.toggleClass('hidden');
+            self.buildingInfo.toggleClass('hidden');
         });
 
         toolbar.find('#grid-tool').click(function () {
@@ -994,7 +1245,7 @@
             }
         });
 
-        toolboxContainer.append(buildingInfo);
+
 
         map.getContainer().appendChild(toolboxContainer.get(0));
         this._map = map;

@@ -18,15 +18,22 @@
 
     var toolbox=new BMapLib.ToolBoxControl();
     map.addControl(toolbox);
+    
 
     $(toolbox).bind("gridSelected",function (e,data) {
-        // console.log(e);
-        // console.log(data);
+        console.log(e);
+        console.log(data);
         leftPanel.showGridSearchResult(data);
     });
 
     $(toolbox).bind("removeGrid",function () {
         leftPanel.clearSearchResult();
+    });
+
+    $(toolbox).bind("buildingClicked",function (e,id) {
+        console.log(e);
+        console.log(id);
+        leftPanel.showBuildingInfo(id);
     });
 
     function getBoundary(){

@@ -1,45 +1,411 @@
 {
     "grid": {
         "g_id": "1",
-        "name": "1",
+        "name": "诺德一期",
         "points": null,
-        "imgurl": " ",
+        "imgurl": "gridimg1.jpg",
         "gridbianhao": null
     },
     "data": [
         {
-            "b_id": "91d98032-cf51-4933-b5ac-5ee51d691ed9",
-            "name": "央视大厦",
-            "address": "北京国贸",
-            "dev": "中建二局",
-            "start_date": "2016-04-27",
-            "end_date": "2016-05-10",
-            "area": 40800,
-            "x": 116.312014,
-            "y": 39.861852,
-            "f": 98,
-            "url1": null,
-            "url2": null,
-            "url3": null,
-            "g_id": "1",
-            "pm": "北京天天物业"
+            "building": {
+                "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+                "name": "崇新大厦3",
+                "address": "123",
+                "dev": "123",
+                "start_date": "2016-03-10",
+                "end_date": "2016-03-10",
+                "area": 123,
+                "x": 116.307989,
+                "y": 39.847894,
+                "f": 1,
+                "url1": null,
+                "url2": null,
+                "url3": null,
+                "g_id": "1",
+                "pm": "123"
+            },
+            "smell": "ok"
         },
         {
-            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
-            "name": "????",
-            "address": "123",
-            "dev": "123",
-            "start_date": "2016-03-10",
-            "end_date": "2016-03-10",
-            "area": 123,
-            "x": 116.307989,
-            "y": 39.847894,
-            "f": 1,
-            "url1": "quick_search_widget_morning.jpg",
-            "url2": "quick_search_widget_night.jpg",
-            "url3": "quick_search_widget_morning.jpg",
-            "g_id": "1",
-            "pm": "123"
+            "building": {
+                "b_id": "86c7f469-7b30-40ee-bbcc-7daf3a9600eb",
+                "name": "央视大厦",
+                "address": "北京",
+                "dev": "打算打算",
+                "start_date": "2016-04-07",
+                "end_date": "2016-04-09",
+                "area": 46,
+                "x": 116.287346,
+                "y": 39.836094,
+                "f": 120,
+                "url1": "IMG_20160430_001916.jpg",
+                "url2": "IMG_20160430_001929.jpg",
+                "url3": "IMG_20160430_001937.jpg",
+                "g_id": "1",
+                "pm": "啊"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "7ccd28a2-dd95-4ec3-bf4d-e70daa633476",
+                "name": "中南海大厦",
+                "address": "北京泰安澳门",
+                "dev": "建筑集团",
+                "start_date": "2016-04-01",
+                "end_date": "2016-04-17",
+                "area": 40000,
+                "x": 116.285028,
+                "y": 39.837728,
+                "f": 80,
+                "url1": "IMG_20160429_210440.jpg",
+                "url2": "IMG_20160429_210450.jpg",
+                "url3": "IMG_20160429_210458.jpg",
+                "g_id": "1",
+                "pm": "同方物业"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "3406c602-3466-4d89-b5bb-e18fd15026bf",
+                "name": "丰台大厦",
+                "address": "丰台8号",
+                "dev": "中建",
+                "start_date": "2016-04-01",
+                "end_date": "2016-04-24",
+                "area": 5444,
+                "x": 116.29376,
+                "y": 39.86296,
+                "f": 120,
+                "url1": "IMG_20160429_093833.jpg",
+                "url2": "IMG_20160429_093842.jpg",
+                "url3": "IMG_20160429_093850.jpg",
+                "g_id": "1",
+                "pm": "大正"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "50f37962-6d6d-42a6-9ebb-ed3777c68db3",
+                "name": "超级摩天大厦",
+                "address": "范围为",
+                "dev": "热武器",
+                "start_date": "2016-04-29",
+                "end_date": "2016-05-28",
+                "area": 32412,
+                "x": 116.284418,
+                "y": 39.837922,
+                "f": 88,
+                "url1": null,
+                "url2": null,
+                "url3": null,
+                "g_id": "1",
+                "pm": "发起违反"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "c18fc8df-fa56-4c68-9116-403667c6c7fe",
+                "name": "迪拜大厦",
+                "address": "迪拜",
+                "dev": "迪拜",
+                "start_date": "2016-04-01",
+                "end_date": "2016-04-24",
+                "area": 9000000,
+                "x": 116.274644,
+                "y": 39.876029,
+                "f": 182,
+                "url1": "IMG_20160518_121550.jpg",
+                "url2": "IMG_20160518_130948.jpg",
+                "url3": "IMG_20160518_121615.jpg",
+                "g_id": "1",
+                "pm": "迪拜"
+            },
+            "smell": "ok"
+        },
+        {
+            "building": {
+                "b_id": "2e13dfb7-35d4-443c-9a4b-c4edffdb23d1",
+                "name": "北京环球大厦",
+                "address": "北京锅炉冒",
+                "dev": "vdv的",
+                "start_date": "2016-05-03",
+                "end_date": "2016-05-22",
+                "area": 12332,
+                "x": 116.291317,
+                "y": 39.831273,
+                "f": 1333,
+                "url1": null,
+                "url2": null,
+                "url3": null,
+                "g_id": "1",
+                "pm": " 单身的"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "5906c4b8-bd4d-48cc-b11a-64faf25822a3",
+                "name": "上海中心",
+                "address": "陆家嘴",
+                "dev": "的打算",
+                "start_date": "2016-03-03",
+                "end_date": "2019-03-28",
+                "area": 520,
+                "x": 116.29879,
+                "y": 39.861852,
+                "f": 126,
+                "url1": "IMG_20160509_085205.jpg",
+                "url2": "IMG_20160513_160817.jpg",
+                "url3": "IMG_20160513_160830.jpg",
+                "g_id": "1",
+                "pm": " 阿斯蒂芬"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "bd9e6d7b-2b16-40fd-8034-2e39fd5454f4",
+                "name": "超级大厦",
+                "address": "发放",
+                "dev": " 发的",
+                "start_date": "2016-04-27",
+                "end_date": "2016-05-21",
+                "area": 432,
+                "x": 116.267745,
+                "y": 39.901717,
+                "f": 123,
+                "url1": "IMG_20160527_080026.jpg",
+                "url2": "IMG_20160527_080041.jpg",
+                "url3": "IMG_20160527_080055.jpg",
+                "g_id": "1",
+                "pm": " 是"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "c97b1d7d-a2f0-41a1-ba84-2d9c533bebbc",
+                "name": "法式风格撒旦法",
+                "address": " 山东饭馆",
+                "dev": " 撒旦法",
+                "start_date": "2016-04-27",
+                "end_date": "2016-06-02",
+                "area": 2314,
+                "x": 116.114817,
+                "y": 39.917656,
+                "f": 321,
+                "url1": "IMG_20160517_140657.jpg",
+                "url2": "IMG_20160517_140658.jpg",
+                "url3": "IMG_20160517_140659.jpg",
+                "g_id": "1",
+                "pm": " 大厦"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "855f5844-d642-46e6-a7a6-91f9019b623e",
+                "name": "央视裤衩大厦",
+                "address": "北京",
+                "dev": "央视电视台",
+                "start_date": "2016-03-29",
+                "end_date": "2016-06-05",
+                "area": 3143,
+                "x": 115.492759,
+                "y": 40.123646,
+                "f": 97,
+                "url1": null,
+                "url2": null,
+                "url3": null,
+                "g_id": "1",
+                "pm": "同方物业"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "7a4d7135-f280-402b-b3e8-f5f3829583f1",
+                "name": "且无人为区分",
+                "address": "爱的所发生的",
+                "dev": "123456789",
+                "start_date": "2016-04-08",
+                "end_date": "2016-04-16",
+                "area": 12,
+                "x": 116.30109,
+                "y": 39.86008,
+                "f": 40,
+                "url1": null,
+                "url2": null,
+                "url3": null,
+                "g_id": "1",
+                "pm": "公司的风格大方"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "cb05347e-5c62-4686-be8a-755523a43feb",
+                "name": "任务更为各地方",
+                "address": "啥的v",
+                "dev": "十多个发",
+                "start_date": "2016-04-15",
+                "end_date": "2016-04-23",
+                "area": 123,
+                "x": 116.290742,
+                "y": 39.859194,
+                "f": 80,
+                "url1": "IMG_20160524_163026.jpg",
+                "url2": "IMG_20160524_163039.jpg",
+                "url3": "IMG_20160524_163051.jpg",
+                "g_id": "1",
+                "pm": " 高度散发个"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "40e106e7-9342-403e-8a89-62e13cdd5ba9",
+                "name": "新浪大厦",
+                "address": "新浪大厦",
+                "dev": "新浪大厦",
+                "start_date": "2016-05-04",
+                "end_date": "2016-05-21",
+                "area": 1000,
+                "x": 116.289592,
+                "y": 39.840785,
+                "f": 16,
+                "url1": "IMG_20160517_133747.jpg",
+                "url2": "IMG_20160517_133701.png",
+                "url3": "IMG_20160517_140647.jpg",
+                "g_id": "1",
+                "pm": "新浪大厦"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "d4613538-119d-4f91-9fff-b5bd4cb480c0",
+                "name": "美国大厦",
+                "address": "华盛顿",
+                "dev": "中国",
+                "start_date": "2016-04-28",
+                "end_date": "2016-06-05",
+                "area": 424,
+                "x": 117.164038,
+                "y": 40.024708,
+                "f": 122,
+                "url1": null,
+                "url2": null,
+                "url3": null,
+                "g_id": "1",
+                "pm": "中国"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "d9d50aec-3570-49d2-b1f8-135884c42b1c",
+                "name": "快手大厦",
+                "address": "丰台区外环西路9号",
+                "dev": "快手地产",
+                "start_date": "2016-05-04",
+                "end_date": "2016-05-29",
+                "area": 1000,
+                "x": 116.297928,
+                "y": 39.835595,
+                "f": 30,
+                "url1": "IMG_20160426_151236.jpg",
+                "url2": "IMG_20160426_151204.jpg",
+                "url3": "IMG_20160523_094127.jpg",
+                "g_id": "1",
+                "pm": "快手物业"
+            },
+            "smell": "ok"
+        },
+        {
+            "building": {
+                "b_id": "08629f84-aa3e-4ef7-8476-4fe62053d719",
+                "name": "发撒的发生的",
+                "address": "按时发生的",
+                "dev": "阿斯顿撒旦",
+                "start_date": "2016-03-31",
+                "end_date": "2016-04-14",
+                "area": 312,
+                "x": 116.294191,
+                "y": 39.862738,
+                "f": 26,
+                "url1": null,
+                "url2": null,
+                "url3": null,
+                "g_id": "1",
+                "pm": "撒旦飞洒"
+            },
+            "smell": "no"
+        },
+        {
+            "building": {
+                "b_id": "6cfa1137-27ad-4592-b1e6-4e81e519b5f5",
+                "name": "庆丰大厦",
+                "address": "清华东路58号",
+                "dev": "中建二局",
+                "start_date": "2016-01-01",
+                "end_date": "2016-04-24",
+                "area": 5000,
+                "x": 116.288478,
+                "y": 39.831052,
+                "f": 40,
+                "url1": "20160518132605.jpg",
+                "url2": "IMG_20160524_161328.jpg",
+                "url3": "IMG_20160524_161340.jpg",
+                "g_id": "1",
+                "pm": "大正物业"
+            },
+            "smell": "ok"
+        },
+        {
+            "building": {
+                "b_id": "c3ed92bb-7068-4ff1-9a8d-ef62863593f3",
+                "name": "北京大厦",
+                "address": "呼家楼",
+                "dev": "大厦",
+                "start_date": "2016-04-01",
+                "end_date": "2016-04-24",
+                "area": 500,
+                "x": 116.30339,
+                "y": 39.858307,
+                "f": 100,
+                "url1": "IMG_20160517_133747.jpg",
+                "url2": "IMG_20160517_140648.jpg",
+                "url3": "IMG_20160517_140652.jpg",
+                "g_id": "1",
+                "pm": " AF "
+            },
+            "smell": "ok"
+        },
+        {
+            "building": {
+                "b_id": "6b3acf2e-e71c-4bfb-9d94-fad6cb3f62c4",
+                "name": "新PAD测试大楼",
+                "address": "新PAD测试大楼",
+                "dev": "新PAD测试大楼",
+                "start_date": "2016-05-20",
+                "end_date": "2016-05-20",
+                "area": 12345,
+                "x": 116.307414,
+                "y": 39.845457,
+                "f": 123,
+                "url1": "IMG_20160520_140250.jpg",
+                "url2": "IMG_20160520_140303.jpg",
+                "url3": "IMG_20160520_140317.jpg",
+                "g_id": "1",
+                "pm": "新PAD测试大楼"
+            },
+            "smell": "no"
         }
     ]
 }

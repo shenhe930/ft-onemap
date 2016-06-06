@@ -2675,6 +2675,7 @@ body.tour-open .animated {
   display: inline-block;
   width: 100%;
   background-color: #fff;
+  overflow: auto;
   margin-bottom: 6px;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
@@ -2766,6 +2767,11 @@ body.tour-open .animated {
 .left-panel .card .card-content .list-group .list-group-item h3 {
   margin: 0 6px;
 }
+.left-panel .card .card-content .list-group .list-group-item .smileImg {
+  position: absolute;
+  right: 6px;
+  top: 18px;
+}
 .left-panel .card .card-content .nav-pills {
   margin: 28px 0 6px 0;
   padding: 0;
@@ -2813,7 +2819,7 @@ body.tour-open .animated {
   min-height: 140px;
 }
 .left-panel .building-detail {
-  height: 532px;
+  height: 562px;
 }
 .left-panel .building-detail img {
   height: 100%;
@@ -2844,9 +2850,16 @@ body.tour-open .animated {
           user-select: none;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
-.company-info .company-img {
-  width: 360px;
-  min-height: 140px;
+.left-panel .building-detail .floor-box .room-cube img {
+  position: absolute;
+  left: 20px;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+}
+.company-info img {
+  width: 100%;
+  height: 100%;
 }
 .company-info .company-content {
   padding: 6px 12px;
@@ -2906,6 +2919,9 @@ body.tour-open .animated {
 .toolbox-container .message-btn:hover {
   color: #1ab394;
 }
+.toolbox-container .message-btn.active {
+  color: #1ab394;
+}
 .toolbox-container .user-btn {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
@@ -2921,7 +2937,7 @@ body.tour-open .animated {
 .toolbox-container .building-info-box {
   top: 60px;
   right: 0;
-  width: 160px;
+  width: 220px;
   padding: 6px;
 }
 .toolbox-container .building-info-box .well {
@@ -2932,10 +2948,10 @@ body.tour-open .animated {
   color: #1ab394;
 }
 .toolbox-container .building-info-box .company {
-  background-color: #fef5ec;
+  background-color: #fffee5;
 }
 .toolbox-container .building-info-box .company-new {
-  background-color: #eefcfc;
+  background-color: #f1f7ff;
 }
 
 /*# sourceMappingURL=main.css.map */
