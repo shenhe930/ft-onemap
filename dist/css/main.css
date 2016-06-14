@@ -2822,8 +2822,14 @@ body.tour-open .animated {
   height: 562px;
 }
 .left-panel .building-detail img {
-  height: 100%;
+  height: 200px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.left-panel .building-detail .tooltip > img {
   width: 100%;
+  height: 100%;
 }
 .left-panel .building-detail .building-info {
   padding: 6px;
@@ -2837,7 +2843,7 @@ body.tour-open .animated {
   padding-top: 6px;
   float: left;
   position: relative;
-  width: 64px;
+  width: 60px;
   height: 44px;
   border: 1 px #f69428;
   background-color: #f8ac59;

@@ -63,7 +63,7 @@
         if(rooms){
             $.each(rooms, function(i, room) {
                 var hasAddSmile=false;
-                roomsHtml += '<div class="room-cube text-center" data-rid="'+room.r_id+'"><strong>房间号：</strong><br>' + (room.name!==undefined?room.name:"");
+                roomsHtml += '<div class="room-cube text-center" data-rid="'+room.r_id+'"><p>' + (room.name!==undefined?room.name:"")+"</p>";
                 $.each(roomsmell, function(j, value) {
                     if(value[0]===room.r_id&&!hasAddSmile){
                         roomsHtml +='<img src="img/smile.gif">';
@@ -77,7 +77,7 @@
         var floorHtml ="";
         if(floor){
             floorHtml =
-                '<div id="floor-Info" class="card-box" style="height: 200px">' +
+                '<div id="floor-Info" class="card-box" style="height: 200px;text-align: center">' +
                 '<img  src="files/' + floor.url + '" onerror="this.src=\'img/wellcm3.png\'">' +
                 '</div>' +
                 '<div class="card-box floor-box" style="height: 200px">' +
@@ -479,6 +479,9 @@
         hideAllCard();
         self.gridSearchResultCard.removeClass("hidden");
 
+        var gridTitle=self.gridSearchResultCard.find("#gridTitle");
+        gridTitle.text(result.grid.name);
+
         var gridImg=self.gridSearchResultCard.find("#gridImg");
         gridImg.attr("src","files/"+result.grid.imgurl);
 
@@ -492,7 +495,7 @@
 
         $.each(result.data, function(i){
             var html='<a class="list-group-item" data-bid="'+result.data[i].building.b_id+'">' +
-                '<strong>'+result.data[i].building.name+'</strong><br><small>'+result.data[i].building.address+'</small>';
+                '<strong>'+result.data[i].building.name.replace(result.grid.name,"")+'</strong><br><small>'+result.data[i].building.address+'</small>';
             if(result.data[i].smell==="ok")
                 html+='<img class="smileImg" src="img/smile.gif">';
             html+='</a>';
@@ -676,6 +679,7 @@
             $('<div class="card hidden animated fadeInUp">' +
                 '<button class="closeBtn btn btn-link glyphicon glyphicon-remove"></button>'+
                 '<div class="card-content">' +
+                    '<h2 id="gridTitle" class="text-center"></h2>'+
                     '<img id="gridImg" onerror="this.src=\'img/wellcm3.png\'">'+
                     '<ul class="list-group">' +
                     '</ul>'+
