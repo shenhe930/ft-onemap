@@ -1,5 +1,5 @@
 .toolbox-container{
-
+    color: @text-color;
     .toolbar{
         padding: 6px 0;
         //width: 380px;
@@ -46,6 +46,9 @@
         &:hover{
             color: @navy;
         }
+        &.active{
+            color: @navy;
+        }
     }
 
     .user-btn{
@@ -66,7 +69,7 @@
     .building-info-box{
         top: 60px;
         right: 0;
-        width: 160px;
+        width: 220px;
         padding: 6px;
         .well{
             padding: 4px 6px;
@@ -76,10 +79,12 @@
             color: @navy;
         }
         .company{
-            background-color: lighten(@yellow,30%);
+            //background-color: lighten(@yellow,30%);
+            background-color: #fffee5;
         }
         .company-new{
-            background-color: lighten(@lazur,50%);
+            //background-color: lighten(@lazur,50%);
+            background-color: #f1f7ff;
         }
     }
 }

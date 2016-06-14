@@ -1,272 +1,2227 @@
 {
-    "buildingImage":"img/7.jpg",
-    "name":"123",
-    "address":"123",
-    "developer":"123",
-    "start":"2016-04-17",
-    "end":"2016-04-17",
-    "floorArea":"123",
-    "floorsNum":"12",
-    "floors":[
+    "floorList": [
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe",
+            "room_num": 130,
+            "row_num": 10,
+            "column_num": 13,
+            "name": "1",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "be422408-6f2e-4063-92cf-f20630422e69",
+            "room_num": 4,
+            "row_num": 2,
+            "column_num": 2,
+            "name": "10",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f",
+            "room_num": 9,
+            "row_num": 3,
+            "column_num": 3,
+            "name": "11",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902",
+            "room_num": 6,
+            "row_num": 2,
+            "column_num": 3,
+            "name": "12",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "037bf0a0-afb0-4c18-86aa-a89057d44277",
+            "room_num": 6,
+            "row_num": 3,
+            "column_num": 2,
+            "name": "13",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "ed02dad1-2400-4f32-9e0e-3f23bf8986b8",
+            "room_num": 6,
+            "row_num": 2,
+            "column_num": 3,
+            "name": "2",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "d9713411-10c0-4bf4-93db-6f264b11e61d",
+            "room_num": 6,
+            "row_num": 3,
+            "column_num": 2,
+            "name": "9",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "f_id": "8f810fb0-1e6a-4ec2-8678-2005c6d1095e",
+            "room_num": 10,
+            "row_num": 2,
+            "column_num": 5,
+            "name": "B1",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
+        }
+    ],
+    "roomsmell": [
+        [
+            "9102e0ca-ab2f-4259-8e4d-aa3be784e62b"
+        ],
+        [
+            "b65b5319-4aba-47f1-8d20-39b5741df384"
+        ],
+        [
+            "1cdc2dd1-ccf5-4cae-ac99-38f9d820efa7"
+        ],
+        [
+            "1cdc2dd1-ccf5-4cae-ac99-38f9d820efa7"
+        ],
+        [
+            "1cdc2dd1-ccf5-4cae-ac99-38f9d820efa7"
+        ]
+    ],
+    "floorsmell": [
+        [
+            "d9713411-10c0-4bf4-93db-6f264b11e61d"
+        ],
+        [
+            "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+        ],
+        [
+            "8f810fb0-1e6a-4ec2-8678-2005c6d1095e"
+        ]
+    ],
+    "building": {
+        "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+        "name": "崇新大厦3",
+        "address": "123",
+        "dev": "123",
+        "start_date": "2016-03-10",
+        "end_date": "2016-03-10",
+        "area": 123,
+        "x": 116.307989,
+        "y": 39.847894,
+        "f": 1,
+        "g_id": "1",
+        "pm": "123"
+    },
+    "roomList": [
+        {
+            "r_id": "95f7876c-4e6b-4b2d-894c-3ff8a6aa353e",
+            "name": "0室",
+            "status": 1,
+            "code": 1,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "r_id": "2defbba6-f39c-4811-b7e1-437d6f8f08e4",
+            "name": "0室",
+            "status": 1,
+            "code": 1,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
         },
         {
-            "floorImage":"img/8.jpg",
-            "rooms":[
-                {
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                },{
-                    "roomNo":"B1"
-                }
-            ]
+            "r_id": "2a913aa7-d10c-499d-87f2-61a35fa059ab",
+            "name": "0室",
+            "status": 1,
+            "code": 1,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "557fdb4d-6162-4df9-8729-be606b99b166",
+            "name": "0室",
+            "status": 1,
+            "code": 1,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1ebf757a-0d7b-4737-afd0-13ce7bf7010d",
+            "name": "0室",
+            "status": 1,
+            "code": 1,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "96759a6d-1085-4aaf-bd48-c24771eb6c47",
+            "name": "0室",
+            "status": 1,
+            "code": 1,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "99063abf-7dfa-4850-9517-2eff0dd333c0",
+            "name": "1室",
+            "status": 1,
+            "code": 2,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "5f56766f-9d3f-42dd-93d6-dcbcadd8354e",
+            "name": "1室",
+            "status": 1,
+            "code": 2,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "dfc4bc52-d823-46ed-ac6e-22529c20e164",
+            "name": "1室",
+            "status": 1,
+            "code": 2,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "bc50cbaf-608e-4cb9-a91a-56ef7bf8712b",
+            "name": "1室",
+            "status": 1,
+            "code": 2,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "05f06478-96e8-4709-86a5-a76ffd3de0ff",
+            "name": "1室",
+            "status": 1,
+            "code": 2,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e3cadbcd-ff66-4831-b5ec-0ae774575593",
+            "name": "1室",
+            "status": 1,
+            "code": 2,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a9c4a5bf-f3a2-46c4-8d92-39c93696b29f",
+            "status": 0,
+            "code": 3,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "8f6c1365-789d-4223-aad1-1958867d307b",
+            "name": "2室",
+            "status": 1,
+            "code": 3,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7ec7cad2-5cc4-40a5-92fd-7c76ac32c488",
+            "name": "2室",
+            "status": 1,
+            "code": 3,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "5f494950-f1f8-458c-af0e-1ea351e6b710",
+            "name": "2室",
+            "status": 1,
+            "code": 3,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "45444774-e2e5-41e2-931d-5c3b98129b33",
+            "name": "2室",
+            "status": 1,
+            "code": 3,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f8524046-1cf5-4e82-9c81-13f7127f1630",
+            "name": "2室",
+            "status": 1,
+            "code": 3,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "6a331991-e46e-4768-a1db-0c466813bc02",
+            "name": "2室",
+            "status": 1,
+            "code": 3,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "2c9cda00-4b39-4f5d-8b63-13eaf6d934e5",
+            "status": 0,
+            "code": 4,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a384270b-d367-4bec-8c82-e14435205121",
+            "name": "3室",
+            "status": 1,
+            "code": 4,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e4c9969a-14e2-4500-9155-fff3aeab5489",
+            "name": "3室",
+            "status": 1,
+            "code": 4,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "74146f1c-3dc6-4949-a495-0a94dbc0c3ff",
+            "name": "3室",
+            "status": 1,
+            "code": 4,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "18f6ceab-c6ed-43b6-84c6-71951e68d7a7",
+            "name": "3室",
+            "status": 1,
+            "code": 4,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "2f7e25ae-69ec-461d-ab97-9692a06b5a98",
+            "name": "3室",
+            "status": 1,
+            "code": 4,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1143fc98-4ea7-4f7a-b0b3-0553f7b6c253",
+            "name": "3室",
+            "status": 1,
+            "code": 4,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "72273b4e-493c-431c-ae89-3275b56a9729",
+            "name": "吃vhjgh",
+            "status": 1,
+            "code": 5,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "78ad5d32-2ac8-4b4f-8c1a-bdac2e42b257",
+            "name": "4室",
+            "status": 1,
+            "code": 5,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "bd6f5aff-8f11-46f4-9b3d-d2bda151b920",
+            "name": "4室",
+            "status": 1,
+            "code": 5,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7cb21ee5-9a9d-4dd1-a426-c07899c45876",
+            "name": "4室",
+            "status": 1,
+            "code": 5,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "96db677a-bfa1-4ba9-881a-91c97b66ae1a",
+            "name": "4室",
+            "status": 1,
+            "code": 5,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "81094f82-143b-49d8-b2d0-4e88b1b99072",
+            "name": "4室",
+            "status": 1,
+            "code": 5,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e9fed605-063a-4fe0-8bf9-60935b323046",
+            "name": "5室",
+            "status": 1,
+            "code": 6,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "200630e6-a355-446e-8344-75aa6a95ee4d",
+            "name": "5室",
+            "status": 1,
+            "code": 6,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "b9da1515-0dd7-4997-9205-434575eba7f4",
+            "name": "5室",
+            "status": 1,
+            "code": 6,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "b9b7cb1e-1829-4d22-ae24-a4e10b48f201",
+            "name": "5室",
+            "status": 1,
+            "code": 6,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "b2d01f67-6801-497a-b8da-ea796ab0d06b",
+            "name": "5室",
+            "status": 1,
+            "code": 6,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "700376b0-f7d5-46f5-8284-610308970563",
+            "name": "5室",
+            "status": 1,
+            "code": 6,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1129b524-2703-4f48-ad9d-8e6c144e7e2e",
+            "name": "6室",
+            "status": 1,
+            "code": 7,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "20a496be-fcc7-4e60-8105-783add6da0ea",
+            "name": "6室",
+            "status": 1,
+            "code": 7,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "379a4047-8853-44f7-92c6-c598562b2173",
+            "name": "6室",
+            "status": 1,
+            "code": 7,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "af38c97d-d058-46f6-804f-fae023a86d36",
+            "name": "6室",
+            "status": 1,
+            "code": 7,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "62ace606-52ae-4d68-b2db-ddf1b0e1d70e",
+            "name": "6室",
+            "status": 1,
+            "code": 7,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "29a30dcd-a96a-4a3d-8175-640a573ebc5a",
+            "name": "6室",
+            "status": 1,
+            "code": 7,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "cbf6b86d-549b-4261-825c-4d27077d85bd",
+            "name": "7室",
+            "status": 1,
+            "code": 8,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "56bb3c26-78bc-4db3-bafa-8c2dd9730c21",
+            "name": "7室",
+            "status": 1,
+            "code": 8,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "2db33e50-025e-4e4c-9ba5-0e1e39646597",
+            "name": "7室",
+            "status": 1,
+            "code": 8,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "4ab9d1c1-9a03-4774-803d-e3172e0ed503",
+            "name": "7室",
+            "status": 1,
+            "code": 8,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a5296046-ded0-4d08-84d4-056ad8edcc3f",
+            "name": "7室",
+            "status": 1,
+            "code": 8,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "9d1ef9bc-72c3-49f9-b5dd-c31b1b641c72",
+            "name": "7室",
+            "status": 1,
+            "code": 8,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "9846a7ca-5016-40bf-a15d-e0c09f171e4a",
+            "name": "8室",
+            "status": 1,
+            "code": 9,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "8e39a096-faf1-4d08-b52d-bb639f2ce7aa",
+            "name": "8室",
+            "status": 1,
+            "code": 9,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "081a7800-67d3-46d7-a50a-df59ac4c9137",
+            "name": "8室",
+            "status": 1,
+            "code": 9,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "03ac4efb-c566-4a38-a702-f87e4bfa6f6f",
+            "name": "8室",
+            "status": 1,
+            "code": 9,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e8372d8c-b7f0-433c-9caf-d1429061648b",
+            "name": "8室",
+            "status": 1,
+            "code": 9,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "8f29538e-d56d-40dd-b305-a784dd54a4f2",
+            "name": "8室",
+            "status": 1,
+            "code": 9,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "2a27e45f-9be4-4284-8612-f2b01258ca6a",
+            "name": "9室",
+            "status": 1,
+            "code": 10,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c0b14080-d6e6-4573-8408-f5fd61ef9143",
+            "name": "9室",
+            "status": 1,
+            "code": 10,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "73b34ff5-806d-481a-8554-44849d87fc5a",
+            "name": "9室",
+            "status": 1,
+            "code": 10,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "af940a27-5582-47ce-afdd-e87001114f87",
+            "name": "9室",
+            "status": 1,
+            "code": 10,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "16ba7745-4fa9-4a9c-a381-19f5d7f944e4",
+            "name": "9室",
+            "status": 1,
+            "code": 10,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "eb505cca-c964-4df2-87f1-72589b8538b3",
+            "name": "9室",
+            "status": 1,
+            "code": 10,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a7bb3c1f-3741-411b-803e-11130179d3de",
+            "name": "10室",
+            "status": 1,
+            "code": 11,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7e4ba2d3-3864-45ef-b2c4-db7dee6e3fc0",
+            "name": "10室",
+            "status": 1,
+            "code": 11,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "2e9fd30d-2201-455e-a36d-49490ee705e7",
+            "name": "11室",
+            "status": 1,
+            "code": 12,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "b264dbf1-8917-45ba-bc33-fb807de2a096",
+            "name": "11室",
+            "status": 1,
+            "code": 12,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "722816b0-0963-4e01-a3ff-395b1e444bfc",
+            "name": "12室",
+            "status": 1,
+            "code": 13,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a4f80d48-da5f-443b-9a5c-107c3381d085",
+            "name": "12室",
+            "status": 1,
+            "code": 13,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "4a9a7a96-df0e-46b9-9396-25db702ea2d0",
+            "name": "13室",
+            "status": 1,
+            "code": 14,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7ab2a9f6-71ce-45a1-883b-e4ecf4b7896c",
+            "name": "13室",
+            "status": 1,
+            "code": 14,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "8a85eae8-832b-497d-be71-28af5224f288",
+            "name": "14室",
+            "status": 1,
+            "code": 15,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "de09ccd3-b1de-4fff-8f75-ede2c5f3a6b2",
+            "name": "14室",
+            "status": 1,
+            "code": 15,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "84c1a094-229d-4a39-ad3c-c91623593bc3",
+            "name": "15室",
+            "status": 1,
+            "code": 16,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f8a6b2f6-4309-4463-ae22-28f78a931403",
+            "name": "15室",
+            "status": 1,
+            "code": 16,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "affd0d05-025b-4ff0-8157-0b7656f2c105",
+            "name": "16室",
+            "status": 1,
+            "code": 17,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "6b9eb104-b610-4d63-aff5-7bb38fcae48e",
+            "name": "16室",
+            "status": 1,
+            "code": 17,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "14c3d5b0-85f5-4070-a6e6-dc287f1d58e4",
+            "name": "17室",
+            "status": 1,
+            "code": 18,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "49456f1e-fca0-4204-a0d5-8c2e17b7e9bf",
+            "name": "17室",
+            "status": 1,
+            "code": 18,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "320c51c9-2a97-40a9-b773-a51482bb31a7",
+            "name": "18室",
+            "status": 1,
+            "code": 19,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "983fec51-97b3-4bc5-8bf8-cf32f64ad408",
+            "name": "18室",
+            "status": 1,
+            "code": 19,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "fda209be-8ec8-4700-8b76-71552943f6cc",
+            "name": "19室",
+            "status": 1,
+            "code": 20,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "67e278ee-a2e4-4182-b645-b62b5385b6ae",
+            "name": "19室",
+            "status": 1,
+            "code": 20,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "b8502f43-5cd0-4200-80b7-b69f89149b2c",
+            "name": "20室",
+            "status": 1,
+            "code": 21,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "9cf88467-5e05-440f-afc7-79d473b43400",
+            "name": "20室",
+            "status": 1,
+            "code": 21,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "303320ff-2fa6-4f9f-b191-762c6b65ac8b",
+            "name": "21室",
+            "status": 1,
+            "code": 22,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "dc1413d0-441c-4be6-b23a-8aed6021c427",
+            "name": "21室",
+            "status": 1,
+            "code": 22,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "0e1c5579-ac3f-49d7-92aa-5c70e17e7e76",
+            "name": "22室",
+            "status": 1,
+            "code": 23,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "32a93049-ff2c-4f0c-b92d-0c17fa502902",
+            "name": "22室",
+            "status": 1,
+            "code": 23,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "095362db-cbc5-480b-b66a-e392edb172d0",
+            "name": "23室",
+            "status": 1,
+            "code": 24,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "8c445932-3c90-404f-8f9a-21d3f2c1a0bf",
+            "name": "23室",
+            "status": 1,
+            "code": 24,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "350f3106-1a40-4273-b517-f64af46a44ad",
+            "name": "24室",
+            "status": 1,
+            "code": 25,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a5142b14-c73a-4b8f-a0ee-723892eb72d2",
+            "name": "24室",
+            "status": 1,
+            "code": 25,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "0f8a8dbe-17f5-4bf8-a007-c16d47b021ea",
+            "name": "25室",
+            "status": 1,
+            "code": 26,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "48831ebd-2a81-4784-b5fb-aa4b1518981e",
+            "name": "25室",
+            "status": 1,
+            "code": 26,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "045e6cbf-55b7-43d4-bfb5-8743d8841d58",
+            "name": "26室",
+            "status": 1,
+            "code": 27,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "85b28de1-b3ff-4d7c-852c-c986dc814787",
+            "name": "26室",
+            "status": 1,
+            "code": 27,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1e5580d1-b6c1-4b25-afd1-698664362b0e",
+            "name": "27室",
+            "status": 1,
+            "code": 28,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "bbeb147c-2e93-4378-9d03-a1a2043c4a3e",
+            "name": "27室",
+            "status": 1,
+            "code": 28,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "be14d515-5458-44ba-9e12-3cefb6659bdb",
+            "name": "28室",
+            "status": 1,
+            "code": 29,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "298eeee7-4f9e-4d9e-8285-27209f64a19a",
+            "name": "28室",
+            "status": 1,
+            "code": 29,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "b781eef4-1da3-467e-a2ba-694decf40f21",
+            "name": "29室",
+            "status": 1,
+            "code": 30,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "671ebd07-f096-4c81-8e1b-a790ed378d6e",
+            "name": "29室",
+            "status": 1,
+            "code": 30,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "501cb337-8ce6-4439-ab77-d902bae63a8e",
+            "name": "30室",
+            "status": 1,
+            "code": 31,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d38175d8-7dea-41df-a578-88220cb54da4",
+            "name": "30室",
+            "status": 1,
+            "code": 31,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "fe5aba09-c11c-4284-a15b-21820c290ce3",
+            "name": "31室",
+            "status": 1,
+            "code": 32,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "39f234bc-c827-4a0e-81c0-b7a1725018ab",
+            "name": "31室",
+            "status": 1,
+            "code": 32,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "45785458-7c96-4c24-8755-013890dc526b",
+            "name": "32室",
+            "status": 1,
+            "code": 33,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "ca01e401-b7fd-4ac7-8f8a-e3c751f4b557",
+            "name": "32室",
+            "status": 1,
+            "code": 33,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "93de772a-bc96-4d68-bd06-60b64f00c31f",
+            "name": "33室",
+            "status": 1,
+            "code": 34,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "69422466-16b9-43d4-bdf4-5d2513355fdb",
+            "name": "33室",
+            "status": 1,
+            "code": 34,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "3651bf24-1cf6-44d6-b108-162b24690156",
+            "name": "34室",
+            "status": 1,
+            "code": 35,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f84dc749-5f8a-40c5-aad3-c5da8382985e",
+            "name": "34室",
+            "status": 1,
+            "code": 35,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f78f3bb3-405d-4f1c-beb6-9001c07af8ce",
+            "name": "35室",
+            "status": 1,
+            "code": 36,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "857310cc-8a59-4079-b290-890f6b8ed6c2",
+            "name": "35室",
+            "status": 1,
+            "code": 36,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "bdd1fc84-9564-4850-84e3-398586067953",
+            "name": "36室",
+            "status": 1,
+            "code": 37,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a83b72c9-0bc2-4b09-954c-66d2dca0b266",
+            "name": "36室",
+            "status": 1,
+            "code": 37,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "5ea6040e-7b94-4663-80e8-c03ae9cdb1ca",
+            "name": "37室",
+            "status": 1,
+            "code": 38,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "915bf757-c9e5-481a-9d03-28aade230164",
+            "name": "37室",
+            "status": 1,
+            "code": 38,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "82c2daa6-7552-4d2a-8774-bb70af66389e",
+            "name": "38室",
+            "status": 1,
+            "code": 39,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c37a78d1-5c9c-4509-876d-e375bbaacd5b",
+            "name": "38室",
+            "status": 1,
+            "code": 39,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "6231ddf0-1158-472c-8efc-4c3b40cfbbf0",
+            "name": "39室",
+            "status": 1,
+            "code": 40,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "69922318-4ea7-4a6a-8627-324216a1de94",
+            "name": "39室",
+            "status": 1,
+            "code": 40,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "04cfa62f-0756-420d-9d1a-98de24bcb99b",
+            "name": "40室",
+            "status": 1,
+            "code": 41,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1d6f3d07-d66c-42f6-9a1b-b74738ff8b8f",
+            "name": "40室",
+            "status": 1,
+            "code": 41,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7e64e14a-9245-481f-aba0-d446c28c8f1d",
+            "name": "41室",
+            "status": 1,
+            "code": 42,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "56f5b55f-2020-4e92-b8c0-015ad6abe5f5",
+            "name": "41室",
+            "status": 1,
+            "code": 42,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "958bfcc9-541c-4165-b2cd-74f8b982ead5",
+            "name": "42室",
+            "status": 1,
+            "code": 43,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e1fbf915-ffff-42a5-be47-9c073a7c7285",
+            "name": "42室",
+            "status": 1,
+            "code": 43,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f0014b2b-3c89-4a04-8b35-02895160382a",
+            "name": "43室",
+            "status": 1,
+            "code": 44,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "9b12d884-255b-4578-bee2-75baeb65058f",
+            "name": "43室",
+            "status": 1,
+            "code": 44,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a24f5829-9e92-40a9-974a-4bf6a276feb9",
+            "name": "44室",
+            "status": 1,
+            "code": 45,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "020a93ff-6992-4bf9-867d-93f8605737c4",
+            "name": "44室",
+            "status": 1,
+            "code": 45,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "52c0dcd7-a75a-47af-90f9-da5a0727a9b6",
+            "name": "45室",
+            "status": 1,
+            "code": 46,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "21e49c11-4589-4e68-8d60-82db2c6cb44a",
+            "name": "45室",
+            "status": 1,
+            "code": 46,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "adaeb920-b4f2-4b5c-9742-d488a6db2d28",
+            "name": "46室",
+            "status": 1,
+            "code": 47,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d461136d-4578-4265-be78-fdadec550f83",
+            "name": "46室",
+            "status": 1,
+            "code": 47,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f370baa5-c821-4506-a7ca-0b152178018e",
+            "name": "47室",
+            "status": 1,
+            "code": 48,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "2b74c75d-00f9-4cf1-9be3-e3d292e4a0fc",
+            "name": "47室",
+            "status": 1,
+            "code": 48,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f3815965-d00e-4205-bf60-3b88cb4f3f22",
+            "name": "48室",
+            "status": 1,
+            "code": 49,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a8c9727f-719c-4acc-a453-ac0c9aa11137",
+            "name": "48室",
+            "status": 1,
+            "code": 49,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "6b647b09-2692-4a07-ac49-ed42fa084e9e",
+            "name": "49室",
+            "status": 1,
+            "code": 50,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "ded1e779-1cec-4883-bbb1-cdd4e353b8c1",
+            "name": "49室",
+            "status": 1,
+            "code": 50,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "27c5c997-2c3e-4926-bcfe-b5218d015e5c",
+            "name": "50室",
+            "status": 1,
+            "code": 51,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "38f3c9f7-85b3-4da2-9ec2-be85c27855d5",
+            "name": "50室",
+            "status": 1,
+            "code": 51,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "af543894-0b05-419e-8aab-4e0ce3a165cb",
+            "name": "51室",
+            "status": 1,
+            "code": 52,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "bd39b6de-6f6c-4b1d-b168-b18afccbd5fe",
+            "name": "51室",
+            "status": 1,
+            "code": 52,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "15d6b604-3e7f-497b-be17-4bff65949947",
+            "name": "52室",
+            "status": 0,
+            "code": 53,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "9d409602-ad14-4257-909b-3f934b5787bd",
+            "name": "52室",
+            "status": 1,
+            "code": 53,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c7456542-8105-4949-9916-a548b098fcba",
+            "name": "53室",
+            "status": 1,
+            "code": 54,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "6f26da7b-94a7-4a92-a172-20c5e79e5578",
+            "name": "53室",
+            "status": 1,
+            "code": 54,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "225e238b-e9cf-4590-a5a8-06ff7c70b942",
+            "name": "54室",
+            "status": 1,
+            "code": 55,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "286327a3-619d-4eff-8773-7d876b5eb3f9",
+            "name": "54室",
+            "status": 1,
+            "code": 55,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "83d8052e-94b5-44e1-b9c3-58685eaa3705",
+            "name": "55室",
+            "status": 1,
+            "code": 56,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "11788fc4-b026-4f75-99e6-72d18debbb44",
+            "name": "55室",
+            "status": 1,
+            "code": 56,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "869f3008-bea2-4e91-9598-642456bd1972",
+            "name": "56室",
+            "status": 1,
+            "code": 57,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "783a9dc0-967f-4192-b5c8-b2b1b6b1b3e5",
+            "name": "56室",
+            "status": 1,
+            "code": 57,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "5a2c804a-48c2-4fa0-9668-65fabde38bb0",
+            "name": "57室",
+            "status": 1,
+            "code": 58,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c5436687-f95c-446b-aaf4-b109aa06e031",
+            "name": "57室",
+            "status": 1,
+            "code": 58,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "67e84574-a8c2-41c2-a8be-a8a39b0399a7",
+            "name": "58室",
+            "status": 1,
+            "code": 59,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "9af553a1-21f9-4730-916b-56cf086d13b0",
+            "name": "58室",
+            "status": 1,
+            "code": 59,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d0a00379-239d-45be-87e2-c444b97a1337",
+            "name": "59室",
+            "status": 1,
+            "code": 60,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7dd11fae-7f8b-49e7-8441-480642db565b",
+            "name": "59室",
+            "status": 1,
+            "code": 60,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "65e02555-9d09-4ebd-b3ec-4068e25827ad",
+            "name": "60室",
+            "status": 1,
+            "code": 61,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a3fca961-c6a8-4b29-8f36-3ce73d9448e9",
+            "name": "60室",
+            "status": 1,
+            "code": 61,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "34713af2-dab7-4956-b743-bc58c05687d0",
+            "name": "61室",
+            "status": 1,
+            "code": 62,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "70656320-3598-4a43-b418-e01432a9c8de",
+            "name": "61室",
+            "status": 1,
+            "code": 62,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "935ab697-739a-4d46-872b-4b4cec763b11",
+            "name": "62室",
+            "status": 1,
+            "code": 63,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "6a0c272d-54c5-4dc2-bfdd-27acf0c76eef",
+            "name": "62室",
+            "status": 1,
+            "code": 63,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e0a559b2-24f9-45d4-9588-1399ca5256dc",
+            "name": "63室",
+            "status": 1,
+            "code": 64,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "20e3fca1-b400-4252-b456-1965f52a5291",
+            "name": "63室",
+            "status": 1,
+            "code": 64,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1d2e779f-1a8e-459b-9240-72a9e029d672",
+            "name": "64室",
+            "status": 1,
+            "code": 65,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "08608d97-24b2-441c-8171-656e54f9ed27",
+            "name": "64室",
+            "status": 1,
+            "code": 65,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c6588589-3e18-4f51-af55-8d93459af520",
+            "name": "65室",
+            "status": 0,
+            "code": 66,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "3b0e8891-5697-42cb-8466-23e497bf7bc5",
+            "name": "65室",
+            "status": 1,
+            "code": 66,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "fb9b3aa3-aba2-43d4-9c49-88875479f9bd",
+            "name": "66室",
+            "status": 1,
+            "code": 67,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "db0b0f86-bec7-432b-aacd-ae53716b2eda",
+            "name": "66室",
+            "status": 1,
+            "code": 67,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "9c2106bb-77fd-4cad-b937-0f93e10810e7",
+            "name": "67室",
+            "status": 1,
+            "code": 68,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "53dca066-1b11-4b55-a523-3d735d803d67",
+            "name": "67室",
+            "status": 1,
+            "code": 68,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "ac7311cf-2c44-4d03-a710-6d463b6e4af2",
+            "name": "68室",
+            "status": 1,
+            "code": 69,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "985a8215-e6c2-46ef-bf14-6f7fe888d5c4",
+            "name": "68室",
+            "status": 1,
+            "code": 69,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "567ac866-3d6f-4475-8393-556db5450419",
+            "name": "69室",
+            "status": 1,
+            "code": 70,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e0f921c8-879e-4ca4-8d69-8d62fd5d3f65",
+            "name": "69室",
+            "status": 1,
+            "code": 70,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c3be9dc6-b3c4-4c04-8bd3-5c78ec8b0e60",
+            "name": "70室",
+            "status": 1,
+            "code": 71,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "cf405d55-0b49-43ea-a0af-322cd0af9729",
+            "name": "70室",
+            "status": 1,
+            "code": 71,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "070aeb67-2de9-4302-9a4b-b1d311f9ce03",
+            "name": "71室",
+            "status": 1,
+            "code": 72,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "ea113a1f-c235-4206-97e7-22f4a8259c62",
+            "name": "71室",
+            "status": 1,
+            "code": 72,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d53dfc53-7444-40ac-8664-43e8b6b38bcc",
+            "name": "72室",
+            "status": 1,
+            "code": 73,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "39792b2d-7e30-4e53-92fe-517f1c769756",
+            "name": "72室",
+            "status": 1,
+            "code": 73,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "4122554b-d614-467c-9e5e-253989c4b339",
+            "name": "73室",
+            "status": 1,
+            "code": 74,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "3f1bf2fc-478e-46e1-b401-5a54f538b44b",
+            "name": "73室",
+            "status": 1,
+            "code": 74,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e4383a02-4858-43c3-b5f9-9f3cb399d903",
+            "name": "74室",
+            "status": 1,
+            "code": 75,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f674ca74-0fa0-48f7-aeef-3a513e37ff40",
+            "name": "74室",
+            "status": 1,
+            "code": 75,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "853deab5-1535-4001-82dd-04c3103ce907",
+            "name": "75室",
+            "status": 1,
+            "code": 76,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "03dd58cd-ba3e-47f9-97be-0f73054826c4",
+            "name": "75室",
+            "status": 1,
+            "code": 76,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "02ffadde-dda2-43df-9068-f8b677d9d2f2",
+            "name": "76室",
+            "status": 1,
+            "code": 77,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "df86641d-7d41-4f81-acc1-91e335d32426",
+            "name": "76室",
+            "status": 1,
+            "code": 77,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "62d85c79-fbc1-4211-8903-8daf207180f1",
+            "name": "77室",
+            "status": 1,
+            "code": 78,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "dd93a973-5af4-4e58-901b-b4cdaf80309d",
+            "name": "77室",
+            "status": 1,
+            "code": 78,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "0166a4b7-cc05-426e-9485-10a0fb76db30",
+            "name": "78室",
+            "status": 1,
+            "code": 79,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "df116b17-907d-4163-b13e-1bbc7f6ad80e",
+            "name": "78室",
+            "status": 1,
+            "code": 79,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "cf686ffb-b4ec-4300-88df-b3e76d2c6e6e",
+            "name": "79室",
+            "status": 1,
+            "code": 80,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e8f277ea-8449-4a41-9d24-b0d3d9bc10b8",
+            "name": "79室",
+            "status": 1,
+            "code": 80,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "b280034b-4380-4360-a2ce-550702fae069",
+            "name": "80室",
+            "status": 1,
+            "code": 81,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d79d2979-9760-4a54-9753-14ba4b160a79",
+            "name": "80室",
+            "status": 1,
+            "code": 81,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "6d8bba15-5f93-43f2-921c-7707f4155368",
+            "name": "81室",
+            "status": 1,
+            "code": 82,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "550bcd56-571a-4102-b692-0aba73f12906",
+            "name": "81室",
+            "status": 0,
+            "code": 82,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "3be3a2aa-312b-45d7-ba9e-fc5d6b729f0b",
+            "name": "82室",
+            "status": 1,
+            "code": 83,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "57f460e3-bb8e-4592-80b4-815b7e323d69",
+            "name": "82室",
+            "status": 1,
+            "code": 83,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7ba44f69-a568-49be-9a4b-4675e3fbee9a",
+            "name": "83室",
+            "status": 1,
+            "code": 84,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "8ca4ce38-76a4-45a1-b52b-8f0e7ddd3291",
+            "name": "83室",
+            "status": 1,
+            "code": 84,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a004e273-4b90-437c-8cfb-a5f55da86cba",
+            "name": "84室",
+            "status": 1,
+            "code": 85,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f8c5fcf1-2c02-4589-8bfc-77647f5558a7",
+            "name": "84室",
+            "status": 1,
+            "code": 85,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7c33bdc1-a671-4574-8017-a73b059e15cd",
+            "name": "85室",
+            "status": 1,
+            "code": 86,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1b72f4b9-5709-4721-b380-2b21cf0f1a7d",
+            "name": "85室",
+            "status": 1,
+            "code": 86,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d39ee823-62fd-4824-988b-e443db00badf",
+            "name": "86室",
+            "status": 1,
+            "code": 87,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "ae269998-f71a-45a3-9ecc-109bf863a0ff",
+            "name": "86室",
+            "status": 1,
+            "code": 87,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "083e06ec-f175-401a-8a45-f0cf3ab69415",
+            "name": "87室",
+            "status": 1,
+            "code": 88,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "6d68a949-b38e-4cf4-913f-733fdd0879a4",
+            "name": "87室",
+            "status": 1,
+            "code": 88,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "86a7e567-b0b0-4f5a-afa0-1d409178c135",
+            "name": "88室",
+            "status": 1,
+            "code": 89,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f6a79a6c-66ed-4aa3-9591-ba6d8cb15085",
+            "name": "88室",
+            "status": 1,
+            "code": 89,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "45191644-8530-426a-a3a1-9ed674903771",
+            "name": "89室",
+            "status": 1,
+            "code": 90,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d0ef3333-febd-419b-84ec-b5f5300864ea",
+            "name": "89室",
+            "status": 1,
+            "code": 90,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "cc79f5da-0056-4542-bfdc-63b172c7e49d",
+            "name": "90室",
+            "status": 1,
+            "code": 91,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "b69e415a-0364-4f1a-8f85-10ce2ee05f8d",
+            "name": "90室",
+            "status": 1,
+            "code": 91,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c3562c0d-a21e-43d0-845d-caa8e1ea8fcc",
+            "name": "91室",
+            "status": 1,
+            "code": 92,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "9341fc72-eddb-49e2-8303-8c39cb70b3ec",
+            "name": "91室",
+            "status": 1,
+            "code": 92,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "55dc6039-fded-4e1a-8ef3-29616b7cec4d",
+            "name": "92室",
+            "status": 1,
+            "code": 93,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "50d60ffc-01e9-471f-8035-4f6f69b1eb25",
+            "name": "92室",
+            "status": 1,
+            "code": 93,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "dfb7a8b2-d0fe-4dfd-9ce2-fe2cb74911dd",
+            "name": "93室",
+            "status": 1,
+            "code": 94,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7358d2dc-6dfa-4296-bddb-a916e1466aa5",
+            "name": "93室",
+            "status": 1,
+            "code": 94,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "ad054a9d-6fb7-486c-b512-5b936d0f1b2c",
+            "name": "94室",
+            "status": 1,
+            "code": 95,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "31e19c31-fc56-4ee2-80e1-6a7a68ea48d2",
+            "name": "94室",
+            "status": 1,
+            "code": 95,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "0cc0a9c8-a2e2-44be-85f2-0f19c1d609c5",
+            "name": "95室",
+            "status": 1,
+            "code": 96,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e10fefe9-ef4a-4ad0-873a-4443d6fd4823",
+            "name": "95室",
+            "status": 1,
+            "code": 96,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "0aa686c1-b2d9-42af-b160-75d90bdf874c",
+            "name": "96室",
+            "status": 1,
+            "code": 97,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "ad9d34c0-4662-4489-a39c-33a8e60b0363",
+            "name": "96室",
+            "status": 2,
+            "code": 97,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "143c35e3-88d3-4d37-8401-b7feefc2b2c3",
+            "name": "97室",
+            "status": 1,
+            "code": 98,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "52d3e42b-7ea9-477b-ac80-8676793d63e4",
+            "name": "97室",
+            "status": 1,
+            "code": 98,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d526b683-b71a-4506-a90c-c84e92e4119f",
+            "name": "98室",
+            "status": 1,
+            "code": 99,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7b1c8501-5b36-4ac0-823b-abc2050eeae2",
+            "name": "98室",
+            "status": 1,
+            "code": 99,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "97f008a8-0e0a-4f91-bfb4-8cf9ae265ce2",
+            "name": "99室",
+            "status": 1,
+            "code": 100,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "cf38339a-038e-4a47-8424-b60db88eb5cc",
+            "name": "99室",
+            "status": 1,
+            "code": 100,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "ca3fce8c-4994-45ae-a1a7-dae92ac687af",
+            "name": "100室",
+            "status": 1,
+            "code": 101,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "8e509354-3ee1-4ba7-ab5f-1c1d0624532a",
+            "name": "100室",
+            "status": 1,
+            "code": 101,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "08b64402-b699-4e67-b607-de9bf05f6543",
+            "name": "101室",
+            "status": 1,
+            "code": 102,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "818c22a1-3d89-488c-aa8e-50cb6183b3be",
+            "name": "101室",
+            "status": 1,
+            "code": 102,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d6d2f085-64fa-4f78-8115-5c8f0ff4eee4",
+            "name": "102室",
+            "status": 1,
+            "code": 103,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1f683199-0291-4576-be42-495bf54551f7",
+            "name": "102室",
+            "status": 1,
+            "code": 103,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d0eb3222-5e77-4f19-b3cf-74b3f9dca316",
+            "name": "103室",
+            "status": 1,
+            "code": 104,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "beba9480-106e-4edd-a11d-c284b63361f3",
+            "name": "103室",
+            "status": 1,
+            "code": 104,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "ab90145c-00d2-4d18-b001-fedde1ab3061",
+            "name": "104室",
+            "status": 1,
+            "code": 105,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1f86d124-33a7-463c-bbe5-93160c4f329e",
+            "name": "104室",
+            "status": 1,
+            "code": 105,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "903f21f6-5410-4089-844f-fe9e7b93c96e",
+            "name": "105室",
+            "status": 1,
+            "code": 106,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "7266d632-b2af-4138-8352-33e2ab65570b",
+            "name": "105室",
+            "status": 1,
+            "code": 106,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "868b0828-7d4c-434e-a8ad-c6d789f1e041",
+            "name": "106室",
+            "status": 1,
+            "code": 107,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "aa1ba60b-2263-4b19-8801-41fab4ac4272",
+            "name": "106室",
+            "status": 1,
+            "code": 107,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f818ade6-98bc-46d7-8db0-93060145afd2",
+            "name": "107室",
+            "status": 1,
+            "code": 108,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "16b4a1bf-3de9-4ed1-8e0d-0ac53849be21",
+            "name": "107室",
+            "status": 1,
+            "code": 108,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "587e46ff-fe8e-4e06-8d3c-7475fe18a2ac",
+            "name": "108室",
+            "status": 1,
+            "code": 109,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "462782ad-19a4-4d14-9c1f-88cf6ecb9b2e",
+            "name": "108室",
+            "status": 1,
+            "code": 109,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1762d949-59b3-4bbf-affc-7c7f3e00ad87",
+            "name": "109室",
+            "status": 1,
+            "code": 110,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1ff4d7c6-5eb5-49c3-8af7-3f82c8d5fcfc",
+            "name": "109室",
+            "status": 2,
+            "code": 110,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "064e6b4a-2730-4ed5-b87a-28f82a4e47e2",
+            "name": "110室",
+            "status": 1,
+            "code": 111,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c84f6116-54fa-4a83-8647-ce35ea380d03",
+            "name": "110室",
+            "status": 1,
+            "code": 111,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1c6495bb-8513-4bc1-ad42-b1f17ef3cd5a",
+            "name": "111室",
+            "status": 1,
+            "code": 112,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1cad23a9-a7cf-4b6c-bd83-83589715d5f3",
+            "name": "111室",
+            "status": 1,
+            "code": 112,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c7f3ea2c-03b3-40e2-9927-fa9e380f2d64",
+            "name": "112室",
+            "status": 1,
+            "code": 113,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c6e0ab80-6260-4c75-a322-48a6ddcfe9ee",
+            "name": "112室",
+            "status": 1,
+            "code": 113,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "fd68ae0e-622a-4888-9894-154edfc6119a",
+            "name": "113室",
+            "status": 1,
+            "code": 114,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f80c9995-f2f6-49a8-b4a9-5d58eb7158a2",
+            "name": "113室",
+            "status": 1,
+            "code": 114,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "8477a21f-7654-4b5a-86b5-431052850f0f",
+            "name": "114室",
+            "status": 1,
+            "code": 115,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "029d5eac-18d5-4f82-9447-1519872cfa33",
+            "name": "114室",
+            "status": 1,
+            "code": 115,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c660aad2-ad3e-460a-9e8d-43d543b4451d",
+            "name": "115室",
+            "status": 1,
+            "code": 116,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "4b60da61-f47d-4edb-9d91-4cfe86378368",
+            "name": "115室",
+            "status": 1,
+            "code": 116,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "15fa6bfb-8b71-45b8-9073-44ecd688cac2",
+            "name": "116室",
+            "status": 1,
+            "code": 117,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "f2882b59-29eb-46e5-a7c9-57ccd80bc80d",
+            "name": "116室",
+            "status": 1,
+            "code": 117,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "2b140ee8-e7c5-4cfc-a221-fcf3a5fbae07",
+            "name": "117室",
+            "status": 1,
+            "code": 118,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "430c8d5e-6442-4b8d-8a25-9fb37a685e66",
+            "name": "117室",
+            "status": 1,
+            "code": 118,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "a038ffbd-1d20-4087-a9ce-c2c0e368d90b",
+            "name": "118室",
+            "status": 1,
+            "code": 119,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "b6685bca-035c-4a39-8cdf-0052ed21ea03",
+            "name": "118室",
+            "status": 1,
+            "code": 119,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "4aea8f20-ac86-41cb-9349-833add431a2c",
+            "name": "119室",
+            "status": 1,
+            "code": 120,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "cd95ece0-d1b7-47d8-b6c9-4d528402c0f9",
+            "name": "119室",
+            "status": 1,
+            "code": 120,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "e1bac1da-48f8-4df5-b22c-397f74deb19f",
+            "name": "120室",
+            "status": 1,
+            "code": 121,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d3ec75ac-4721-45e2-8b0a-2f0e8f3ed941",
+            "name": "120室",
+            "status": 1,
+            "code": 121,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "8b6b06fc-129d-4804-b315-321118dfcb5c",
+            "name": "121室",
+            "status": 1,
+            "code": 122,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "692e635a-784d-4e5e-a6cb-e4620ba74a16",
+            "name": "121室",
+            "status": 2,
+            "code": 122,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "9ffebe64-b768-43ce-aa38-59fa4285553d",
+            "name": "122室",
+            "status": 1,
+            "code": 123,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "c55a1a5b-6719-419a-a13e-502c10fda325",
+            "name": "122室",
+            "status": 1,
+            "code": 123,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "1efe2d52-89e0-454e-ba28-4ba587bfaf54",
+            "name": "123室",
+            "status": 1,
+            "code": 124,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "98151d32-5252-43c3-94cf-dbf38cf8ac8a",
+            "name": "123室",
+            "status": 1,
+            "code": 124,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "935a903e-170c-4c6f-aa94-a5e2b2553453",
+            "name": "124室",
+            "status": 2,
+            "code": 125,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "2299e840-5aa2-4a73-91c2-c7e6ecf373b0",
+            "name": "124室",
+            "status": 1,
+            "code": 125,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d999d0b3-ed79-47c7-89d1-3b7d290652ec",
+            "name": "125室",
+            "status": 1,
+            "code": 126,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "d27d7ec5-0a50-4a2b-acd4-0301adbfcf4c",
+            "name": "125室",
+            "status": 1,
+            "code": 126,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "2d42d081-89dd-4db6-a9e2-536ec2c8b288",
+            "name": "126室",
+            "status": 1,
+            "code": 127,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "4feaab31-ef4a-44e2-8b70-20abf29459f3",
+            "name": "126室",
+            "status": 1,
+            "code": 127,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "fd49a1da-0d0c-4a66-ae9d-153d9769489f",
+            "name": "127室",
+            "status": 1,
+            "code": 128,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "b6c26661-5ca4-4bc4-beb6-036ee5a32c6b",
+            "name": "127室",
+            "status": 1,
+            "code": 128,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "4c98a49c-31c2-4c9f-b98f-28fb0bbd5f52",
+            "name": "128室",
+            "status": 1,
+            "code": 129,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "4bda3e9b-9f7e-4940-b394-3c86f12c5ecc",
+            "name": "128室",
+            "status": 1,
+            "code": 129,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "113e0396-dcf1-4f6e-987d-ecad265e4445",
+            "name": "129室",
+            "status": 1,
+            "code": 130,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
+        },
+        {
+            "r_id": "4054d9d2-692f-49a9-bb17-3d5b13d3c328",
+            "name": "129室",
+            "status": 1,
+            "code": 130,
+            "f_id": "171ed676-162e-4d43-87e3-02f6a6cb50fe"
         }
     ]
 }

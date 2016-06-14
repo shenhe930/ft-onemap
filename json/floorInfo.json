@@ -1,0 +1,67 @@
+{
+    "roomsmell": [
+        [
+            "988ebdfc-033f-4f9b-911d-49f18ee06343"
+        ],
+        [
+            "b217c7f7-42b8-4ad6-8571-4fe803ba7e6f"
+        ],
+        [
+            "988ebdfc-033f-4f9b-911d-49f18ee06343"
+        ],
+        [
+            "b65b5319-4aba-47f1-8d20-39b5741df384"
+        ]
+    ],
+    "floor": {
+        "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902",
+        "room_num": 6,
+        "row_num": 2,
+        "column_num": 3,
+        "name": "12",
+        "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
+    },
+    "roomList": [
+        {
+            "r_id": "b65b5319-4aba-47f1-8d20-39b5741df384",
+            "name": "几点结束",
+            "status": 2,
+            "code": 1,
+            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+        },
+        {
+            "r_id": "b217c7f7-42b8-4ad6-8571-4fe803ba7e6f",
+            "name": "vhh",
+            "status": 1,
+            "code": 2,
+            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+        },
+        {
+            "r_id": "988ebdfc-033f-4f9b-911d-49f18ee06343",
+            "name": "你的决定",
+            "status": 1,
+            "code": 3,
+            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+        },
+        {
+            "r_id": "8a9613da-05f1-43cc-b666-6eb8a157e046",
+            "status": 0,
+            "code": 4,
+            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+        },
+        {
+            "r_id": "08593c92-e77c-49ac-a987-231d2ee9a736",
+            "name": "男的女的",
+            "status": 1,
+            "code": 5,
+            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+        },
+        {
+            "r_id": "19efde40-acc0-43dc-a2c7-0a0c5b071310",
+            "name": "你想你是",
+            "status": 1,
+            "code": 6,
+            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+        }
+    ]
+}
