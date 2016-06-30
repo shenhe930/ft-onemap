@@ -2863,6 +2863,9 @@ body.tour-open .animated {
   width: 24px;
   height: 24px;
 }
+.left-panel .building-detail .floor-box .room-cube p {
+  margin: 16px auto;
+}
 .company-info img {
   width: 100%;
   height: 100%;

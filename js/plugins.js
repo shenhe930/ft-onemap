@@ -229,16 +229,47 @@
                     return companyInfoWindowHtml;
                 }
 
+                if(data.length===1){
+                    layer.open({
+                        type: 1,
+                        shift: 0,
+                        // shade:0,
+                        title: '公司信息',
+                        maxmin: true,
+                        shadeClose: true, //开启遮罩关闭
+                        content: singleCompanyInfo(data[0])
+                    });
+                }else if(data.length>1){
+                    var itemHtml='';
+                    $.each(data, function(i,v){
+                        itemHtml+='<a class="list-group-item" href="javascript:void(0)" data-index="'+i+'">'+v.name+'</a>';
+                    });
+                    var companyInfoWindowHtml=
+                        '<ul class="list-group">' +
+                        itemHtml+
+                        '</ul>';
 
-            layer.open({
-                type: 1,
-                shift: 0,
-                // shade:0,
-                title: '公司信息',
-                maxmin: true,
-                shadeClose: true, //开启遮罩关闭
-                content: singleCompanyInfo(data[0])
-            });
+                    layer.open({
+                        type: 1,
+                        shift: 0,
+                        title: '公司列表',
+                        shadeClose: true, //开启遮罩关闭
+                        content: companyInfoWindowHtml,
+                        success: function(layero){
+                            $(layero).find("a.list-group-item").click(function(){
+                                var index=$(this).data("index");
+                                layer.open({
+                                    type: 1,
+                                    shift: 0,
+                                    title: '公司列表',
+                                    shadeClose: true, //开启遮罩关闭
+                                    content: singleCompanyInfo(data[index])
+                                });
+                            });
+                        }
+                    });
+                }
+
         });
 
     }
@@ -1076,6 +1107,21 @@
             });
     }
 
+    /***
+     * 网格
+     */
+    function queryGrid(){
+        $.when(
+            $.ajax("json/grid.json"),
+            $.ajax("json/ZRGrid.json")
+        ).then(function(grid,ZRGrid){
+            if(grid[1]==="success")
+                addGrid(grid[0]);
+            if(ZRGrid[1]==="success")
+                addGrid(ZRGrid[0],true);
+        });
+    }
+
     /**
      * 实现父类的initialize方法
      * @ignore
@@ -1092,7 +1138,7 @@
         var toolbar=
             $('<div class="toolbar btn-group btn-group-sm">' +
                 '<button class="btn btn-white" id="info-tool" type="button"><i class="fa fa-info fa-lg"></i>&nbsp;&nbsp;信息</button>' +
-                '<button class="btn btn-white" id="grid-tool" type="button"><i class="fa fa-th fa-lg"></i>&nbsp;&nbsp;网格</button>' +
+                '<button class="btn btn-white active" id="grid-tool" type="button"><i class="fa fa-th fa-lg"></i>&nbsp;&nbsp;网格</button>' +
                 '<div class="btn-group btn-group-sm">' +
                 '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-line-chart fa-lg"></i>&nbsp;&nbsp;专题图 <span class="caret"></span></button>' +
                 '<ul class="dropdown-menu">' +
@@ -1228,8 +1274,9 @@
 
                 }
             });
-
+        queryGrid();
         queryGPS();
+
         gpsIntervalId=setInterval(queryGPS, 60*1000);
 
         toolbar.find('#info-tool').click(function () {
@@ -1240,15 +1287,7 @@
         toolbar.find('#grid-tool').click(function () {
             $(this).toggleClass('active');
             if($(this).hasClass("active")){
-                $.when(
-                    $.ajax("json/grid.json"),
-                    $.ajax("json/ZRGrid.json")
-                ).then(function(grid,ZRGrid){
-                    if(grid[1]==="success")
-                        addGrid(grid[0]);
-                    if(ZRGrid[1]==="success")
-                        addGrid(ZRGrid[0],true);
-                });
+                queryGrid();
             }else{
                 removeGrid();
             }
