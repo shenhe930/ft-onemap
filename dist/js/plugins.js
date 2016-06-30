@@ -109,131 +109,167 @@
                     else
                         return str;
                 }
-                var companyInfoWindowHtml=
-                    '<div class="company-info" >' +
+
+                function singleCompanyInfo(data){
+                    var companyInfoWindowHtml=
+                        '<div class="company-info" >' +
                         /*'<img class="company-img" style="height: 200px; width:600px;" src="' +"files/"+ nullToEmpty(data[0].url1) + '" onerror="this.src=\'img/wellcm3.png\'">' +*/
                         '<div id="carousel-company-info" class="carousel slide" data-ride="carousel">' +
-                            '<ol class="carousel-indicators">' +
-                                '<li data-target="#carousel-company-info" data-slide-to="0" class="active"></li>' +
-                                '<li data-target="#carousel-company-info" data-slide-to="1"></li>' +
-                                '<li data-target="#carousel-company-info" data-slide-to="2"></li>' +
-                            '</ol>' +
+                        '<ol class="carousel-indicators">' +
+                        '<li data-target="#carousel-company-info" data-slide-to="0" class="active"></li>' +
+                        '<li data-target="#carousel-company-info" data-slide-to="1"></li>' +
+                        '<li data-target="#carousel-company-info" data-slide-to="2"></li>' +
+                        '</ol>' +
                         '<div class="carousel-inner" style="height: 200px;width:360px">' +
-                            '<div class="item active">' +
-                                '<img src="files/' + nullToEmpty(data[0].url1) + '" onerror="this.src=\'img/wellcm3.png\'">' +
-                            '</div>' +
-                            '<div class="item">' +
-                                '<img src="files/' + nullToEmpty(data[0].url2) + '" onerror="this.src=\'img/wellcm3.png\'">' +
-                            '</div>' +
-                            '<div class="item">' +
-                                '<img src="files/' + nullToEmpty(data[0].url3) + '" onerror="this.src=\'img/wellcm3.png\'">' +
-                            '</div>' +
+                        '<div class="item active">' +
+                        '<img src="files/' + nullToEmpty(data.url1) + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                        '</div>' +
+                        '<div class="item">' +
+                        '<img src="files/' + nullToEmpty(data.url2) + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                        '</div>' +
+                        '<div class="item">' +
+                        '<img src="files/' + nullToEmpty(data.url3) + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                        '</div>' +
                         '</div>'+
                         '<a class="left carousel-control" href="#carousel-company-info" data-slide="prev">' +
-                            '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>'+
-                            '<span class="sr-only">Previous</span>'+
+                        '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>'+
+                        '<span class="sr-only">Previous</span>'+
                         '</a>'+
                         '<a class="right carousel-control" href="#carousel-company-info" data-slide="next">' +
-                            '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'+
-                            '<span class="sr-only">Next</span>'+
+                        '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'+
+                        '<span class="sr-only">Next</span>'+
                         '</a>'+
                         '</div>'+
                         '<div class="company-content">' +
-                            '<p class="text-muted"><strong>公司名称：</strong>' + nullToEmpty(data[0].cmp_name) + '</p>' +
-                            '<p class="text-muted"><strong>生产经营地：</strong>' + nullToEmpty(data[0].bg_adr) + '</p>' +
+                        '<p class="text-muted"><strong>公司名称：</strong>' + nullToEmpty(data.cmp_name) + '</p>' +
+                        '<p class="text-muted"><strong>生产经营地：</strong>' + nullToEmpty(data.bg_adr) + '</p>' +
                         '</div>'+
                         '<div class="tabs-container">' +
-                            '<ul class="nav nav-tabs">' +
-                                '<li class="active"><a data-toggle="tab" href="#company-tab1">基本信息</a></li>' +
-                                '<li class=""><a data-toggle="tab" href="#company-tab2" >企服信息</a></li>' +
-                                '<li class=""><a data-toggle="tab" href="#company-tab3" >党建信息</a></li>' +
-                            '</ul>' +
-                            '<div class="tab-content">' +
-                                '<div id="company-tab1" class="tab-pane active" style="height: 320px">' +
-                                    '<p class="text-muted"><strong>是否三证合一：</strong>' + nullToEmpty(data[0].ck_sanz) + '</p>' +
-                                    '<p class="text-muted"><strong>社会统一信用代码：</strong>' + nullToEmpty(data[0].uni_code) + '</p>' +
-                                    '<p class="text-muted"><strong>注册登记号：</strong>' + nullToEmpty(data[0].zhuce_nums)+ '</p>' +
-                                    '<p class="text-muted"><strong>企业名称：</strong>' + nullToEmpty(data[0].cmp_name) + '</p>' +
-                                    '<p class="text-muted"><strong>注册资金：</strong>' + nullToEmpty(data[0].zhuce_price) + '</p>' +
-                                    '<p class="text-muted"><strong>注册地址：</strong>' + nullToEmpty(data[0].zc_address) + '</p>' +
-                                    '<p class="text-muted"><strong>办公地址：</strong>' + nullToEmpty(data[0].bg_adr) + '</p>' +
-                                    '<p class="text-muted"><strong>组织结构代码证：</strong>' + nullToEmpty(data[0].zzjg_daima) + '</p>' +
-                                    '<p class="text-muted"><strong>税务登记号：</strong>' + nullToEmpty(data[0].swdj_nums) + '</p>' +
-                                    '<p class="text-muted"><strong>地税所在区县（所）：</strong>' + nullToEmpty(data[0].dishui_x) + '</p>' +
-                                    '<p class="text-muted"><strong>国税所在区县（所）：</strong>' + nullToEmpty(data[0].guishui_x) + '</p>' +
-                                    '<p class="text-muted"><strong>统计登记号：</strong>' + nullToEmpty(data[0].tjdj_nums) + '</p>' +
-                                    '<p class="text-muted"><strong>主营业务：</strong>' + nullToEmpty(data[0].zhuyingyw) + '</p>' +
-                                    '<p class="text-muted"><strong>企业性质：</strong>' + nullToEmpty(data[0].qiyexingzhi) + '</p>' +
-                                    '<p class="text-muted"><strong>联系人：</strong>' + nullToEmpty(data[0].lx_people) + '</p>' +
-                                    '<p class="text-muted"><strong>电话：</strong>' + nullToEmpty(data[0].phone_num) + '</p>' +
-                                    '<p class="text-muted"><strong>法人：</strong>' + nullToEmpty(data[0].faren_man) + '</p>' +
-                                    '<p class="text-muted"><strong>注册时期：</strong>' + nullToEmpty(data[0].zhuce_date) + '</p>' +
-                                    '<p class="text-muted"><strong>分支机构：</strong>' + nullToEmpty(data[0].fenzhi_jg) + '</p>' +
-                                    '<p class="text-muted"><strong>职工总数：</strong>' + nullToEmpty(data[0].zhigong_nums) + '</p>' +
-                                    '<p class="text-muted"><strong>其中：非京少数民族：</strong>' + nullToEmpty(data[0].fenjing_sm) + '</p>' +
-                                    '<p class="text-muted"><strong>民主党派：</strong>' + nullToEmpty(data[0].mngzhu_nums) + '</p>' +
-                                    '<p class="text-muted"><strong>本科以上：</strong>' + nullToEmpty(data[0].benke_nums) + '</p>' +
-                                    '<p class="text-muted"><strong>硕士：</strong>' + nullToEmpty(data[0].shuoshi_nums) + '</p>' +
-                                    '<p class="text-muted"><strong>博士：</strong>' + nullToEmpty(data[0].boshi_nums) + '</p>' +
-                                    '<p class="text-muted"><strong>归国留学人员：</strong>' + nullToEmpty(data[0].haigui_nums) + '</p>' +
-                                    '<p class="text-muted"><strong>高级职称：</strong>' + nullToEmpty(data[0].gaoji_nums) + '</p>' +
-                                    '<p class="text-muted"><strong>是否中关村高新：</strong>' + nullToEmpty(data[0].sfgx_zgc) + '</p>' +
-                                    '<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data[0].shunum1) + '</p>' +
-                                    '<p class="text-muted"><strong>是否国高新：</strong>' + nullToEmpty(data[0].sfgg_guo) + '</p>' +
-                                    '<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data[0].shunum2) + '</p>' +
-                                    '<p class="text-muted"><strong>备注：</strong>' + nullToEmpty(data[0].remarks) + '</p>' +
-                                    '<p class="text-muted"><strong>其他：</strong>' + nullToEmpty(data[0].othermk) + '</p>' +
-                                    '<p class="text-muted"><strong>是否同址办公：</strong>' + nullToEmpty(data[0].isbeyond) + '</p>' +
-                                '</div>' +
-                                '<div id="company-tab2" class="tab-pane" style="height: 320px">' +
-                                    '<p class="text-muted"><strong>是否建立院士工作站：</strong>' + nullToEmpty(data[0].isaca) + '</p>' +
-                                    '<p class="text-muted"><strong>进站院士：</strong>' + nullToEmpty(data[0].aca_name) + '</p>' +
-                                    '<p class="text-muted"><strong>合作项目：</strong>' + nullToEmpty(data[0].aca_project) + '</p>' +
-                                '</div>' +
-                                '<div id="company-tab3" class="tab-pane" style="height: 320px">' +
-                                    '<p class="text-muted"><strong>是否建立党组织：</strong>' +nullToEmpty(data[0].isp) + '</p>' +
-                                    '<p class="text-muted"><strong>组建年月：</strong>' + nullToEmpty(data[0].start_date_p) + '</p>' +
-                                    '<p class="text-muted"><strong>组织类型：</strong>' + nullToEmpty(data[0].type_p) + '</p>' +
-                                    '<p class="text-muted"><strong>隶属关系：</strong>' + nullToEmpty(data[0].sub) + '</p>' +
-                                    '<p class="text-muted"><strong>所属上级党组织名称：</strong>' + nullToEmpty(data[0].sub_sub) + '</p>' +
-                                    '<p class="text-muted"><strong>类别：</strong>' + nullToEmpty(data[0].category) + '</p>' +
-                                    '<p class="text-muted"><strong>是否楼宇企业：</strong>' + nullToEmpty(data[0].isbc) + '</p>' +
-                                    '<p class="text-muted"><strong>是否规模以上：</strong>' + nullToEmpty(data[0].isas) + '</p>' +
-                                    '<p class="text-muted"><strong>是否建立群团组织：</strong>' + nullToEmpty(data[0].isyoung) + '</p>' +
-                                    '<p class="text-muted"><strong>工会建立时间：</strong>' + nullToEmpty(data[0].start_date_lu) + '</p>' +
-                                    '<p class="text-muted"><strong>共青团建立时间：</strong>' + nullToEmpty(data[0].start_date_cyl) + '</p>' +
-                                    '<p class="text-muted"><strong>妇联建立时间：</strong>' + nullToEmpty(data[0].start_date_wf) + '</p>' +
-                                    '<p class="text-muted"><strong>是否配备党建工作指导员：</strong>' + nullToEmpty(data[0].ispc) + '</p>' +
-                                    '<p class="text-muted"><strong>党建工作指导员姓名：</strong>' + nullToEmpty(data[0].name_pc) + '</p>' +
-                                    '<p class="text-muted"><strong>党建工作指导员联系电话：</strong>' + nullToEmpty(data[0].phone_pc) + '</p>' +
-                                    '<p class="text-muted"><strong>员工数：</strong>' + nullToEmpty(data[0].staff) + '</p>' +
-                                    '<p class="text-muted"><strong>入党积极分子：</strong>' + nullToEmpty(data[0].active) + '</p>' +
-                                    '<p class="text-muted"><strong>党员数：</strong>' + nullToEmpty(data[0].member) + '</p>' +
-                                    '<p class="text-muted"><strong>关系在本企业人数：</strong>' + nullToEmpty(data[0].atcompany) + '</p>' +
-                                    '<p class="text-muted"><strong>关系在人才职介人数：</strong>' + nullToEmpty(data[0].atmarket) + '</p>' +
-                                    '<p class="text-muted"><strong>关系在原单位或街道社区人数：</strong>' + nullToEmpty(data[0].atstreet) + '</p>' +
-                                    '<p class="text-muted"><strong>临时组织关系人数：</strong>' + nullToEmpty(data[0].attemp) + '</p>' +
-                                    '<p class="text-muted"><strong>其他亮身份的人数：</strong>' + nullToEmpty(data[0].atother) + '</p>' +
-                                    '<p class="text-muted"><strong>法定代表人是否为党员：</strong>' + nullToEmpty(data[0].ismember_lr) + '</p>' +
-                                    '<p class="text-muted"><strong>党组织书记姓名：</strong>' + nullToEmpty(data[0].name_pbs) + '</p>' +
-                                    '<p class="text-muted"><strong>党组织数据在企业中的身份：</strong>' + nullToEmpty(data[0].identity_pbs) + '</p>' +
-                                    '<p class="text-muted"><strong>企业当组织书记联系电话：</strong>' + nullToEmpty(data[0].phone_pbs) + '</p>' +
-                                    '<p class="text-muted"><strong>企业党组织工作和活动经费保障情况：</strong>' + nullToEmpty(data[0].finance) + '</p>' +
-                                    '<p class="text-muted"><strong>企业党组织办公和活动场所保障情况：</strong>' + nullToEmpty(data[0].place) + '</p>' +
-                                '</div>' +
-                            '</div>' +
+                        '<ul class="nav nav-tabs">' +
+                        '<li class="active"><a data-toggle="tab" href="#company-tab1">基本信息</a></li>' +
+                        '<li class=""><a data-toggle="tab" href="#company-tab2" >企服信息</a></li>' +
+                        '<li class=""><a data-toggle="tab" href="#company-tab3" >党建信息</a></li>' +
+                        '</ul>' +
+                        '<div class="tab-content">' +
+                        '<div id="company-tab1" class="tab-pane active" style="height: 320px">' +
+                        '<p class="text-muted"><strong>是否三证合一：</strong>' + nullToEmpty(data.ck_sanz) + '</p>' +
+                        '<p class="text-muted"><strong>社会统一信用代码：</strong>' + nullToEmpty(data.uni_code) + '</p>' +
+                        '<p class="text-muted"><strong>注册登记号：</strong>' + nullToEmpty(data.zhuce_nums)+ '</p>' +
+                        '<p class="text-muted"><strong>企业名称：</strong>' + nullToEmpty(data.cmp_name) + '</p>' +
+                        '<p class="text-muted"><strong>注册资金：</strong>' + nullToEmpty(data.zhuce_price) + '</p>' +
+                        '<p class="text-muted"><strong>注册地址：</strong>' + nullToEmpty(data.zc_address) + '</p>' +
+                        '<p class="text-muted"><strong>办公地址：</strong>' + nullToEmpty(data.bg_adr) + '</p>' +
+                        '<p class="text-muted"><strong>组织结构代码证：</strong>' + nullToEmpty(data.zzjg_daima) + '</p>' +
+                        '<p class="text-muted"><strong>税务登记号：</strong>' + nullToEmpty(data.swdj_nums) + '</p>' +
+                        '<p class="text-muted"><strong>地税所在区县（所）：</strong>' + nullToEmpty(data.dishui_x) + '</p>' +
+                        '<p class="text-muted"><strong>国税所在区县（所）：</strong>' + nullToEmpty(data.guishui_x) + '</p>' +
+                        '<p class="text-muted"><strong>统计登记号：</strong>' + nullToEmpty(data.tjdj_nums) + '</p>' +
+                        '<p class="text-muted"><strong>主营业务：</strong>' + nullToEmpty(data.zhuyingyw) + '</p>' +
+                        '<p class="text-muted"><strong>企业性质：</strong>' + nullToEmpty(data.qiyexingzhi) + '</p>' +
+                        '<p class="text-muted"><strong>联系人：</strong>' + nullToEmpty(data.lx_people) + '</p>' +
+                        '<p class="text-muted"><strong>电话：</strong>' + nullToEmpty(data.phone_num) + '</p>' +
+                        '<p class="text-muted"><strong>法人：</strong>' + nullToEmpty(data.faren_man) + '</p>' +
+                        '<p class="text-muted"><strong>注册时期：</strong>' + nullToEmpty(data.zhuce_date) + '</p>' +
+                        '<p class="text-muted"><strong>分支机构：</strong>' + nullToEmpty(data.fenzhi_jg) + '</p>' +
+                        '<p class="text-muted"><strong>职工总数：</strong>' + nullToEmpty(data.zhigong_nums) + '</p>' +
+                        '<p class="text-muted"><strong>其中：非京少数民族：</strong>' + nullToEmpty(data.fenjing_sm) + '</p>' +
+                        '<p class="text-muted"><strong>民主党派：</strong>' + nullToEmpty(data.mngzhu_nums) + '</p>' +
+                        '<p class="text-muted"><strong>本科以上：</strong>' + nullToEmpty(data.benke_nums) + '</p>' +
+                        '<p class="text-muted"><strong>硕士：</strong>' + nullToEmpty(data.shuoshi_nums) + '</p>' +
+                        '<p class="text-muted"><strong>博士：</strong>' + nullToEmpty(data.boshi_nums) + '</p>' +
+                        '<p class="text-muted"><strong>归国留学人员：</strong>' + nullToEmpty(data.haigui_nums) + '</p>' +
+                        '<p class="text-muted"><strong>高级职称：</strong>' + nullToEmpty(data.gaoji_nums) + '</p>' +
+                        '<p class="text-muted"><strong>是否中关村高新：</strong>' + nullToEmpty(data.sfgx_zgc) + '</p>' +
+                        '<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data.shunum1) + '</p>' +
+                        '<p class="text-muted"><strong>是否国高新：</strong>' + nullToEmpty(data.sfgg_guo) + '</p>' +
+                        '<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data.shunum2) + '</p>' +
+                        '<p class="text-muted"><strong>备注：</strong>' + nullToEmpty(data.remarks) + '</p>' +
+                        '<p class="text-muted"><strong>其他：</strong>' + nullToEmpty(data.othermk) + '</p>' +
+                        '<p class="text-muted"><strong>是否同址办公：</strong>' + nullToEmpty(data.isbeyond) + '</p>' +
                         '</div>' +
-                    '</div>';
+                        '<div id="company-tab2" class="tab-pane" style="height: 320px">' +
+                        '<p class="text-muted"><strong>是否建立院士工作站：</strong>' + nullToEmpty(data.isaca) + '</p>' +
+                        '<p class="text-muted"><strong>进站院士：</strong>' + nullToEmpty(data.aca_name) + '</p>' +
+                        '<p class="text-muted"><strong>合作项目：</strong>' + nullToEmpty(data.aca_project) + '</p>' +
+                        '</div>' +
+                        '<div id="company-tab3" class="tab-pane" style="height: 320px">' +
+                        '<p class="text-muted"><strong>是否建立党组织：</strong>' +nullToEmpty(data.isp) + '</p>' +
+                        '<p class="text-muted"><strong>组建年月：</strong>' + nullToEmpty(data.start_date_p) + '</p>' +
+                        '<p class="text-muted"><strong>组织类型：</strong>' + nullToEmpty(data.type_p) + '</p>' +
+                        '<p class="text-muted"><strong>隶属关系：</strong>' + nullToEmpty(data.sub) + '</p>' +
+                        '<p class="text-muted"><strong>所属上级党组织名称：</strong>' + nullToEmpty(data.sub_sub) + '</p>' +
+                        '<p class="text-muted"><strong>类别：</strong>' + nullToEmpty(data.category) + '</p>' +
+                        '<p class="text-muted"><strong>是否楼宇企业：</strong>' + nullToEmpty(data.isbc) + '</p>' +
+                        '<p class="text-muted"><strong>是否规模以上：</strong>' + nullToEmpty(data.isas) + '</p>' +
+                        '<p class="text-muted"><strong>是否建立群团组织：</strong>' + nullToEmpty(data.isyoung) + '</p>' +
+                        '<p class="text-muted"><strong>工会建立时间：</strong>' + nullToEmpty(data.start_date_lu) + '</p>' +
+                        '<p class="text-muted"><strong>共青团建立时间：</strong>' + nullToEmpty(data.start_date_cyl) + '</p>' +
+                        '<p class="text-muted"><strong>妇联建立时间：</strong>' + nullToEmpty(data.start_date_wf) + '</p>' +
+                        '<p class="text-muted"><strong>是否配备党建工作指导员：</strong>' + nullToEmpty(data.ispc) + '</p>' +
+                        '<p class="text-muted"><strong>党建工作指导员姓名：</strong>' + nullToEmpty(data.name_pc) + '</p>' +
+                        '<p class="text-muted"><strong>党建工作指导员联系电话：</strong>' + nullToEmpty(data.phone_pc) + '</p>' +
+                        '<p class="text-muted"><strong>员工数：</strong>' + nullToEmpty(data.staff) + '</p>' +
+                        '<p class="text-muted"><strong>入党积极分子：</strong>' + nullToEmpty(data.active) + '</p>' +
+                        '<p class="text-muted"><strong>党员数：</strong>' + nullToEmpty(data.member) + '</p>' +
+                        '<p class="text-muted"><strong>关系在本企业人数：</strong>' + nullToEmpty(data.atcompany) + '</p>' +
+                        '<p class="text-muted"><strong>关系在人才职介人数：</strong>' + nullToEmpty(data.atmarket) + '</p>' +
+                        '<p class="text-muted"><strong>关系在原单位或街道社区人数：</strong>' + nullToEmpty(data.atstreet) + '</p>' +
+                        '<p class="text-muted"><strong>临时组织关系人数：</strong>' + nullToEmpty(data.attemp) + '</p>' +
+                        '<p class="text-muted"><strong>其他亮身份的人数：</strong>' + nullToEmpty(data.atother) + '</p>' +
+                        '<p class="text-muted"><strong>法定代表人是否为党员：</strong>' + nullToEmpty(data.ismember_lr) + '</p>' +
+                        '<p class="text-muted"><strong>党组织书记姓名：</strong>' + nullToEmpty(data.name_pbs) + '</p>' +
+                        '<p class="text-muted"><strong>党组织数据在企业中的身份：</strong>' + nullToEmpty(data.identity_pbs) + '</p>' +
+                        '<p class="text-muted"><strong>企业当组织书记联系电话：</strong>' + nullToEmpty(data.phone_pbs) + '</p>' +
+                        '<p class="text-muted"><strong>企业党组织工作和活动经费保障情况：</strong>' + nullToEmpty(data.finance) + '</p>' +
+                        '<p class="text-muted"><strong>企业党组织办公和活动场所保障情况：</strong>' + nullToEmpty(data.place) + '</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                    return companyInfoWindowHtml;
+                }
 
-            layer.open({
-                type: 1,
-                shift: 0,
-                // shade:0,
-                title: '公司信息',
-                maxmin: true,
-                shadeClose: true, //开启遮罩关闭
-                content: companyInfoWindowHtml
-            });
+                if(data.length===1){
+                    layer.open({
+                        type: 1,
+                        shift: 0,
+                        // shade:0,
+                        title: '公司信息',
+                        maxmin: true,
+                        shadeClose: true, //开启遮罩关闭
+                        content: singleCompanyInfo(data[0])
+                    });
+                }else if(data.length>1){
+                    var itemHtml='';
+                    $.each(data, function(i,v){
+                        itemHtml+='<a class="list-group-item" href="javascript:void(0)" data-index="'+i+'">'+v.name+'</a>';
+                    });
+                    var companyInfoWindowHtml=
+                        '<ul class="list-group">' +
+                        itemHtml+
+                        '</ul>';
+
+                    layer.open({
+                        type: 1,
+                        shift: 0,
+                        title: '公司列表',
+                        shadeClose: true, //开启遮罩关闭
+                        content: companyInfoWindowHtml,
+                        success: function(layero){
+                            $(layero).find("a.list-group-item").click(function(){
+                                var index=$(this).data("index");
+                                layer.open({
+                                    type: 1,
+                                    shift: 0,
+                                    title: '公司列表',
+                                    shadeClose: true, //开启遮罩关闭
+                                    content: singleCompanyInfo(data[index])
+                                });
+                            });
+                        }
+                    });
+                }
+
         });
 
     }
@@ -1071,6 +1107,21 @@
             });
     }
 
+    /***
+     * 网格
+     */
+    function queryGrid(){
+        $.when(
+            $.ajax("json/grid.json"),
+            $.ajax("json/ZRGrid.json")
+        ).then(function(grid,ZRGrid){
+            if(grid[1]==="success")
+                addGrid(grid[0]);
+            if(ZRGrid[1]==="success")
+                addGrid(ZRGrid[0],true);
+        });
+    }
+
     /**
      * 实现父类的initialize方法
      * @ignore
@@ -1087,7 +1138,7 @@
         var toolbar=
             $('<div class="toolbar btn-group btn-group-sm">' +
                 '<button class="btn btn-white" id="info-tool" type="button"><i class="fa fa-info fa-lg"></i>&nbsp;&nbsp;信息</button>' +
-                '<button class="btn btn-white" id="grid-tool" type="button"><i class="fa fa-th fa-lg"></i>&nbsp;&nbsp;网格</button>' +
+                '<button class="btn btn-white active" id="grid-tool" type="button"><i class="fa fa-th fa-lg"></i>&nbsp;&nbsp;网格</button>' +
                 '<div class="btn-group btn-group-sm">' +
                 '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-line-chart fa-lg"></i>&nbsp;&nbsp;专题图 <span class="caret"></span></button>' +
                 '<ul class="dropdown-menu">' +
@@ -1223,8 +1274,9 @@
 
                 }
             });
-
+        queryGrid();
         queryGPS();
+
         gpsIntervalId=setInterval(queryGPS, 60*1000);
 
         toolbar.find('#info-tool').click(function () {
@@ -1235,15 +1287,7 @@
         toolbar.find('#grid-tool').click(function () {
             $(this).toggleClass('active');
             if($(this).hasClass("active")){
-                $.when(
-                    $.ajax("json/grid.json"),
-                    $.ajax("json/ZRGrid.json")
-                ).then(function(grid,ZRGrid){
-                    if(grid[1]==="success")
-                        addGrid(grid[0]);
-                    if(ZRGrid[1]==="success")
-                        addGrid(ZRGrid[0],true);
-                });
+                queryGrid();
             }else{
                 removeGrid();
             }
