@@ -1,67 +1,91 @@
 {
     "roomsmell": [
         [
-            "988ebdfc-033f-4f9b-911d-49f18ee06343"
+            "6cbc0c7a-03bf-45c0-857f-03a8d461feb9"
         ],
         [
-            "b217c7f7-42b8-4ad6-8571-4fe803ba7e6f"
+            "6cbc0c7a-03bf-45c0-857f-03a8d461feb9"
         ],
         [
-            "988ebdfc-033f-4f9b-911d-49f18ee06343"
-        ],
-        [
-            "b65b5319-4aba-47f1-8d20-39b5741df384"
+            "af01654d-5b2a-4f81-805e-1e3d25436dd2"
         ]
     ],
     "floor": {
-        "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902",
-        "room_num": 6,
-        "row_num": 2,
+        "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f",
+        "room_num": 9,
+        "row_num": 3,
         "column_num": 3,
-        "name": "12",
+        "name": "11",
         "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77"
     },
     "roomList": [
         {
-            "r_id": "b65b5319-4aba-47f1-8d20-39b5741df384",
-            "name": "几点结束",
-            "status": 2,
+            "r_id": "4fc6a6f7-941a-4d33-8432-a56402f033c8",
+            "status": 0,
             "code": 1,
-            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f"
         },
         {
-            "r_id": "b217c7f7-42b8-4ad6-8571-4fe803ba7e6f",
-            "name": "vhh",
+            "r_id": "6cbc0c7a-03bf-45c0-857f-03a8d461feb9",
+            "name": "bxnz",
             "status": 1,
             "code": 2,
-            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f"
         },
         {
-            "r_id": "988ebdfc-033f-4f9b-911d-49f18ee06343",
-            "name": "你的决定",
-            "status": 1,
-            "code": 3,
-            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
-        },
-        {
-            "r_id": "8a9613da-05f1-43cc-b666-6eb8a157e046",
+            "r_id": "3c614be0-78cd-4ba7-9858-9581d8829572",
             "status": 0,
-            "code": 4,
-            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+            "code": 3,
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f"
         },
         {
-            "r_id": "08593c92-e77c-49ac-a987-231d2ee9a736",
-            "name": "男的女的",
+            "r_id": "75531674-3d3c-443d-84b5-b8acc8df2db2",
+            "name": "本身就是",
             "status": 1,
-            "code": 5,
-            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+            "code": 4,
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f"
         },
         {
-            "r_id": "19efde40-acc0-43dc-a2c7-0a0c5b071310",
-            "name": "你想你是",
+            "r_id": "21e8a3c2-7f4b-4bb8-9812-98d1082b3a63",
+            "status": 0,
+            "code": 5,
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f"
+        },
+        {
+            "r_id": "af01654d-5b2a-4f81-805e-1e3d25436dd2",
+            "name": "你手机上",
             "status": 1,
             "code": 6,
-            "f_id": "f1c23ec2-2ebe-4259-9cd6-5487f48ad902"
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f"
+        },
+        {
+            "r_id": "63e6b58b-9f28-4a11-b89d-0c36ee24d01e",
+            "status": 0,
+            "code": 7,
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f"
+        },
+        {
+            "r_id": "3cdb9fd7-3b68-4610-9d45-f15eb96ae30b",
+            "status": 1,
+            "code": 8,
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f"
+        },
+        {
+            "r_id": "18fbf1a4-aaec-4d0c-86bf-81963f83c188",
+            "status": 0,
+            "code": 9,
+            "f_id": "39ac4247-3792-4efb-8629-69ee10e89d1f"
         }
+    ],
+    "roomcolor": [
+        [
+            "6cbc0c7a-03bf-45c0-857f-03a8d461feb9"
+        ],
+        [
+            "6cbc0c7a-03bf-45c0-857f-03a8d461feb9"
+        ],
+        [
+            "af01654d-5b2a-4f81-805e-1e3d25436dd2"
+        ]
     ]
 }
