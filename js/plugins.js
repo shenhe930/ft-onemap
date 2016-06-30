@@ -58,12 +58,30 @@
         self.cardList.find(".card").addClass("hidden");
     }
 
-    function generateFloorDetailHtml(floor,rooms,roomsmell) {
+    function generateFloorDetailHtml(floor,rooms,roomsmell,roomcolor) {
+
+        function hasCompany(rid){
+            var result=false;
+            $.each(roomcolor, function(i, v) {
+                if(rid===v[0]){
+                    result=true;
+                    return false;
+                }
+
+            });
+
+            return result;
+        }
         var roomsHtml = "";
         if(rooms){
             $.each(rooms, function(i, room) {
                 var hasAddSmile=false;
-                roomsHtml += '<div class="room-cube text-center" data-rid="'+room.r_id+'"><p>' + (room.name!==undefined?room.name:"")+"</p>";
+                if(hasCompany(room.r_id)){
+                    roomsHtml += '<div class="room-cube text-center" data-rid="'+room.r_id+'"><p>' + (room.name!==undefined?room.name:"")+"</p>";
+                }else{
+                    roomsHtml += '<div class="room-cube gray text-center" data-rid="'+room.r_id+'"><p>' + (room.name!==undefined?room.name:"")+"</p>";
+                }
+
                 $.each(roomsmell, function(j, value) {
                     if(value[0]===room.r_id&&!hasAddSmile){
                         roomsHtml +='<img src="img/smile.gif">';
@@ -263,7 +281,14 @@
                                     shift: 0,
                                     title: '公司列表',
                                     shadeClose: true, //开启遮罩关闭
-                                    content: singleCompanyInfo(data[index])
+                                    content: singleCompanyInfo(data[index]),
+                                    success:function(layero){
+                                        $(layero).find(".carousel-inner img").click(function(){
+                                            layer.photos({
+                                                photos: '#carousel-company-info'
+                                            });
+                                        });
+                                    }
                                 });
                             });
                         }
@@ -362,7 +387,7 @@
                     '</ul>' +
                     '</nav>' +
                     '<div id="floor-detail">' +
-                    generateFloorDetailHtml(floors[0],data.roomList,data.roomsmell) +
+                    generateFloorDetailHtml(floors[0],data.roomList,data.roomsmell,data.roomcolor) +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -389,6 +414,18 @@
 
                        }
 
+                    });
+                });
+
+                self.buildingDetailCard.find(".carousel-inner img").click(function(){
+                    layer.photos({
+                        photos: '#carousel-building-info'
+                    });
+                });
+
+                self.buildingDetailCard.find("#floor-Info img").click(function(){
+                    layer.photos({
+                        photos: '#floor-Info'
                     });
                 });
 
@@ -419,7 +456,7 @@
                                 f_id:$(this).data("fid")
                             },
                             function(result){
-                                self.buildingDetailCard.find('#floor-detail').html(generateFloorDetailHtml(result.floor,result.roomList,result.roomsmell));
+                                self.buildingDetailCard.find('#floor-detail').html(generateFloorDetailHtml(result.floor,result.roomList,result.roomsmell,result.roomcolor));
                                 self.buildingDetailCard.find(".room-cube").click(function () {
                                     showCompanyInfoWindow($(this).data('rid'));
                                 });
@@ -1274,8 +1311,32 @@
 
                 }
             });
-        queryGrid();
-        queryGPS();
+
+        function getBoundary(){
+            var bdary = new BMap.Boundary();
+            bdary.get("北京市丰台区", function(rs){       //获取行政区域
+                var count = rs.boundaries.length; //行政区域的点有多少个
+                if (count === 0) {
+                    alert('未能获取当前输入行政区域');
+                    return ;
+                }
+                var pointArray = [];
+                for (var i = 0; i < count; i++) {
+                    var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 4, strokeColor: "#ff0000",fillOpacity:0.1}); //建立多边形覆盖物
+                    map.addOverlay(ply);  //添加覆盖物
+                    pointArray = pointArray.concat(ply.getPath());
+                }
+                map.setViewport(pointArray);    //调整视野
+
+                queryGrid();
+                queryGPS();
+            });
+        }
+
+        setTimeout(function(){
+            getBoundary();
+        }, 2000);
+
 
         gpsIntervalId=setInterval(queryGPS, 60*1000);
 

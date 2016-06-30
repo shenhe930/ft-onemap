@@ -2844,7 +2844,7 @@ body.tour-open .animated {
   float: left;
   position: relative;
   width: 60px;
-  height: 44px;
+  height: 60px;
   border: 1 px #f69428;
   background-color: #f8ac59;
   color: #fff;
@@ -2855,6 +2855,10 @@ body.tour-open .animated {
       -ms-user-select: none;
           user-select: none;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+.left-panel .building-detail .floor-box .room-cube.gray {
+  border: 1 px #a9a9a9;
+  background-color: #c2c2c2;
 }
 .left-panel .building-detail .floor-box .room-cube img {
   position: absolute;

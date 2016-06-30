@@ -260,7 +260,7 @@
                 float: left;
                 position: relative;
                 width: 60px;
-                height: 44px;
+                height: 60px;
                 border: 1 px darken(@yellow,10%);
                 background-color: @yellow;
                 color: #fff;
@@ -269,6 +269,10 @@
                 user-select: none;
                 .shadow-z-1();
 
+                &.gray{
+                    border: 1 px darken(@dark-gray,10%);
+                    background-color: @dark-gray;
+                }
                 img{
                     position: absolute;
                     left:20px;
@@ -282,6 +286,7 @@
                 }
 
             }
+
         }
     }
 
