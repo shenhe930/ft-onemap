@@ -174,7 +174,8 @@
                         '<p class="text-muted"><strong>社会统一信用代码：</strong>' + nullToEmpty(data.uni_code) + '</p>' +
                         '<p class="text-muted"><strong>注册登记号：</strong>' + nullToEmpty(data.zhuce_nums)+ '</p>' +
                         '<p class="text-muted"><strong>企业名称：</strong>' + nullToEmpty(data.cmp_name) + '</p>' +
-                        '<p class="text-muted"><strong>注册资金：</strong>' + nullToEmpty(data.zhuce_price) + '</p>' +
+                        '<p class="text-muted"><strong>注册资金：</strong>' + nullToEmpty(data.zhuce_price) + '&nbsp;万元</p>' +
+                        '<p class="text-muted"><strong>是否同址办公：</strong>' + nullToEmpty(data.isbeyond) + '</p>' +
                         '<p class="text-muted"><strong>注册地址：</strong>' + nullToEmpty(data.zc_address) + '</p>' +
                         '<p class="text-muted"><strong>办公地址：</strong>' + nullToEmpty(data.bg_adr) + '</p>' +
                         '<p class="text-muted"><strong>组织结构代码证：</strong>' + nullToEmpty(data.zzjg_daima) + '</p>' +
@@ -187,7 +188,7 @@
                         '<p class="text-muted"><strong>联系人：</strong>' + nullToEmpty(data.lx_people) + '</p>' +
                         '<p class="text-muted"><strong>电话：</strong>' + nullToEmpty(data.phone_num) + '</p>' +
                         '<p class="text-muted"><strong>法人：</strong>' + nullToEmpty(data.faren_man) + '</p>' +
-                        '<p class="text-muted"><strong>注册时期：</strong>' + nullToEmpty(data.zhuce_date) + '</p>' +
+                        '<p class="text-muted"><strong>注册日期：</strong>' + nullToEmpty(data.zhuce_date) + '</p>' +
                         '<p class="text-muted"><strong>分支机构：</strong>' + nullToEmpty(data.fenzhi_jg) + '</p>' +
                         '<p class="text-muted"><strong>职工总数：</strong>' + nullToEmpty(data.zhigong_nums) + '</p>' +
                         '<p class="text-muted"><strong>其中：非京少数民族：</strong>' + nullToEmpty(data.fenjing_sm) + '</p>' +
@@ -203,7 +204,6 @@
                         '<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data.shunum2) + '</p>' +
                         '<p class="text-muted"><strong>备注：</strong>' + nullToEmpty(data.remarks) + '</p>' +
                         '<p class="text-muted"><strong>其他：</strong>' + nullToEmpty(data.othermk) + '</p>' +
-                        '<p class="text-muted"><strong>是否同址办公：</strong>' + nullToEmpty(data.isbeyond) + '</p>' +
                         '</div>' +
                         '<div id="company-tab2" class="tab-pane" style="height: 320px">' +
                         '<p class="text-muted"><strong>是否建立院士工作站：</strong>' + nullToEmpty(data.isaca) + '</p>' +
@@ -260,7 +260,7 @@
                 }else if(data.length>1){
                     var itemHtml='';
                     $.each(data, function(i,v){
-                        itemHtml+='<a class="list-group-item" href="javascript:void(0)" data-index="'+i+'">'+v.name+'</a>';
+                        itemHtml+='<a class="list-group-item" href="javascript:void(0)" data-index="'+i+'">'+v.cmp_name+'</a>';
                     });
                     var companyInfoWindowHtml=
                         '<ul class="list-group">' +
@@ -285,7 +285,13 @@
                                     success:function(layero){
                                         $(layero).find(".carousel-inner img").click(function(){
                                             layer.photos({
-                                                photos: '#carousel-company-info'
+                                                photos: {
+                                                    "data": [   //相册包含的图片，数组格式
+                                                        {
+                                                            "src": $(this).attr("src"), //原图地址
+                                                        }
+                                                    ]
+                                                }
                                             });
                                         });
                                     }
@@ -325,6 +331,7 @@
                     '<div class="card-content">' +
                     '<ul class="nav nav-pills nav-justified">' +
                     '<li class="active" data-toggle="tab"><a href="#detail-building">楼宇信息</a></li>' +
+                    '<li class="" data-toggle="tab"><a href="#detail-buildingparty">楼宇党建</a></li>' +
                     '<li class="" data-toggle="tab"><a href="#detail-floor">楼层信息</a></li>' +
                     '</ul>' +
                     '<div class="tab-content">' +
@@ -417,17 +424,6 @@
                     });
                 });
 
-                self.buildingDetailCard.find(".carousel-inner img").click(function(){
-                    layer.photos({
-                        photos: '#carousel-building-info'
-                    });
-                });
-
-                self.buildingDetailCard.find("#floor-Info img").click(function(){
-                    layer.photos({
-                        photos: '#floor-Info'
-                    });
-                });
 
 
                 if(!notBack)
@@ -461,9 +457,34 @@
                                     showCompanyInfoWindow($(this).data('rid'));
                                 });
 
+                                self.buildingDetailCard.find("#floor-Info img").click(function(){
+                                    layer.photos({
+                                        //maxWidth : $(window).width(),
+                                        photos: {
+                                            "data": [   //相册包含的图片，数组格式
+                                                {
+                                                    "src": $(this).attr("src") //原图地址
+                                                }
+                                            ]
+                                        }
+                                    });
+                                });
                             });
                     }
 
+                });
+
+                self.buildingDetailCard.find(".carousel-inner img,#floor-Info img").click(function(){
+                    layer.photos({
+                        //maxWidth : $(window).width(),
+                        photos: {
+                            "data": [   //相册包含的图片，数组格式
+                                {
+                                    "src": $(this).attr("src") //原图地址
+                                }
+                            ]
+                        }
+                    });
                 });
 
                 self.buildingDetailCard.find(".room-cube").click(function () {
@@ -1139,6 +1160,20 @@
                         marker.rownum=v.rownum;
                         gps[v.u_id]=marker;
                         self._map.addOverlay(marker);
+
+                        var sContent =
+                            "<img style='float:left;margin:4px' id='imgDemo' src='photo/"+ v.userimg+"' onerror='this.src=\"img/i_demographics.png\" ' width='64' height='64' title='天安门'/>" +
+                            "<p style='margin:0;line-height:1.5;font-size:13px;'><strong>账号：</strong>"+ v.name+"<br><strong> 姓名：</strong>"+ v.markname+"<br><strong>管理网格：</strong><br><strong>电话：</strong>"+ v.phonenum+"</p>" +
+                            "</div>";
+                        var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+
+                        marker.addEventListener("click", function(){
+                            this.openInfoWindow(infoWindow);
+                            //图片加载完毕重绘infowindow
+                            document.getElementById('imgDemo').onload = function (){
+                                infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
+                            };
+                        });
                     }
                 });
             });
@@ -1174,7 +1209,7 @@
 
         var toolbar=
             $('<div class="toolbar btn-group btn-group-sm">' +
-                '<button class="btn btn-white" id="info-tool" type="button"><i class="fa fa-info fa-lg"></i>&nbsp;&nbsp;信息</button>' +
+                '<button class="btn btn-white active" id="info-tool" type="button"><i class="fa fa-info fa-lg"></i>&nbsp;&nbsp;信息</button>' +
                 '<button class="btn btn-white active" id="grid-tool" type="button"><i class="fa fa-th fa-lg"></i>&nbsp;&nbsp;网格</button>' +
                 '<div class="btn-group btn-group-sm">' +
                 '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-line-chart fa-lg"></i>&nbsp;&nbsp;专题图 <span class="caret"></span></button>' +
@@ -1189,7 +1224,7 @@
                     '<div class="btn-group btn-group-sm">'+
                         '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-file fa-lg"></i>&nbsp;&nbsp;企业分布 <span class="caret"></span></button>'+
                         '<ul class="dropdown-menu">'+
-                            '<li><a id="info-tool" type="button" href="./worldmap/extension/BMap/doc/BMap.html"><i class="fa fa-globe fa-lg"></i>&nbsp;&nbsp;迁徙图</a></li>'+
+                            '<li><a id="travel-tool" type="button" href="./worldmap/extension/BMap/doc/BMap.html"><i class="fa fa-globe fa-lg"></i>&nbsp;&nbsp;迁徙图</a></li>'+
                             '<li><a href="#"><i class="fa fa-fire fa-lg"></i>&nbsp;&nbsp;热力图</a></li>'+
                     '    </ul>'+
                      '</div>'+
@@ -1224,7 +1259,7 @@
                     v.setLabel(label);
                     self._map.addOverlay(v);
                 });
-                gpsIntervalId=setInterval(queryGPS, 60*1000);
+                gpsIntervalId=setInterval(queryGPS, 30*1000);
             }else{
                 $.each(gps,function(k,v){
                     self._map.removeOverlay(v);
@@ -1255,7 +1290,7 @@
                 }
 
                 var buildingInfo=self.buildingInfo=
-                    $('<div class="building-info-box card hidden animated flipInY " >' +
+                    $('<div class="building-info-box card animated flipInY " >' +
                         '<div class="company well well-sm">' +
                         '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;园区企业总数</h4>'+
                         '<p class="text-center text-danger">'+result.count+'</p>'+
@@ -1338,7 +1373,7 @@
         }, 2000);
 
 
-        gpsIntervalId=setInterval(queryGPS, 60*1000);
+        gpsIntervalId=setInterval(queryGPS, 30*1000);
 
         toolbar.find('#info-tool').click(function () {
             $(this).toggleClass('active');

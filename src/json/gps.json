@@ -1,10 +1,24 @@
 [
     {
         "rownum": 0,
+        "u_id": "1043d9e3067a41bf901e48d923b6298b",
+        "name": "usb",
+        "longitude": 116.346152,
+        "latitude": 40.005331,
+        "currentTime": "1467884106882",
+        "phonenum": "18723911401",
+        "userimg": "header.jpg",
+        "markname": "采集员"
+    },
+    {
+        "rownum": 0,
         "u_id": "03004465-c84d-416c-9845-33491dc7f5e0",
         "name": "test5",
-        "longitude": 116.286074,
-        "latitude": 39.836959,
-        "currentTime": "1464746946019"
+        "longitude": 116.346141,
+        "latitude": 40.005351,
+        "currentTime": "1467881867758",
+        "phonenum": "18723911401",
+        "userimg": "header.jpg",
+        "markname": "采集员"
     }
 ]
