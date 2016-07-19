@@ -318,12 +318,21 @@
             function (data) {
                 hideAllCard();
                 var floors = data.floorList;
-                var paginationHtml = "";
-                for (var i = 0; i < floors.length; i++) {
-                    if (i === 0)
-                        paginationHtml += '<li class="active"><a href="#" data-fid="'+floors[i].f_id+'">' + floors[i].name + '</a></li>';
-                    else
-                        paginationHtml += '<li><a href="#" data-fid="'+floors[i].f_id+'">' + floors[i].name + '</a></li>';
+
+                function generatePaginationHtml(floors){
+                    var paginationHtml = "";
+
+                    var width=32*floors.length;
+
+                    paginationHtml+='<ul id="pagination" class="pagination" style="width: '+width+'px" data-offset="0">';
+                    for (var i = 0; i < floors.length; i++) {
+                        if (i === 0)
+                            paginationHtml += '<li class="active"><a href="#" data-fid="'+floors[i].f_id+'">' + floors[i].name + '</a></li>';
+                        else
+                            paginationHtml += '<li><a href="#" data-fid="'+floors[i].f_id+'">' + floors[i].name + '</a></li>';
+                    }
+                    paginationHtml+='</ul>';
+                    return paginationHtml;
                 }
 
                 var buildingDetailCardHtml =
@@ -377,22 +386,26 @@
                     '</div>' +
                     '</div>' +
                     '<div role="tabpanel" class="tab-pane fade" id="detail-floor">' +
-                    '<nav>' +
+                    '<div class="floor-pagination">' +
+                        '<div class="inner">' +
+                            '<div class="floor-pagination-wrapper">' +
+                               /* '<ul id="pagination" class="pagination">' +
+                                    paginationHtml +
+                                '</ul>' +*/
+                                generatePaginationHtml(floors)+
+                            '</div>'+
+                        '</div>'+
 
-                    '<ul id="pagination" class="pagination">' +
-                    '<li id="pagination-prev">' +
-                    '<a href="#" >' +
-                    '<span>&laquo;</span>' +
-                    '</a>' +
-                    '</li>' +
-                    paginationHtml +
-                    '<li id="pagination-next">' +
-                    '<a href="#" >' +
-                    '<span>&raquo;</span>' +
-                    '</a>' +
-                    '</li>' +
-                    '</ul>' +
-                    '</nav>' +
+
+                        '<a href="#" class="prev" >' +
+                            '&laquo;' +
+                        '</a>' +
+
+                        '<a href="#" class="next">' +
+                            '&raquo;' +
+                        '</a>' +
+
+                    '</div>' +
                     '<div id="floor-detail">' +
                     generateFloorDetailHtml(floors[0],data.roomList,data.roomsmell,data.roomcolor) +
                     '</div>' +
@@ -402,12 +415,14 @@
 
                 self.buildingDetailCard.html(buildingDetailCardHtml);
 
+                var smellFloorDom=[];
                 self.buildingDetailCard.find("a[data-fid]").each(function(){
                     var $floor=$(this);
                     var fid=$floor.data("fid");
                     $.each(data.floorsmell, function(i, value) {
                        if(value[0]===fid){
-                           $floor.parents("nav").css("margin-top","30px");
+                           //$floor.parents("nav").css("margin-top","30px");
+
                            $floor.tooltip({
                                placement:"top",
                                template:'<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><img src="img/smile.gif"></div>',
@@ -419,11 +434,49 @@
                                $floor.tooltip("show");
                            });
 
+                           smellFloorDom.push($floor);
+
                        }
 
                     });
                 });
 
+                self.buildingDetailCard.find(".prev").click(function(){
+                    var $pagination= self.buildingDetailCard.find("#pagination");
+                    var offset=$pagination.data("offset");
+                    if(offset<0){
+                        $.each(smellFloorDom,function(i,floor){
+                            floor.tooltip("hide");
+                        });
+                        $pagination.animate({'margin-left':offset+32},600,"swing",function(){
+                            $.each(smellFloorDom,function(i,floor){
+                                floor.tooltip("show");
+                            });
+                        });
+                        $pagination.data("offset",offset+32);
+                    }
+
+                });
+
+                self.buildingDetailCard.find(".next").click(function(){
+                    var $pagination= self.buildingDetailCard.find("#pagination");
+                    var $wrapper= self.buildingDetailCard.find(".floor-pagination-wrapper");
+                    var offset=$pagination.data("offset");
+                    if(offset+$pagination.width()>$wrapper.width()){
+
+                        $.each(smellFloorDom,function(i,floor){
+                            floor.tooltip("hide");
+                        });
+
+                        $pagination.animate({'margin-left':offset-32},600,"swing",function(){
+                            $.each(smellFloorDom,function(i,floor){
+                                floor.tooltip("show");
+                            });
+                        });
+                        $pagination.data("offset",offset-32);
+                    }
+
+                });
 
 
                 if(!notBack)

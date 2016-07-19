@@ -195,32 +195,65 @@
                 }
 
             }
+            .floor-pagination{
+                width:372px;
+                overflow: hidden;
+                position:relative;
 
-            .pagination{
-                margin: 6px 2px;
-                a{
-                    border:0;
-                    &:hover {
+                .inner{
+                    padding: 0 32px;
+                }
+
+                .floor-pagination-wrapper{
+                    overflow: hidden;
+                }
+
+                .prev,
+                .next{
+                    display: block;
+                    width: 32px;
+                    height: 32px;
+                    font-size: 30px;
+                    font-weight: 600;
+                    text-align: center;
+                    background: #fff;
+                    position: absolute;
+                    top:0;
+                }
+
+                .prev{left: 0;}
+                .next{right: 0;}
+
+                .pagination{
+                    width: 1000px;
+                    margin: 6px 2px;
+                    a{
+                        border:0;
+                        &:hover {
+                            color: @navy;
+                            background: none;
+                        }
+                        &:focus {
+                            background: none;
+                        }
+                    }
+                    li {
+                        width: 36px;
+                        display:inline-block;
+                        &:first-child {
+                            float: left;
+                        }
+                        &:last-child {
+                            float: right;
+                        }
+                    }
+                    li.active>a{
                         color: @navy;
                         background: none;
                     }
-                    &:focus {
-                        background: none;
-                    }
-                }
-                li {
-                    &:first-child {
-                        float: left;
-                    }
-                    &:last-child {
-                        float: right;
-                    }
-                }
-                li.active>a{
-                    color: @navy;
-                    background: none;
                 }
             }
+
 
             #gridTitle{
 

@@ -28,6 +28,60 @@
             "url": "IMG_20160318_230603.jpg"
         },
         {
+            "f_id": "ed02dad1-2400-4f32-9e0e-3f23bf8986b8",
+            "room_num": 6,
+            "row_num": 2,
+            "column_num": 3,
+            "name": "3",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
+        },
+        {
+            "f_id": "ed02dad1-2400-4f32-9e0e-3f23bf8986b8",
+            "room_num": 6,
+            "row_num": 2,
+            "column_num": 3,
+            "name": "4",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
+        },
+        {
+            "f_id": "ed02dad1-2400-4f32-9e0e-3f23bf8986b8",
+            "room_num": 6,
+            "row_num": 2,
+            "column_num": 3,
+            "name": "5",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
+        },
+        {
+            "f_id": "ed02dad1-2400-4f32-9e0e-3f23bf8986b8",
+            "room_num": 6,
+            "row_num": 2,
+            "column_num": 3,
+            "name": "6",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
+        },
+        {
+            "f_id": "ed02dad1-2400-4f32-9e0e-3f23bf8986b8",
+            "room_num": 6,
+            "row_num": 2,
+            "column_num": 3,
+            "name": "7",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
+        },
+        {
+            "f_id": "ed02dad1-2400-4f32-9e0e-3f23bf8986b8",
+            "room_num": 6,
+            "row_num": 2,
+            "column_num": 3,
+            "name": "8",
+            "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
+            "url": "IMG_20160318_230603.jpg"
+        },
+        {
             "f_id": "d9713411-10c0-4bf4-93db-6f264b11e61d",
             "room_num": 6,
             "row_num": 3,
@@ -69,7 +123,7 @@
         }
     ],
     "roomsmell": [],
-    "floorsmell": [],
+    "floorsmell": [["ed02dad1-2400-4f32-9e0e-3f23bf8986b8"],["037bf0a0-afb0-4c18-86aa-a89057d44277"]],
     "building": {
         "b_id": "a14b0b03-1690-4df5-abbd-56dfc42d3a77",
         "name": "崇新大厦3",

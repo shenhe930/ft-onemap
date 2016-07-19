@@ -2791,26 +2791,65 @@ body.tour-open .animated {
   background-color: #1ab394;
   color: #fff;
 }
-.left-panel .card .card-content .pagination {
-  margin: 6px 2px;
+.left-panel .card .card-content .floor-pagination {
+  width: 372px;
+  position: relative;
+  top: 24px;
 }
-.left-panel .card .card-content .pagination a {
+.left-panel .card .card-content .floor-pagination .inner {
+  padding: 0 24px;
+}
+.left-panel .card .card-content .floor-pagination .floor-pagination-wrapper {
+  overflow-x: hidden;
+}
+.left-panel .card .card-content .floor-pagination .prev,
+.left-panel .card .card-content .floor-pagination .next {
+  display: block;
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  color: #676a6c;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  text-decoration: none;
+}
+.left-panel .card .card-content .floor-pagination .prev:hover,
+.left-panel .card .card-content .floor-pagination .next:hover {
+  color: #1ab394;
+}
+.left-panel .card .card-content .floor-pagination .prev {
+  left: 0;
+}
+.left-panel .card .card-content .floor-pagination .next {
+  right: 0;
+}
+.left-panel .card .card-content .floor-pagination .pagination {
+  margin: 6px 0;
+}
+.left-panel .card .card-content .floor-pagination .pagination a {
   border: 0;
 }
-.left-panel .card .card-content .pagination a:hover {
+.left-panel .card .card-content .floor-pagination .pagination a:hover {
   color: #1ab394;
   background: none;
 }
-.left-panel .card .card-content .pagination a:focus {
+.left-panel .card .card-content .floor-pagination .pagination a:focus {
   background: none;
 }
-.left-panel .card .card-content .pagination li:first-child {
+.left-panel .card .card-content .floor-pagination .pagination li {
+  width: 32px;
+  display: inline-block;
+}
+.left-panel .card .card-content .floor-pagination .pagination li:first-child {
   float: left;
 }
-.left-panel .card .card-content .pagination li:last-child {
+.left-panel .card .card-content .floor-pagination .pagination li:last-child {
   float: right;
 }
-.left-panel .card .card-content .pagination li.active > a {
+.left-panel .card .card-content .floor-pagination .pagination li.active > a {
   color: #1ab394;
   background: none;
 }
@@ -2819,7 +2858,11 @@ body.tour-open .animated {
   min-height: 140px;
 }
 .left-panel .building-detail {
+  overflow: hidden;
   height: 562px;
+}
+.left-panel .building-detail #floor-detail {
+  margin-top: 18px;
 }
 .left-panel .building-detail img {
   height: 200px;
@@ -2836,7 +2879,7 @@ body.tour-open .animated {
 }
 .left-panel .building-detail .floor-box {
   padding: 6px;
-  overflow-y: auto;
+  overflow-x: auto;
 }
 .left-panel .building-detail .floor-box .room-cube {
   margin: 0 6px 6px 0;
