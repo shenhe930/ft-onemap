@@ -131,7 +131,7 @@
                 function singleCompanyInfo(data){
                     var companyInfoWindowHtml=
                         '<div class="company-info" >' +
-                        /*'<img class="company-img" style="height: 200px; width:600px;" src="' +"files/"+ nullToEmpty(data[0].url1) + '" onerror="this.src=\'img/wellcm3.png\'">' +*/
+                            /*'<img class="company-img" style="height: 200px; width:600px;" src="' +"files/"+ nullToEmpty(data[0].url1) + '" onerror="this.src=\'img/wellcm3.png\'">' +*/
                         '<div id="carousel-company-info" class="carousel slide" data-ride="carousel">' +
                         '<ol class="carousel-indicators">' +
                         '<li data-target="#carousel-company-info" data-slide-to="0" class="active"></li>' +
@@ -170,20 +170,34 @@
                         '</ul>' +
                         '<div class="tab-content">' +
                         '<div id="company-tab1" class="tab-pane active" style="height: 320px">' +
-                        '<p class="text-muted"><strong>是否三证合一：</strong>' + nullToEmpty(data.ck_sanz) + '</p>' +
-                        '<p class="text-muted"><strong>社会统一信用代码：</strong>' + nullToEmpty(data.uni_code) + '</p>' +
-                        '<p class="text-muted"><strong>注册登记号：</strong>' + nullToEmpty(data.zhuce_nums)+ '</p>' +
-                        '<p class="text-muted"><strong>企业名称：</strong>' + nullToEmpty(data.cmp_name) + '</p>' +
+                        '<p class="text-muted"><strong>是否三证合一：</strong>' + nullToEmpty(data.ck_sanz) + '</p>' ;
+                    if(nullToEmpty(data.uni_code)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>社会统一信用代码：</strong>' + nullToEmpty(data.uni_code) + '</p>';
+                    }
+                    if(nullToEmpty(data.zhuce_nums)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>注册登记号：</strong>' + nullToEmpty(data.zhuce_nums)+ '</p>';
+                    }
+                    companyInfoWindowHtml+='<p class="text-muted"><strong>企业名称：</strong>' + nullToEmpty(data.cmp_name) + '</p>' +
                         '<p class="text-muted"><strong>注册资金：</strong>' + nullToEmpty(data.zhuce_price) + '&nbsp;万元</p>' +
                         '<p class="text-muted"><strong>是否同址办公：</strong>' + nullToEmpty(data.isbeyond) + '</p>' +
                         '<p class="text-muted"><strong>注册地址：</strong>' + nullToEmpty(data.zc_address) + '</p>' +
-                        '<p class="text-muted"><strong>办公地址：</strong>' + nullToEmpty(data.bg_adr) + '</p>' +
-                        '<p class="text-muted"><strong>组织结构代码证：</strong>' + nullToEmpty(data.zzjg_daima) + '</p>' +
-                        '<p class="text-muted"><strong>税务登记号：</strong>' + nullToEmpty(data.swdj_nums) + '</p>' +
-                        '<p class="text-muted"><strong>地税所在区县（所）：</strong>' + nullToEmpty(data.dishui_x) + '</p>' +
-                        '<p class="text-muted"><strong>国税所在区县（所）：</strong>' + nullToEmpty(data.guishui_x) + '</p>' +
-                        '<p class="text-muted"><strong>统计登记号：</strong>' + nullToEmpty(data.tjdj_nums) + '</p>' +
-                        '<p class="text-muted"><strong>主营业务：</strong>' + nullToEmpty(data.zhuyingyw) + '</p>' +
+                        '<p class="text-muted"><strong>办公地址：</strong>' + nullToEmpty(data.bg_adr) + '</p>';
+                    if(nullToEmpty(data.zzjg_daima)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>组织机构代码证：</strong>' + nullToEmpty(data.zzjg_daima) + '</p>';
+                    }
+                    if(nullToEmpty(data.swdj_nums)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>税务登记号：</strong>' + nullToEmpty(data.swdj_nums)+'</p>';
+                    }
+                    if(nullToEmpty(data.dishui_x)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>地税所在区县（所）：</strong>' + nullToEmpty(data.dishui_x)+'</p>';
+                    }
+                    if(nullToEmpty(data.guishui_x)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>国税所在区县（所）：</strong>' + nullToEmpty(data.guishui_x) + '</p>';
+                    }
+                    if(nullToEmpty(data.tjdj_nums)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>统计登记号：</strong>' + nullToEmpty(data.tjdj_nums) + '</p>';
+                    }
+                    companyInfoWindowHtml+='<p class="text-muted"><strong>主营业务：</strong>' + nullToEmpty(data.zhuyingyw) + '</p>' +
                         '<p class="text-muted"><strong>企业性质：</strong>' + nullToEmpty(data.qiyexingzhi) + '</p>' +
                         '<p class="text-muted"><strong>联系人：</strong>' + nullToEmpty(data.lx_people) + '</p>' +
                         '<p class="text-muted"><strong>电话：</strong>' + nullToEmpty(data.phone_num) + '</p>' +
@@ -191,59 +205,129 @@
                         '<p class="text-muted"><strong>注册日期：</strong>' + nullToEmpty(data.zhuce_date) + '</p>' +
                         '<p class="text-muted"><strong>分支机构：</strong>' + nullToEmpty(data.fenzhi_jg) + '</p>' +
                         '<p class="text-muted"><strong>职工总数：</strong>' + nullToEmpty(data.zhigong_nums) + '</p>' +
-                        '<p class="text-muted"><strong>其中：非京少数民族：</strong>' + nullToEmpty(data.fenjing_sm) + '</p>' +
+                        '<p class="text-muted"><strong>其中：非京人数：</strong>' + nullToEmpty(data.fenjing_sm) + '</p>' +
+                        '<p class="text-muted"><strong>其中：少数民族人数：</strong>' + nullToEmpty(data.name) + '</p>' +
                         '<p class="text-muted"><strong>民主党派：</strong>' + nullToEmpty(data.mngzhu_nums) + '</p>' +
                         '<p class="text-muted"><strong>本科以上：</strong>' + nullToEmpty(data.benke_nums) + '</p>' +
                         '<p class="text-muted"><strong>硕士：</strong>' + nullToEmpty(data.shuoshi_nums) + '</p>' +
                         '<p class="text-muted"><strong>博士：</strong>' + nullToEmpty(data.boshi_nums) + '</p>' +
                         '<p class="text-muted"><strong>归国留学人员：</strong>' + nullToEmpty(data.haigui_nums) + '</p>' +
                         '<p class="text-muted"><strong>高级职称：</strong>' + nullToEmpty(data.gaoji_nums) + '</p>' +
-                        '<p class="text-muted"><strong>是否中关村高新：</strong>' + nullToEmpty(data.sfgx_zgc) + '</p>' +
-                        '<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data.shunum1) + '</p>' +
-                        '<p class="text-muted"><strong>是否国高新：</strong>' + nullToEmpty(data.sfgg_guo) + '</p>' +
-                        '<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data.shunum2) + '</p>' +
-                        '<p class="text-muted"><strong>备注：</strong>' + nullToEmpty(data.remarks) + '</p>' +
-                        '<p class="text-muted"><strong>其他：</strong>' + nullToEmpty(data.othermk) + '</p>' +
+                        '<p class="text-muted"><strong>是否中关村高新：</strong>' + nullToEmpty(data.sfgx_zgc) + '</p>';
+                    if(nullToEmpty(data.shunum1)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data.shunum1) + '</p>';
+                    }
+                    companyInfoWindowHtml+='<p class="text-muted"><strong>是否国高新：</strong>' + nullToEmpty(data.sfgg_guo) + '</p>';
+                    if(nullToEmpty(data.shunum2)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data.shunum2) + '</p>';
+                    }
+                    if(nullToEmpty(data.remarks)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>备注：</strong>' + nullToEmpty(data.remarks) + '</p>';
+                    }
+                    companyInfoWindowHtml+='<p class="text-muted"><strong>公司简介：</strong>' + nullToEmpty(data.othermk) + '</p>' +
                         '</div>' +
                         '<div id="company-tab2" class="tab-pane" style="height: 320px">' +
-                        '<p class="text-muted"><strong>是否建立院士工作站：</strong>' + nullToEmpty(data.isaca) + '</p>' +
-                        '<p class="text-muted"><strong>进站院士：</strong>' + nullToEmpty(data.aca_name) + '</p>' +
-                        '<p class="text-muted"><strong>合作项目：</strong>' + nullToEmpty(data.aca_project) + '</p>' +
-                        '</div>' +
+                        '<p class="text-muted"><strong>是否建立院士工作站：</strong>' + nullToEmpty(data.isaca) + '</p>';
+                    if(nullToEmpty(data.aca_name)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>进站院士：</strong>' + nullToEmpty(data.aca_name) + '</p>';
+                    }
+                    if(nullToEmpty(data.aca_project)===""){}else{
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>合作项目：</strong>' + nullToEmpty(data.aca_project) + '</p>';
+                    }
+                    companyInfoWindowHtml+='</div>' +
                         '<div id="company-tab3" class="tab-pane" style="height: 320px">' +
-                        '<p class="text-muted"><strong>是否建立党组织：</strong>' +nullToEmpty(data.isp) + '</p>' +
-                        '<p class="text-muted"><strong>组建年月：</strong>' + nullToEmpty(data.start_date_p) + '</p>' +
-                        '<p class="text-muted"><strong>组织类型：</strong>' + nullToEmpty(data.type_p) + '</p>' +
-                        '<p class="text-muted"><strong>隶属关系：</strong>' + nullToEmpty(data.sub) + '</p>' +
-                        '<p class="text-muted"><strong>所属上级党组织名称：</strong>' + nullToEmpty(data.sub_sub) + '</p>' +
-                        '<p class="text-muted"><strong>类别：</strong>' + nullToEmpty(data.category) + '</p>' +
-                        '<p class="text-muted"><strong>是否楼宇企业：</strong>' + nullToEmpty(data.isbc) + '</p>' +
-                        '<p class="text-muted"><strong>是否规模以上：</strong>' + nullToEmpty(data.isas) + '</p>' +
-                        '<p class="text-muted"><strong>是否建立群团组织：</strong>' + nullToEmpty(data.isyoung) + '</p>' +
-                        '<p class="text-muted"><strong>工会建立时间：</strong>' + nullToEmpty(data.start_date_lu) + '</p>' +
-                        '<p class="text-muted"><strong>共青团建立时间：</strong>' + nullToEmpty(data.start_date_cyl) + '</p>' +
-                        '<p class="text-muted"><strong>妇联建立时间：</strong>' + nullToEmpty(data.start_date_wf) + '</p>' +
-                        '<p class="text-muted"><strong>是否配备党建工作指导员：</strong>' + nullToEmpty(data.ispc) + '</p>' +
-                        '<p class="text-muted"><strong>党建工作指导员姓名：</strong>' + nullToEmpty(data.name_pc) + '</p>' +
-                        '<p class="text-muted"><strong>党建工作指导员联系电话：</strong>' + nullToEmpty(data.phone_pc) + '</p>' +
-                        '<p class="text-muted"><strong>员工数：</strong>' + nullToEmpty(data.staff) + '</p>' +
-                        '<p class="text-muted"><strong>入党积极分子：</strong>' + nullToEmpty(data.active) + '</p>' +
-                        '<p class="text-muted"><strong>党员数：</strong>' + nullToEmpty(data.member) + '</p>' +
-                        '<p class="text-muted"><strong>关系在本企业人数：</strong>' + nullToEmpty(data.atcompany) + '</p>' +
-                        '<p class="text-muted"><strong>关系在人才职介人数：</strong>' + nullToEmpty(data.atmarket) + '</p>' +
-                        '<p class="text-muted"><strong>关系在原单位或街道社区人数：</strong>' + nullToEmpty(data.atstreet) + '</p>' +
-                        '<p class="text-muted"><strong>临时组织关系人数：</strong>' + nullToEmpty(data.attemp) + '</p>' +
-                        '<p class="text-muted"><strong>其他亮身份的人数：</strong>' + nullToEmpty(data.atother) + '</p>' +
-                        '<p class="text-muted"><strong>法定代表人是否为党员：</strong>' + nullToEmpty(data.ismember_lr) + '</p>' +
-                        '<p class="text-muted"><strong>党组织书记姓名：</strong>' + nullToEmpty(data.name_pbs) + '</p>' +
-                        '<p class="text-muted"><strong>党组织数据在企业中的身份：</strong>' + nullToEmpty(data.identity_pbs) + '</p>' +
-                        '<p class="text-muted"><strong>企业当组织书记联系电话：</strong>' + nullToEmpty(data.phone_pbs) + '</p>' +
-                        '<p class="text-muted"><strong>企业党组织工作和活动经费保障情况：</strong>' + nullToEmpty(data.finance) + '</p>' +
-                        '<p class="text-muted"><strong>企业党组织办公和活动场所保障情况：</strong>' + nullToEmpty(data.place) + '</p>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>';
+                        '<p class="text-muted"><strong>是否建立党组织：</strong>' +nullToEmpty(data.isp) + '</p>';
+                    if(nullToEmpty(data.isp)==="否"){}else{
+                        if(nullToEmpty(data.start_date_p)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>组建年月：</strong>' + nullToEmpty(data.start_date_p) + '</p>';
+                        }
+                        if(nullToEmpty(data.type_p)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>组织类型：</strong>' + nullToEmpty(data.type_p) + '</p>';
+                        }
+                        if(nullToEmpty(data.sub)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>隶属关系：</strong>' + nullToEmpty(data.sub) + '</p>';
+                        }
+                        if(nullToEmpty(data.sub_sub)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>所属上级党组织名称：</strong>' + nullToEmpty(data.sub_sub) + '</p>';
+                        }
+                        if(nullToEmpty(data.category)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>类别：</strong>' + nullToEmpty(data.category) + '</p>';
+                        }
+                        if(nullToEmpty(data.isbc)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>是否楼宇企业：</strong>' + nullToEmpty(data.isbc) + '</p>';
+                        }
+                        if(nullToEmpty(data.isas)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>是否规模以上：</strong>' + nullToEmpty(data.isas) + '</p>';
+                        }
+                        if(nullToEmpty(data.isyoung)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>是否建立群团组织：</strong>' + nullToEmpty(data.isyoung) + '</p>';
+                        }
+                        if(nullToEmpty(data.start_date_lu)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>工会建立时间：</strong>' + nullToEmpty(data.start_date_lu) + '</p>';
+                        }
+                        if(nullToEmpty(data.start_date_cyl)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>共青团建立时间：</strong>' + nullToEmpty(data.start_date_cyl) + '</p>';
+                        }
+                        if(nullToEmpty(data.start_date_wf)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>妇联建立时间：</strong>' + nullToEmpty(data.start_date_wf) + '</p>';
+                        }
+                        if(nullToEmpty(data.ispc)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>是否配备党建工作指导员：</strong>' + nullToEmpty(data.ispc) + '</p>';
+                        }
+                        if(nullToEmpty(data.name_pc)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>党建工作指导员姓名：</strong>' + nullToEmpty(data.name_pc) + '</p>';
+                        }
+                        if(nullToEmpty(data.phone_pc)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>党建工作指导员联系电话：</strong>' + nullToEmpty(data.phone_pc) + '</p>';
+                        }
+                        if(nullToEmpty(data.staff)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>员工数：</strong>' + nullToEmpty(data.staff) + '</p>';
+                        }
+                        if(nullToEmpty(data.active)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>入党积极分子：</strong>' + nullToEmpty(data.active) + '</p>';
+                        }
+                        if(nullToEmpty(data.member)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>党员数：</strong>' + nullToEmpty(data.member) + '</p>';
+                        }
+                        if(nullToEmpty(data.atcompany)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>关系在本企业人数：</strong>' + nullToEmpty(data.atcompany) + '</p>';
+                        }
+                        if(nullToEmpty(data.atmarket)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>关系在人才职介人数：</strong>' + nullToEmpty(data.atmarket) + '</p>';
+                        }
+                        if(nullToEmpty(data.atstreet)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>关系在原单位或街道社区人数：</strong>' + nullToEmpty(data.atstreet) + '</p>';
+                        }
+                        if(nullToEmpty(data.attemp)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>临时组织关系人数：</strong>' + nullToEmpty(data.attemp) + '</p>';
+                        }
+                        if(nullToEmpty(data.atother)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>其他亮身份的人数：</strong>' + nullToEmpty(data.atother) + '</p>';
+                        }
+                        if(nullToEmpty(data.ismember_lr)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>法定代表人是否为党员：</strong>' + nullToEmpty(data.ismember_lr) + '</p>';
+                        }
+                        if(nullToEmpty(data.name_pbs)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>党组织书记姓名：</strong>' + nullToEmpty(data.name_pbs) + '</p>';
+                        }
+                        if(nullToEmpty(data.identity_pbs)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>党组织数据在企业中的身份：</strong>' + nullToEmpty(data.identity_pbs) + '</p>';
+                        }
+                        if(nullToEmpty(data.phone_pbs)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>企业当组织书记联系电话：</strong>' + nullToEmpty(data.phone_pbs) + '</p>';
+                        }
+                        if(nullToEmpty(data.finance)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>企业党组织工作和活动经费保障情况：</strong>' + nullToEmpty(data.finance) + '</p>';
+                        }
+                        if(nullToEmpty(data.place)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>企业党组织办公和活动场所保障情况：</strong>' + nullToEmpty(data.place) + '</p>';
+                        }
+                        companyInfoWindowHtml+='</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+
                     return companyInfoWindowHtml;
                 }
 
@@ -631,6 +715,27 @@
 
         var gridImg=self.gridSearchResultCard.find("#gridImg");
         gridImg.attr("src","files/"+result.grid.imgurl);
+        gridImg.click(function(){
+            layer.photos({
+                photos: {
+                    "data": [   //相册包含的图片，数组格式
+                        {
+                            "src": $(this).attr("src"), //原图地址
+                        }
+                    ]
+                }
+            });
+        });
+
+        layer.photos({
+            photos: {
+                "data": [   //相册包含的图片，数组格式
+                    {
+                        "src": "files/"+result.grid.imgurl //原图地址
+                    }
+                ]
+            }
+        });
 
         var list=self.gridSearchResultCard.find(".list-group");
         list.empty();
@@ -1257,7 +1362,7 @@
         $.getJSON(
             hotmapUrl,
             {
-                method:"method=selectBuildingCmpNum"
+                method:"selectBuildingCmpNum"
             },
             function (result){
                 if(hotmapOverlay){
@@ -1275,7 +1380,7 @@
 
                 });
 
-                hotmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+                hotmapOverlay = new BMapLib.HeatmapOverlay({"radius":30});
                 self._map.addOverlay(hotmapOverlay);
                 hotmapOverlay.setDataSet({data:points,max:max});
             });
@@ -1311,7 +1416,7 @@
                     '<div class="btn-group btn-group-sm">'+
                         '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-file fa-lg"></i>&nbsp;&nbsp;企业分布 <span class="caret"></span></button>'+
                         '<ul class="dropdown-menu">'+
-                            '<li><a id="travel-tool" type="button" href="./worldmap/extension/BMap/doc/BMap.html"><i class="fa fa-globe fa-lg"></i>&nbsp;&nbsp;迁徙图</a></li>'+
+                            '<li><a id="travel-tool" type="button" href="./worldmap/extension/BMap/doc/BMap.html"><i class="fa fa-globe fa-lg"></i>&nbsp;&nbsp;公司分布图</a></li>'+
                             '<li><a href="javascript:void(0)" id="hotmap-tool"><i class="fa fa-fire fa-lg"></i>&nbsp;&nbsp;热力图</a></li>'+
                     '    </ul>'+
                      '</div>'+
@@ -1370,24 +1475,25 @@
                 var companyHtml="";
                 for (var i = 0; i < companys.length; i++) {
                     var name=companys[i].cmp_name;
+                    var cid=companys[i].c_id;
                     if(name.length<13)
-                        companyHtml += '<li>'+name+'</li>';
+                        companyHtml += '<li><a style="cursor: pointer" data-cid="'+cid+'">'+name+'</a></li>';
                     else
-                        companyHtml += '<li title="'+name+'">'+name.slice(0,12).toString()+'...'+'</li>';
+                        companyHtml += '<li title="'+name+'"><a style="cursor: pointer" data-cid="'+cid+'">'+name.slice(0,12).toString()+'...'+'</a></li>';
                 }
 
                 var buildingInfo=self.buildingInfo=
                     $('<div class="building-info-box card animated flipInY " >' +
                         '<div class="company well well-sm">' +
-                        '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;园区企业总数</h4>'+
+                        '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;已纳入系统园区企业数</h4>'+
                         '<p class="text-center text-danger">'+result.count+'</p>'+
                         '</div>'+
                         '<div class="company well well-sm">' +
-                        '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;园区楼宇总数</h4>'+
+                        '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;已纳入系统园区楼宇数</h4>'+
                         '<p class="text-center text-danger">'+result.buildingCount+'</p>'+
                         '</div>'+
                         '<div class="company well well-sm">' +
-                        '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;园区管理网格总数</h4>'+
+                        '<h4><i class="fa fa-info-circle"></i>&nbsp;&nbsp;已纳入系统园区管理网格数</h4>'+
                         '<p class="text-center text-danger">'+result.gridCount+'</p>'+
                         '</div>'+
                         '<div class="company-new well well-sm bg-info">' +
@@ -1398,6 +1504,244 @@
                         '</div>'+
                         '</div>');
 
+                buildingInfo.find('a[data-cid]').click(function(){
+                    function nullToEmpty(str){
+                        if(str===null)
+                            return"";
+                        else
+                            return str;
+                    }
+
+                    function singleCompanyInfo(data){
+                        var companyInfoWindowHtml=
+                            '<div class="company-info" >' +
+                                /*'<img class="company-img" style="height: 200px; width:600px;" src="' +"files/"+ nullToEmpty(data[0].url1) + '" onerror="this.src=\'img/wellcm3.png\'">' +*/
+                            '<div id="carousel-company-info" class="carousel slide" data-ride="carousel">' +
+                            '<ol class="carousel-indicators">' +
+                            '<li data-target="#carousel-company-info" data-slide-to="0" class="active"></li>' +
+                            '<li data-target="#carousel-company-info" data-slide-to="1"></li>' +
+                            '<li data-target="#carousel-company-info" data-slide-to="2"></li>' +
+                            '</ol>' +
+                            '<div class="carousel-inner" style="height: 200px;width:360px">' +
+                            '<div class="item active">' +
+                            '<img src="files/' + nullToEmpty(data.url1) + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                            '</div>' +
+                            '<div class="item">' +
+                            '<img src="files/' + nullToEmpty(data.url2) + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                            '</div>' +
+                            '<div class="item">' +
+                            '<img src="files/' + nullToEmpty(data.url3) + '" onerror="this.src=\'img/wellcm3.png\'">' +
+                            '</div>' +
+                            '</div>'+
+                            '<a class="left carousel-control" href="#carousel-company-info" data-slide="prev">' +
+                            '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>'+
+                            '<span class="sr-only">Previous</span>'+
+                            '</a>'+
+                            '<a class="right carousel-control" href="#carousel-company-info" data-slide="next">' +
+                            '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'+
+                            '<span class="sr-only">Next</span>'+
+                            '</a>'+
+                            '</div>'+
+                            '<div class="company-content">' +
+                            '<p class="text-muted"><strong>公司名称：</strong>' + nullToEmpty(data.cmp_name) + '</p>' +
+                            '<p class="text-muted"><strong>生产经营地：</strong>' + nullToEmpty(data.bg_adr) + '</p>' +
+                            '</div>'+
+                            '<div class="tabs-container">' +
+                            '<ul class="nav nav-tabs">' +
+                            '<li class="active"><a data-toggle="tab" href="#company-tab1">基本信息</a></li>' +
+                            '<li class=""><a data-toggle="tab" href="#company-tab2" >企服信息</a></li>' +
+                            '<li class=""><a data-toggle="tab" href="#company-tab3" >党建信息</a></li>' +
+                            '</ul>' +
+                            '<div class="tab-content">' +
+                            '<div id="company-tab1" class="tab-pane active" style="height: 320px">' +
+                            '<p class="text-muted"><strong>是否三证合一：</strong>' + nullToEmpty(data.ck_sanz) + '</p>' ;
+                        if(nullToEmpty(data.uni_code)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>社会统一信用代码：</strong>' + nullToEmpty(data.uni_code) + '</p>';
+                        }
+                        if(nullToEmpty(data.zhuce_nums)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>注册登记号：</strong>' + nullToEmpty(data.zhuce_nums)+ '</p>';
+                        }
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>企业名称：</strong>' + nullToEmpty(data.cmp_name) + '</p>' +
+                            '<p class="text-muted"><strong>注册资金：</strong>' + nullToEmpty(data.zhuce_price) + '&nbsp;万元</p>' +
+                            '<p class="text-muted"><strong>是否同址办公：</strong>' + nullToEmpty(data.isbeyond) + '</p>' +
+                            '<p class="text-muted"><strong>注册地址：</strong>' + nullToEmpty(data.zc_address) + '</p>' +
+                            '<p class="text-muted"><strong>办公地址：</strong>' + nullToEmpty(data.bg_adr) + '</p>';
+                        if(nullToEmpty(data.zzjg_daima)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>组织机构代码证：</strong>' + nullToEmpty(data.zzjg_daima) + '</p>';
+                        }
+                        if(nullToEmpty(data.swdj_nums)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>税务登记号：</strong>' + nullToEmpty(data.swdj_nums)+'</p>';
+                        }
+                        if(nullToEmpty(data.dishui_x)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>地税所在区县（所）：</strong>' + nullToEmpty(data.dishui_x)+'</p>';
+                        }
+                        if(nullToEmpty(data.guishui_x)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>国税所在区县（所）：</strong>' + nullToEmpty(data.guishui_x) + '</p>';
+                        }
+                        if(nullToEmpty(data.tjdj_nums)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>统计登记号：</strong>' + nullToEmpty(data.tjdj_nums) + '</p>';
+                        }
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>主营业务：</strong>' + nullToEmpty(data.zhuyingyw) + '</p>' +
+                            '<p class="text-muted"><strong>企业性质：</strong>' + nullToEmpty(data.qiyexingzhi) + '</p>' +
+                            '<p class="text-muted"><strong>联系人：</strong>' + nullToEmpty(data.lx_people) + '</p>' +
+                            '<p class="text-muted"><strong>电话：</strong>' + nullToEmpty(data.phone_num) + '</p>' +
+                            '<p class="text-muted"><strong>法人：</strong>' + nullToEmpty(data.faren_man) + '</p>' +
+                            '<p class="text-muted"><strong>注册日期：</strong>' + nullToEmpty(data.zhuce_date) + '</p>' +
+                            '<p class="text-muted"><strong>分支机构：</strong>' + nullToEmpty(data.fenzhi_jg) + '</p>' +
+                            '<p class="text-muted"><strong>职工总数：</strong>' + nullToEmpty(data.zhigong_nums) + '</p>' +
+                            '<p class="text-muted"><strong>其中：非京人数：</strong>' + nullToEmpty(data.fenjing_sm) + '</p>' +
+                            '<p class="text-muted"><strong>其中：少数民族人数：</strong>' + nullToEmpty(data.name) + '</p>' +
+                            '<p class="text-muted"><strong>民主党派：</strong>' + nullToEmpty(data.mngzhu_nums) + '</p>' +
+                            '<p class="text-muted"><strong>本科以上：</strong>' + nullToEmpty(data.benke_nums) + '</p>' +
+                            '<p class="text-muted"><strong>硕士：</strong>' + nullToEmpty(data.shuoshi_nums) + '</p>' +
+                            '<p class="text-muted"><strong>博士：</strong>' + nullToEmpty(data.boshi_nums) + '</p>' +
+                            '<p class="text-muted"><strong>归国留学人员：</strong>' + nullToEmpty(data.haigui_nums) + '</p>' +
+                            '<p class="text-muted"><strong>高级职称：</strong>' + nullToEmpty(data.gaoji_nums) + '</p>' +
+                            '<p class="text-muted"><strong>是否中关村高新：</strong>' + nullToEmpty(data.sfgx_zgc) + '</p>';
+                        if(nullToEmpty(data.shunum1)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data.shunum1) + '</p>';
+                        }
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>是否国高新：</strong>' + nullToEmpty(data.sfgg_guo) + '</p>';
+                        if(nullToEmpty(data.shunum2)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>证书号：</strong>' + nullToEmpty(data.shunum2) + '</p>';
+                        }
+                        if(nullToEmpty(data.remarks)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>备注：</strong>' + nullToEmpty(data.remarks) + '</p>';
+                        }
+                        companyInfoWindowHtml+='<p class="text-muted"><strong>公司简介：</strong>' + nullToEmpty(data.othermk) + '</p>' +
+                            '</div>' +
+                            '<div id="company-tab2" class="tab-pane" style="height: 320px">' +
+                            '<p class="text-muted"><strong>是否建立院士工作站：</strong>' + nullToEmpty(data.isaca) + '</p>';
+                        if(nullToEmpty(data.aca_name)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>进站院士：</strong>' + nullToEmpty(data.aca_name) + '</p>';
+                        }
+                        if(nullToEmpty(data.aca_project)===""){}else{
+                            companyInfoWindowHtml+='<p class="text-muted"><strong>合作项目：</strong>' + nullToEmpty(data.aca_project) + '</p>';
+                        }
+                        companyInfoWindowHtml+='</div>' +
+                            '<div id="company-tab3" class="tab-pane" style="height: 320px">' +
+                            '<p class="text-muted"><strong>是否建立党组织：</strong>' +nullToEmpty(data.isp) + '</p>';
+                        if(nullToEmpty(data.isp)==="否"){}else{
+                            if(nullToEmpty(data.start_date_p)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>组建年月：</strong>' + nullToEmpty(data.start_date_p) + '</p>';
+                            }
+                            if(nullToEmpty(data.type_p)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>组织类型：</strong>' + nullToEmpty(data.type_p) + '</p>';
+                            }
+                            if(nullToEmpty(data.sub)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>隶属关系：</strong>' + nullToEmpty(data.sub) + '</p>';
+                            }
+                            if(nullToEmpty(data.sub_sub)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>所属上级党组织名称：</strong>' + nullToEmpty(data.sub_sub) + '</p>';
+                            }
+                            if(nullToEmpty(data.category)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>类别：</strong>' + nullToEmpty(data.category) + '</p>';
+                            }
+                            if(nullToEmpty(data.isbc)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>是否楼宇企业：</strong>' + nullToEmpty(data.isbc) + '</p>';
+                            }
+                            if(nullToEmpty(data.isas)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>是否规模以上：</strong>' + nullToEmpty(data.isas) + '</p>';
+                            }
+                            if(nullToEmpty(data.isyoung)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>是否建立群团组织：</strong>' + nullToEmpty(data.isyoung) + '</p>';
+                            }
+                            if(nullToEmpty(data.start_date_lu)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>工会建立时间：</strong>' + nullToEmpty(data.start_date_lu) + '</p>';
+                            }
+                            if(nullToEmpty(data.start_date_cyl)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>共青团建立时间：</strong>' + nullToEmpty(data.start_date_cyl) + '</p>';
+                            }
+                            if(nullToEmpty(data.start_date_wf)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>妇联建立时间：</strong>' + nullToEmpty(data.start_date_wf) + '</p>';
+                            }
+                            if(nullToEmpty(data.ispc)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>是否配备党建工作指导员：</strong>' + nullToEmpty(data.ispc) + '</p>';
+                            }
+                            if(nullToEmpty(data.name_pc)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>党建工作指导员姓名：</strong>' + nullToEmpty(data.name_pc) + '</p>';
+                            }
+                            if(nullToEmpty(data.phone_pc)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>党建工作指导员联系电话：</strong>' + nullToEmpty(data.phone_pc) + '</p>';
+                            }
+                            if(nullToEmpty(data.staff)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>员工数：</strong>' + nullToEmpty(data.staff) + '</p>';
+                            }
+                            if(nullToEmpty(data.active)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>入党积极分子：</strong>' + nullToEmpty(data.active) + '</p>';
+                            }
+                            if(nullToEmpty(data.member)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>党员数：</strong>' + nullToEmpty(data.member) + '</p>';
+                            }
+                            if(nullToEmpty(data.atcompany)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>关系在本企业人数：</strong>' + nullToEmpty(data.atcompany) + '</p>';
+                            }
+                            if(nullToEmpty(data.atmarket)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>关系在人才职介人数：</strong>' + nullToEmpty(data.atmarket) + '</p>';
+                            }
+                            if(nullToEmpty(data.atstreet)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>关系在原单位或街道社区人数：</strong>' + nullToEmpty(data.atstreet) + '</p>';
+                            }
+                            if(nullToEmpty(data.attemp)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>临时组织关系人数：</strong>' + nullToEmpty(data.attemp) + '</p>';
+                            }
+                            if(nullToEmpty(data.atother)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>其他亮身份的人数：</strong>' + nullToEmpty(data.atother) + '</p>';
+                            }
+                            if(nullToEmpty(data.ismember_lr)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>法定代表人是否为党员：</strong>' + nullToEmpty(data.ismember_lr) + '</p>';
+                            }
+                            if(nullToEmpty(data.name_pbs)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>党组织书记姓名：</strong>' + nullToEmpty(data.name_pbs) + '</p>';
+                            }
+                            if(nullToEmpty(data.identity_pbs)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>党组织数据在企业中的身份：</strong>' + nullToEmpty(data.identity_pbs) + '</p>';
+                            }
+                            if(nullToEmpty(data.phone_pbs)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>企业当组织书记联系电话：</strong>' + nullToEmpty(data.phone_pbs) + '</p>';
+                            }
+                            if(nullToEmpty(data.finance)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>企业党组织工作和活动经费保障情况：</strong>' + nullToEmpty(data.finance) + '</p>';
+                            }
+                            if(nullToEmpty(data.place)===""){}else{
+                                companyInfoWindowHtml+='<p class="text-muted"><strong>企业党组织办公和活动场所保障情况：</strong>' + nullToEmpty(data.place) + '</p>';
+                            }
+                            companyInfoWindowHtml+='</div>' +
+                                '</div>' +
+                                '</div>' +
+                                '</div>';
+                        }
+
+                        return companyInfoWindowHtml;
+                    }
+
+                    var index;
+                    for (var i = 0; i < companys.length; i++) {
+                        if(companys[i].c_id===$(this).data('cid').toString()){
+                            index=i;
+                        }
+                    }
+                    layer.open({
+                        type: 1,
+                        shift: 0,
+                        title: '公司列表',
+                        shadeClose: true, //开启遮罩关闭
+                        content: singleCompanyInfo(companys[index]),
+                        success:function(layero){
+                            $(layero).find(".carousel-inner img").click(function(){
+                                layer.photos({
+                                    photos: {
+                                        "data": [   //相册包含的图片，数组格式
+                                            {
+                                                "src": $(this).attr("src"), //原图地址
+                                            }
+                                        ]
+                                    }
+                                });
+                            });
+                        }
+                    });
+                });
 
 
                 toolboxContainer.append(buildingInfo);
