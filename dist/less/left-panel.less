@@ -197,36 +197,39 @@
             }
             .floor-pagination{
                 width:372px;
-                overflow: hidden;
                 position:relative;
-
+                top: 24px;
                 .inner{
-                    padding: 0 32px;
+                    padding: 0 24px;
                 }
 
                 .floor-pagination-wrapper{
-                    overflow: hidden;
+                    overflow-x: hidden;
                 }
 
                 .prev,
                 .next{
                     display: block;
-                    width: 32px;
-                    height: 32px;
-                    font-size: 30px;
-                    font-weight: 600;
+                    width: 24px;
+                    height: 24px;
+                    font-size: 24px;
+                    font-weight: 400;
                     text-align: center;
+                    color:@text-color;
                     background: #fff;
                     position: absolute;
                     top:0;
+                    text-decoration: none;
+                    &:hover{
+                        color:@navy;
+                    }
                 }
 
                 .prev{left: 0;}
                 .next{right: 0;}
 
                 .pagination{
-                    width: 1000px;
-                    margin: 6px 2px;
+                    margin: 6px 0;
                     a{
                         border:0;
                         &:hover {
@@ -238,7 +241,7 @@
                         }
                     }
                     li {
-                        width: 36px;
+                        width: 32px;
                         display:inline-block;
                         &:first-child {
                             float: left;
@@ -268,7 +271,11 @@
     }
 
     .building-detail{
+        overflow: hidden;
         height: 562px;
+        #floor-detail{
+            margin-top: 18px;
+        }
         img{
             height: 200px;
 			text-align: center;
@@ -286,7 +293,7 @@
 
         .floor-box{
             padding: 6px;
-            overflow-y: auto;
+            overflow-x: auto;
             .room-cube{
                 margin: 0 6px 6px 0;
                 padding-top: 6px;

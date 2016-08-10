@@ -1088,11 +1088,14 @@
     var newCompanys=[];//新入驻企业
     var gps={};//采集员GPS
     var gpsIntervalId;//采集员轮询id
+    var hotmapOverlay=null;
 
     var gridUrl="json/buildingByGrid.json";//根据网格查楼宇
     var newCompanyUrl="json/newCompany.json";//查询新入驻企业
     var smilingFaceUrl="json/smilingFace.json";//查询笑脸
     var gpsUrl="json/gps.json";//查询GPS
+    var hotmapUrl="json/hotmap.json";//热力图
+
     /***
      * 网格点击事件
      * @param e
@@ -1199,7 +1202,7 @@
                             position : point,    // 指定文本标注所在的地理位置
                             offset   : new BMap.Size(20, -20)    //设置文本偏移量
                         };
-                        var label = new BMap.Label(v.name, opts);
+                        var label = new BMap.Label(v.markname, opts);
                         label.setStyle({
                             "color" : "red",
                             "fontSize" : "12px",
@@ -1216,7 +1219,7 @@
 
                         var sContent =
                             "<img style='float:left;margin:4px' id='imgDemo' src='photo/"+ v.userimg+"' onerror='this.src=\"img/i_demographics.png\" ' width='64' height='64' title='天安门'/>" +
-                            "<p style='margin:0;line-height:1.5;font-size:13px;'><strong>账号：</strong>"+ v.name+"<br><strong> 姓名：</strong>"+ v.markname+"<br><strong>管理网格：</strong><br><strong>电话：</strong>"+ v.phonenum+"</p>" +
+                            "<p style='margin:0;line-height:1.5;font-size:13px;'><strong>账号：</strong>"+ v.name+"<br><strong> 姓名：</strong>"+ v.markname+"<br><strong>管理网格：</strong>"+v.gridname+"<br><strong>电话：</strong>"+ v.phonenum+"</p>" +
                             "</div>";
                         var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
 
@@ -1245,6 +1248,37 @@
             if(ZRGrid[1]==="success")
                 addGrid(ZRGrid[0],true);
         });
+    }
+
+    /***
+     * 热力图
+     */
+    function queryHotmap(){
+        $.getJSON(
+            hotmapUrl,
+            {
+                method:"method=selectBuildingCmpNum"
+            },
+            function (result){
+                if(hotmapOverlay){
+                    self._map.removeOverlay(hotmapOverlay);
+                }
+
+                var points=[];
+                var max=0;
+                $.each(result,function(i,v){
+
+                    points.push({"lng": v.build.x,"lat":v.build.y,"count": v.counts});
+                    if(v.counts>max){
+                        max=v.counts;
+                    }
+
+                });
+
+                hotmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+                self._map.addOverlay(hotmapOverlay);
+                hotmapOverlay.setDataSet({data:points,max:max});
+            });
     }
 
     /**
@@ -1278,7 +1312,7 @@
                         '<button data-toggle="dropdown" class="btn btn-white dropdown-toggle"><i class="fa fa-file fa-lg"></i>&nbsp;&nbsp;企业分布 <span class="caret"></span></button>'+
                         '<ul class="dropdown-menu">'+
                             '<li><a id="travel-tool" type="button" href="./worldmap/extension/BMap/doc/BMap.html"><i class="fa fa-globe fa-lg"></i>&nbsp;&nbsp;迁徙图</a></li>'+
-                            '<li><a href="#"><i class="fa fa-fire fa-lg"></i>&nbsp;&nbsp;热力图</a></li>'+
+                            '<li><a href="javascript:void(0)" id="hotmap-tool"><i class="fa fa-fire fa-lg"></i>&nbsp;&nbsp;热力图</a></li>'+
                     '    </ul>'+
                      '</div>'+
                     '<button class="btn btn-white" type="button"><i class="fa fa-expand fa-lg"></i>&nbsp;&nbsp;测距</button>'+
@@ -1442,7 +1476,15 @@
             }
         });
 
+        toolbar.find('#hotmap-tool').click(function(){
+            $(this).toggleClass("active");
 
+            if( $(this).hasClass("active")){
+                queryHotmap();
+            }else{
+                map.removeOverlay(hotmapOverlay);
+            }
+        });
 
         map.getContainer().appendChild(toolboxContainer.get(0));
         this._map = map;
